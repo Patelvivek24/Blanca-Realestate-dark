@@ -286,7 +286,7 @@
         if ($('#testi2Carousel .carousel-item').length) {
             let items = document.querySelectorAll('#testi2Carousel .carousel-item')
             items.forEach((el) => {
-                const minPerSlide = 2
+                const minPerSlide = 3
                 let next = el.nextElementSibling            
                 for (var i=1; i<minPerSlide; i++) {
                     if (!next) {
