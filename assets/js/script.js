@@ -394,6 +394,21 @@
             });
             wow.init();
         }
+
+        // ## Footer Water Ripple Effect
+        if ($('.modern-footer').length && $.fn.ripples) {
+            try {
+                $('.modern-footer').ripples({
+                    resolution: 512,
+                    dropRadius: 20,
+                    perturbance: 0.04,
+                    interactive: true,
+                    crossOrigin: ''
+                });
+            } catch(e) {
+                console.log('Ripples effect initialization error:', e);
+            }
+        }
         
 
 

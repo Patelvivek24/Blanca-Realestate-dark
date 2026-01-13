@@ -7774,6 +7774,17 @@ blockquote cite.name {
   padding: 80px 0 30px;
 }
 
+/* Water Ripples Canvas - created by jQuery Ripples plugin */
+.modern-footer canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: auto;
+}
+
 .modern-footer::before {
   content: '';
   position: absolute;
@@ -7836,9 +7847,9 @@ blockquote cite.name {
   position: relative;
   z-index: 3;
   width: 100%;
-  max-width: 1200px;
+  /* max-width: 1200px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 15px; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -7862,6 +7873,12 @@ blockquote cite.name {
 
 .footer-brand {
   margin-bottom: 20px;
+}
+
+.logo-image {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
 }
 
 .brand-logo {
@@ -7892,11 +7909,11 @@ blockquote cite.name {
 }
 
 .footer-description {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 30px;
-  max-width: 100%;
+  max-width: 355px;
 }
 
 .light-mode .footer-description {
@@ -7967,10 +7984,11 @@ blockquote cite.name {
 .footer-links a {
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
+  /* text-align: center; */
   font-size: 15px;
   transition: all 0.3s ease;
   display: block;
-  padding: 8px 0;
+  /* padding: 8px 120px; */
 }
 
 .footer-links a:hover {
@@ -8002,13 +8020,13 @@ blockquote cite.name {
 .contact-item {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: 16px;
 }
 
 .contact-item i {
   color: rgba(255, 255, 255, 0.9);
-  font-size: 16px;
-  margin-top: 4px;
+  font-size: 20px;
+  margin-top: 5px;
   flex-shrink: 0;
   transition: color 0.3s ease;
 }
@@ -8043,42 +8061,43 @@ blockquote cite.name {
   flex-wrap: wrap;
 }
 
-.social-links {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
 .social-link {
-  width: 45px;
-  height: 45px;
+  width: 46px;
+  height: 46px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 8px;
-  color: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  color: #ffffff;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 24px;
   transition: all 0.3s ease;
+  position: relative;
+}
+
+.social-link i {
+  display: block;
+  line-height: 1;
 }
 
 .social-link:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.6);
-  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #E6672E;
+  color: #E6672E;
   transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
 }
 
 .light-mode .social-link {
-  border-color: rgba(255, 255, 255, 0.3);
-  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
 }
 
 .light-mode .social-link:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.8);
 }
 
 /* Footer Middle Text - Large Logo */
