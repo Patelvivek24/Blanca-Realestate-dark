@@ -6811,6 +6811,19 @@ button.read-more {
   z-index: 0;
 }
 
+.why-choose-bg-image {
+  position: absolute;
+  right: 0;
+  bottom: -30px;
+  width: 500px;
+  height: 360px;
+  background: url("../images/background/building-bg.svg") no-repeat right bottom;
+  background-size: contain;
+  opacity: 0.30;
+  z-index: 0;
+  pointer-events: none;
+}
+
 /* .why-choose-us-area::before {
   content: "";
   position: absolute;
@@ -6836,6 +6849,22 @@ button.read-more {
 .why-choose-content {
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 991px) {
+  .why-choose-bg-image {
+    width: 360px;
+    height: 260px;
+    opacity: 0.4;
+  }
+}
+
+@media (max-width: 575px) {
+  .why-choose-bg-image {
+    width: 240px;
+    height: 180px;
+    opacity: 0.3;
+  }
 }
 
 .why-choose-main-features {
