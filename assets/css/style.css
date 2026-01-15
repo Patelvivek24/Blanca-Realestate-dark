@@ -2310,14 +2310,14 @@ h4,
 /*******************************************************/
 /******************* ## Header style ******************/
 /*******************************************************/
-header {
+/* header {
   margin-bottom: 92px;
-}
+} */
 
 @media (max-width: 991px) {
-  header {
+  /* header {
     margin-bottom: 46px;
-  }
+  } */
 }
 
 .main-header {
@@ -2338,6 +2338,98 @@ header {
   -webkit-transition: all 500ms ease;
   -o-transition: all 500ms ease;
   transition: all 500ms ease;
+}
+
+.glass-header .header-upper {
+  background: transparent;
+  padding: 12px 0;
+}
+
+.glass-header .header-inner {
+  position: relative;
+  padding: 10px 30px;
+  border-radius: 28px;
+  background: rgba(15, 15, 15, 0.38);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  backdrop-filter: blur(18px) saturate(160%);
+  overflow: hidden;
+}
+
+.glass-header .header-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(255, 255, 255, 0.03) 35%,
+    rgba(255, 255, 255, 0.12) 65%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.glass-header .header-inner > * {
+  position: relative;
+  z-index: 1;
+}
+
+.glass-header .main-menu .navbar-collapse>ul>li>a {
+  color: rgba(255, 255, 255, 0.92);
+  letter-spacing: 0.5px;
+}
+
+.glass-header .main-menu .navbar-collapse li a {
+  border-radius: 999px;
+  padding: 8px 14px;
+  -webkit-transition: all 250ms ease;
+  -o-transition: all 250ms ease;
+  transition: all 250ms ease;
+}
+
+.glass-header .main-menu .navbar-collapse li a:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.glass-header .header-contact-btn {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  border-radius: 999px;
+  padding: 10px 18px;
+}
+
+.glass-header .header-contact-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  /* color: white; */
+}
+
+.main-header.glass-header.fixed-header .header-upper {
+  background: transparent;
+}
+
+.main-header.glass-header.fixed-header .header-inner {
+  background: rgba(10, 10, 10, 0.6);
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+@media only screen and (min-width: 992px) {
+  .glass-header .main-menu .navbar-collapse li {
+    padding: 16px 10px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .glass-header .header-inner {
+    border-radius: 22px;
+    padding: 8px 12px;
+  }
 }
 
 .main-header.fixed-header .header-upper {
@@ -2403,14 +2495,14 @@ header {
 .main-header .header-contact-btn {
   margin-top: 16px;
   display: inline-block;
-  border: 1px solid var(--black-100);
+  /* border: 1px solid var(--black-100); */
   font-weight: 500;
 }
 
 /* Enhanced Liquid Glass Hover Effect for Contact Us Button */
 a.light-btn.header-contact-btn:hover,
 .header-contact-btn:hover {
-  color: #d04713 !important;
+  /* color: #d04713 !important; */
   transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -2504,8 +2596,8 @@ a.light-btn.header-contact-btn:hover,
   position: fixed;
   -webkit-animation: sticky 1s;
   animation: sticky 1s;
-  -webkit-box-shadow: 0px 0px 30px 0px rgba(87, 95, 245, 0.1);
-  box-shadow: 0px 0px 30px 0px rgba(87, 95, 245, 0.1);
+  /* -webkit-box-shadow: 0px 0px 30px 0px rgba(87, 95, 245, 0.1);
+  box-shadow: 0px 0px 30px 0px rgba(87, 95, 245, 0.1); */
 }
 
 @media only screen and (min-width: 1200px) {
@@ -3198,9 +3290,26 @@ header form.search-form button > * {
 }
 
 /*-------Hero-area-2--------*/
+.hero-area-2 {
+  height: 100vh;
+  min-height: 100vh;
+}
+
+.hero-area-2 .hero-2-slider,
+.hero-area-2 .slick-list,
+.hero-area-2 .slick-track {
+  height: 100%;
+}
+
 .hero-2-item {
   background-size: cover;
   background-repeat: no-repeat;
+  height: 100vh;
+  min-height: 100vh;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  align-items: center;
 }
 
 .hero-area-2 .phone-title {
@@ -3258,7 +3367,12 @@ header form.search-form button > * {
 }
 
 .hero-area-2 .container-fluid {
-  padding: 96px 64px;
+  padding: 0 64px;
+  height: 100%;
+}
+
+.hero-area-2 .container-fluid .row {
+  min-height: 100%;
 }
 
 .hero-area-2 .buttons a:not(:first-child) {
