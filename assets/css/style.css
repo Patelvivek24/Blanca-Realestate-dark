@@ -2347,8 +2347,8 @@ h4,
 
 .glass-header .header-inner {
   position: relative;
-  padding: 10px 30px;
-  border-radius: 28px;
+  padding: 12px 30px;
+  border-radius: 20px;
   background: rgba(15, 15, 15, 0.38);
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
@@ -2421,7 +2421,7 @@ h4,
 
 @media only screen and (min-width: 992px) {
   .glass-header .main-menu .navbar-collapse li {
-    padding: 16px 10px;
+    padding: 10px;
   }
 }
 
@@ -6700,6 +6700,8 @@ button.read-more {
   background: var(--black-90);
   padding: 64px;
   position: relative;
+  width: 100%;
+  min-height: 420px;
 }
 
 .light-mode .reviews2-area .testimonial-item-bg {
@@ -6791,6 +6793,12 @@ button.read-more {
   .reviews2-area .testimonial-item:last-child {
     padding-left: 0;
     margin-top: 30px;
+  }
+}
+
+@media(max-width: 767px) {
+  .reviews2-area .testimonial-item-bg {
+    min-height: 360px;
   }
 }
 
