@@ -740,6 +740,66 @@ section {
   letter-spacing: 2px;
 }
 
+/* .screenshot-heading {
+  text-align: center;
+} */
+
+.screenshot-heading .common-subtitle {
+  letter-spacing: 4px;
+  position: relative;
+  padding: 0 18px;
+}
+
+.screenshot-heading .common-subtitle::before,
+.screenshot-heading .common-subtitle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 28px;
+  height: 1px;
+  background: rgba(208, 71, 19, 0.7);
+}
+
+.screenshot-heading .common-subtitle::before {
+  left: 0;
+  transform: translate(-120%, -50%);
+}
+
+.screenshot-heading .common-subtitle::after {
+  right: 0;
+  transform: translate(120%, -50%);
+}
+
+.reviews2-area .section-heading.screenshot-heading {
+  position: relative;
+  justify-content: center;
+}
+
+.reviews2-area .section-heading.screenshot-heading .section-title {
+  width: 100%;
+}
+
+.reviews2-area .section-heading.screenshot-heading .carousel-buttons {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  float: none;
+}
+
+@media (max-width: 575px) {
+  .reviews2-area .section-heading.screenshot-heading {
+    display: block;
+  }
+
+  .reviews2-area .section-heading.screenshot-heading .carousel-buttons {
+    position: static;
+    transform: none;
+    margin: 16px 0 0;
+  }
+}
+
 .common-title {
   color: var(--heading-color);
   font-size: 44px;
@@ -4457,6 +4517,10 @@ header form.search-form button > * {
   background: rgba(208, 71, 19, 0.6);
 }
 
+.reviews2-area .sub-title-wrapper {
+  margin-left: 35px;
+}
+
 .homeproject-area .section-title .sub-title {
   font-weight: 600;
   letter-spacing: 2px;
@@ -6687,7 +6751,7 @@ button.read-more {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(17, 17, 17, 0.6);
+  background: linear-gradient(120deg, rgba(10, 11, 9, 0.92) 0%, rgba(15, 16, 14, 0.78) 45%, rgba(15, 16, 14, 0.62) 100%);
   z-index: 0;
 }
 
@@ -9412,7 +9476,7 @@ blockquote cite.name {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 12px;
+  /* margin-bottom: 12px; */
 }
 
 .our-story-area .story-heading .sub-title-wrapper::before,
@@ -9639,6 +9703,14 @@ blockquote cite.name {
   border: 1px solid rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(8px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interior-area button:has(.carousel-control-next-icon) {
+  right: 22%;
+}
+
+.interior-area button:has(.carousel-control-prev-icon) {
+  left: 22%;
 }
 
 .interior-area button:has(.carousel-control-prev-icon):hover,
