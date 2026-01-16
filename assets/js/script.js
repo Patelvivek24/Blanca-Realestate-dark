@@ -53,6 +53,57 @@
         }
         headerStyle();
 
+        // ## Active Navigation on Click and Scroll
+        var $navLinks = $('.main-header .navigation a[href^="#"]');
+
+        function setActiveNav(hash) {
+            if (!hash) {
+                return;
+            }
+            $navLinks.closest('li').removeClass('current current-menu-item');
+            $navLinks.filter('[href="' + hash + '"]').closest('li')
+                .addClass('current current-menu-item');
+        }
+
+        function updateActiveNav() {
+            if (!$navLinks.length) {
+                return;
+            }
+            var scrollPos = $(window).scrollTop() + 140;
+            var activeHash = null;
+
+            $navLinks.each(function () {
+                var target = $(this).attr('href');
+                if (!target || target.charAt(0) !== '#') {
+                    return;
+                }
+                var $section = $(target);
+                if (!$section.length) {
+                    return;
+                }
+                var sectionTop = $section.offset().top;
+                var sectionBottom = sectionTop + $section.outerHeight(true);
+                if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+                    activeHash = target;
+                    return false;
+                }
+            });
+
+            if (activeHash) {
+                setActiveNav(activeHash);
+            }
+        }
+
+        $navLinks.on('click', function () {
+            var target = $(this).attr('href');
+            if (target && target.charAt(0) === '#') {
+                setActiveNav(target);
+            }
+        });
+
+        updateActiveNav();
+        $(window).on('scroll', updateActiveNav);
+
         // ## Dropdown menu
         var mobileWidth = 992;
         var navcollapse = $('.navigation li.dropdown');

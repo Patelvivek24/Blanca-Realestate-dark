@@ -2456,6 +2456,12 @@ h4,
   background: rgba(255, 255, 255, 0.12);
 }
 
+.glass-header .main-menu .navbar-collapse li.current > a,
+.glass-header .main-menu .navbar-collapse li.current-menu-item > a {
+  color: white;
+  background: rgba(255, 255, 255, 0.18);
+}
+
 .glass-header .header-contact-btn {
   border: 1px solid rgba(255, 255, 255, 0.35);
   background: rgba(255, 255, 255, 0.08);
@@ -4496,6 +4502,30 @@ header form.search-form button > * {
 /*******************************************************/
 /****************** ## Projects Area *******************/
 /*******************************************************/
+.homeproject-area {
+  position: relative;
+  overflow: hidden;
+}
+
+/* .homeproject-area::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -65px;
+  width: 550px;
+  height: 550px;
+  background: url("../images/background/building-bg-2.svg") no-repeat left bottom;
+  background-size: contain;
+  opacity: 0.65;
+  pointer-events: none;
+  z-index: 0;
+} */
+
+.homeproject-area .container {
+  position: relative;
+  z-index: 1;
+}
+
 .homeproject-area .section-title {
   max-width: 780px;
   margin: 0 auto;
@@ -4627,6 +4657,11 @@ header form.search-form button > * {
 @media only screen and (max-width: 575px) {
   .homeproject-area .section-title h2 {
     font-size: 32px;
+  }
+
+  .homeproject-area::before {
+    width: 220px;
+    height: 220px;
   }
 }
 
