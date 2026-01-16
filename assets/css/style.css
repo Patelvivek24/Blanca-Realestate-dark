@@ -9252,27 +9252,53 @@ blockquote cite.name {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.4);
+  /* background: rgba(255, 255, 255, 0.08); */
+  /* border: 1px solid var(--lg-highlight); */
   border-radius: 10px;
-  color: #ffffff;
+  color: var(--lg-text);
   text-decoration: none;
   font-size: 24px;
   transition: all 0.3s ease;
   position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  /* -webkit-backdrop-filter: blur(6px); */
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25), 0 0 16px rgba(0, 0, 0, 0.15);
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  background: radial-gradient(circle at 30% 20%, rgb(255 255 255 / 8%), rgba(255, 255, 255, 0) 40%), radial-gradient(circle at 80% 80%, rgb(255 255 255 / 5%), rgb(255 255 255 / 0%) 60%);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.social-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 1px 1px 0 var(--lg-highlight), inset 0 0 5px var(--lg-highlight);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .social-link i {
   display: block;
   line-height: 1;
+  position: relative;
+  z-index: 2;
 }
 
 .social-link:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: #E6672E;
-  color: #E6672E;
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: var(--lg-text);
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35), 0 0 20px rgba(255, 255, 255, 0.12);
 }
 
 .light-mode .social-link {
