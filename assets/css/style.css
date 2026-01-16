@@ -9919,9 +9919,9 @@ blockquote cite.name {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  color: #ffffff;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--lg-text);
+  /* background: rgba(255, 255, 255, 0.08); */
+  border: 1px solid var(--lg-highlight);
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -9957,7 +9957,7 @@ blockquote cite.name {
   content: "";
   position: absolute;
   inset: -10px;
-  background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0) 55%), radial-gradient(circle at 80% 80%, rgb(243 237 237 / 25%), rgba(0, 0, 0, 0) 60%), radial-gradient(circle, rgb(229 237 232 / 45%), rgb(249 244 244 / 0%) 55%);
+  background: radial-gradient(circle at 30% 20%, rgb(255 255 255 / 8%), rgba(255, 255, 255, 0) 55%), radial-gradient(circle at 80% 80%, rgb(243 237 237 / 10%), rgba(0, 0, 0, 0) 60%), radial-gradient(circle, rgb(229 237 232 / 5%), rgb(249 244 244 / 0%) 55%);
   opacity: 0.9;
   pointer-events: none;
 }
