@@ -9452,10 +9452,10 @@ blockquote cite.name {
 /*******************************************************/
 /*********** ## Our Story Motion Enhancements ***********/
 /*******************************************************/
-.our-story-area {
+/* .our-story-area {
   background: radial-gradient(circle at 20% 20%, rgba(208, 71, 19, 0.08), transparent 45%),
     radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.06), transparent 50%);
-}
+} */
 
 .our-story-area .story-overlay {
   background: linear-gradient(120deg, rgba(10, 11, 9, 0.92) 0%, rgba(15, 16, 14, 0.78) 45%, rgba(15, 16, 14, 0.62) 100%);
@@ -9625,8 +9625,8 @@ blockquote cite.name {
 .interior-area {
   position: relative;
   overflow: hidden;
-  background: radial-gradient(circle at 15% 20%, rgba(208, 71, 19, 0.12), transparent 45%),
-    radial-gradient(circle at 80% 15%, rgba(255, 255, 255, 0.05), transparent 55%);
+  /* background: radial-gradient(circle at 15% 20%, rgba(208, 71, 19, 0.12), transparent 45%),
+    radial-gradient(circle at 80% 15%, rgba(255, 255, 255, 0.05), transparent 55%); */
 }
 
 .interior-area::after {
