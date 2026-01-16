@@ -5815,6 +5815,28 @@ header form.search-form button>* {
   overflow: hidden;
 }
 
+#future-projects .project-parallax-card {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 250ms ease;
+  will-change: transform;
+}
+
+#future-projects .project-parallax-card img,
+#future-projects .project-parallax-card .carousel-caption {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #future-projects .project-parallax-card,
+  #future-projects .project-parallax-card img,
+  #future-projects .project-parallax-card .carousel-caption {
+    transition: none;
+    transform: none !important;
+  }
+}
+
 .interior-area .carousel-caption {
   position: absolute;
   right: 0;
@@ -5849,10 +5871,6 @@ header form.search-form button>* {
   z-index: 2;
 }
 
-.interior-area .carousel-item .interior-act.future-thumb-active .future-hover-thumb {
-  opacity: 0.70;
-}
-
 .interior-area .carousel-item .interior-act:first-child .carousel-caption,
 .interior-area .carousel-item .interior-act:last-child .carousel-caption {
   opacity: 0;
@@ -5885,16 +5903,6 @@ header form.search-form button>* {
   perspective: 1000px;
 }
 
-.interior-area .carousel-item .interior-act:first-child:hover .carousel-caption,
-.interior-area .carousel-item .interior-act:last-child:hover .carousel-caption {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: rotateY(0deg);
-  transition-delay: 0s;
-  transition: transform 650ms ease, opacity 650ms ease, box-shadow 650ms ease;
-}
-
 .interior-area .carousel-item .interior-act::before {
   content: '';
   position: absolute;
@@ -5905,20 +5913,6 @@ header form.search-form button>* {
   opacity: 0;
   transition: opacity 450ms ease;
   pointer-events: none;
-}
-
-.interior-area .carousel-item .interior-act:nth-child(2):hover::before {
-  opacity: 1;
-}
-
-.interior-area .carousel-item .interior-act:nth-child(2):hover img {
-  transform: scale(1.06);
-  filter: saturate(1.05);
-}
-
-.interior-area .carousel-item .interior-act:nth-child(2):hover .carousel-caption {
-  transform: translateY(-6px);
-  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.22);
 }
 
 .interior-area .carousel-caption .sub-title {
@@ -9825,36 +9819,8 @@ blockquote cite.name {
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
-.interior-area .carousel-item .interior-act:nth-child(2):hover img {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
-}
-
-#future-projects .carousel-item .interior-act:nth-child(2):hover::before {
-  opacity: 0;
-}
-
-#future-projects .carousel-item .interior-act:nth-child(2):hover img {
-  transform: none;
-  filter: none;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
-}
-
-#future-projects .carousel-item .interior-act:nth-child(2):hover .carousel-caption {
-  transform: none;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
-}
-
 #future-projects .carousel-item .interior-act:first-child .carousel-caption,
 #future-projects .carousel-item .interior-act:last-child .carousel-caption {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: none;
-}
-
-#future-projects .carousel-item .interior-act:first-child:hover .carousel-caption,
-#future-projects .carousel-item .interior-act:last-child:hover .carousel-caption {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -9890,12 +9856,6 @@ blockquote cite.name {
 
 .interior-area button:has(.carousel-control-prev-icon) {
   left: 22%;
-}
-
-.interior-area button:has(.carousel-control-prev-icon):hover,
-.interior-area button:has(.carousel-control-next-icon):hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
 }
 
 .motion-ready .interior-area .future-projects-heading,

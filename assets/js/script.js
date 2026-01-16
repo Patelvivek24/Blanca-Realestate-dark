@@ -300,62 +300,84 @@
             }
         }
 
-        // ## Future Projects Hover Follow Image
-        if ($('.interior-area .interior-act').length) {
-            function isCenterFutureCard($card) {
-                var $parent = $card.parent();
-                var $cards = $parent.children('.interior-act');
-                if ($cards.length <= 1) {
-                    return true;
-                }
-                return $cards.eq(1)[0] === $card[0];
-            }
+        // ## Future Projects Parallax Cards
+        const parallaxCards = document.querySelectorAll('#future-projects .project-parallax-card');
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-            $('.interior-area').on('mouseenter', '.interior-act', function () {
-                var $card = $(this);
-                if (!isCenterFutureCard($card)) {
-                    return;
-                }
-                var $thumb = $card.find('.future-hover-thumb');
-                if (!$thumb.length) {
-                    $thumb = $('<span class="future-hover-thumb"></span>');
-                    $card.append($thumb);
-                }
-                var $img = $card.find('img').first();
-                if ($img.length) {
-                    $thumb.css('background-image', 'url("' + $img.attr('src') + '")');
-                }
-                $card.addClass('future-thumb-active');
-            });
+        if (parallaxCards.length && !prefersReducedMotion && supportsHover) {
+            parallaxCards.forEach((card) => {
+                const image = card.querySelector('img');
+                const caption = card.querySelector('.carousel-caption');
+                const maxTilt = 10;
+                const maxShift = 16;
+                let bounds = null;
+                let rafId = null;
+                let isActive = false;
 
-            $('.interior-area').on('mousemove', '.interior-act', function (event) {
-                var $card = $(this);
-                if (!isCenterFutureCard($card)) {
-                    return;
-                }
-                var $thumb = $card.find('.future-hover-thumb');
-                if (!$thumb.length) {
-                    return;
-                }
-                var size = 40;
-                var offset = $card.offset();
-                var cardWidth = $card.outerWidth();
-                var cardHeight = $card.outerHeight();
-                var x = event.pageX - offset.left - size / 2;
-                var y = event.pageY - offset.top - size / 2;
-                var maxX = Math.max(0, cardWidth - size);
-                var maxY = Math.max(0, cardHeight - size);
-                x = Math.max(0, Math.min(x, maxX));
-                y = Math.max(0, Math.min(y, maxY));
-                $thumb.css('transform', 'translate(' + x + 'px, ' + y + 'px)');
-            });
+                const updateCard = (clientX, clientY) => {
+                    if (!bounds) {
+                        bounds = card.getBoundingClientRect();
+                    }
+                    const relX = (clientX - bounds.left) / bounds.width;
+                    const relY = (clientY - bounds.top) / bounds.height;
+                    const rotateX = (0.5 - relY) * maxTilt;
+                    const rotateY = (relX - 0.5) * (maxTilt + 2);
+                    const shiftX = (relX - 0.5) * maxShift;
+                    const shiftY = (relY - 0.5) * maxShift;
 
-            $('.interior-area').on('mouseleave', '.interior-act', function () {
-                var $card = $(this);
-                if (!isCenterFutureCard($card)) {
-                    return;
-                }
-                $card.removeClass('future-thumb-active');
+                    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                    if (image) {
+                        image.style.transform = `translate3d(${shiftX}px, ${shiftY}px, 18px) scale(1.03)`;
+                    }
+                    if (caption) {
+                        caption.style.transform = `translate3d(${-shiftX * 0.6}px, ${-shiftY * 0.6}px, 36px)`;
+                    }
+                };
+
+                const onMove = (event) => {
+                    if (!isActive) {
+                        return;
+                    }
+                    const { clientX, clientY } = event;
+                    if (rafId) {
+                        return;
+                    }
+                    rafId = requestAnimationFrame(() => {
+                        if (isActive) {
+                            updateCard(clientX, clientY);
+                        }
+                        rafId = null;
+                    });
+                };
+
+                const onEnter = () => {
+                    isActive = true;
+                    bounds = card.getBoundingClientRect();
+                };
+
+                const onLeave = () => {
+                    isActive = false;
+                    bounds = null;
+                    if (rafId) {
+                        cancelAnimationFrame(rafId);
+                        rafId = null;
+                    }
+                    card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+                    if (image) {
+                        image.style.transform = 'translate3d(0, 0, 0) scale(1)';
+                    }
+                    if (caption) {
+                        caption.style.transform = 'translate3d(0, 0, 0)';
+                    }
+                };
+
+                card.addEventListener('mouseenter', onEnter);
+                card.addEventListener('mousemove', onMove);
+                card.addEventListener('mouseleave', onLeave);
+                window.addEventListener('resize', () => {
+                    bounds = null;
+                });
             });
         }
 
