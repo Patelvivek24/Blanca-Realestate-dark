@@ -5797,10 +5797,15 @@ header form.search-form button > * {
   max-height: 600px;
   object-fit: cover;
   aspect-ratio: 1/1;
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 600ms cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  z-index: 1;
 }
 
 .interior-area .carousel-item .interior-act {
   position: relative;
+  overflow: hidden;
 }
 
 .interior-area .carousel-caption {
@@ -5810,35 +5815,44 @@ header form.search-form button > * {
   left: unset;
   width: fit-content;
   max-width: 430px;
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   padding: 32px;
   text-align: left;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  transition: transform 650ms ease, opacity 650ms ease, box-shadow 650ms ease !important;
+  z-index: 3;
+}
+
+.interior-area .carousel-item .interior-act .future-hover-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  opacity: 0;
+  transform: translate(0, 0);
+  transition: opacity 180ms ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.interior-area .carousel-item .interior-act.future-thumb-active .future-hover-thumb {
+  opacity: 0.70;
 }
 
 .interior-area .carousel-item .interior-act:first-child .carousel-caption,
 .interior-area .carousel-item .interior-act:last-child .carousel-caption {
-  -webkit-transform: perspective(250px) rotateY(-90deg);
-  -khtml-transform: perspective(250px) rotateY(-90deg);
-  -moz-transform: perspective(250px) rotateY(-90deg);
-  -ms-transform: perspective(250px) rotateY(-90deg);
-  -o-transform: perspective(250px) rotateY(-90deg);
-  transform: perspective(250px) rotateY(-90deg);
-  -webkit-transition: all 400ms ease-in-out;
-  -khtml-transition: all 400ms ease-in-out;
-  -moz-transition: all 400ms ease-in-out;
-  -ms-transition: all 400ms ease-in-out;
-  -o-transition: all 400ms ease-in-out;
-  transition: all 400ms ease-in-out;
-}
-
-.interior-area .carousel-item .interior-act:first-child:hover .carousel-caption,
-.interior-area .carousel-item .interior-act:last-child:hover .carousel-caption {
-  -webkit-transform: perspective(250px) rotateY(0deg);
-  -khtml-transform: perspective(250px) rotateY(0deg);
-  -moz-transform: perspective(250px) rotateY(0deg);
-  -ms-transform: perspective(250px) rotateY(0deg);
-  -o-transform: perspective(250px) rotateY(0deg);
-  transform: perspective(250px) rotateY(0deg);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: rotateY(90deg);
+  transition: transform 650ms ease, opacity 650ms ease, box-shadow 650ms ease;
 }
 
 .interior-area .carousel-item .interior-act:nth-child(2) .carousel-caption {
@@ -5857,6 +5871,47 @@ header form.search-form button > * {
 .interior-area .carousel-item .interior-act:last-child {
   padding-left: 64px;
   width: 25%;
+}
+
+.interior-area .carousel-item .interior-act:first-child,
+.interior-area .carousel-item .interior-act:last-child {
+  perspective: 1000px;
+}
+
+.interior-area .carousel-item .interior-act:first-child:hover .carousel-caption,
+.interior-area .carousel-item .interior-act:last-child:hover .carousel-caption {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: rotateY(0deg);
+  transition-delay: 0s;
+  transition: transform 650ms ease, opacity 650ms ease, box-shadow 650ms ease;
+}
+
+.interior-area .carousel-item .interior-act::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0) 20%,
+      rgba(0, 0, 0, 0.35) 100%);
+  opacity: 0;
+  transition: opacity 450ms ease;
+  pointer-events: none;
+}
+
+.interior-area .carousel-item .interior-act:nth-child(2):hover::before {
+  opacity: 1;
+}
+
+.interior-area .carousel-item .interior-act:nth-child(2):hover img {
+  transform: scale(1.06);
+  filter: saturate(1.05);
+}
+
+.interior-area .carousel-item .interior-act:nth-child(2):hover .carousel-caption {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.22);
 }
 
 .interior-area .carousel-caption .sub-title {
@@ -5904,7 +5959,7 @@ button.read-more {
 
 @media only screen and (max-width: 991px) {
 
-  .interior-area .carousel-item .interior-act:first-child .carousel-caption,
+  /* .interior-area .carousel-item .interior-act:first-child .carousel-caption,
   .interior-area .carousel-item .interior-act:last-child .carousel-caption {
     display: none;
     -webkit-transform: unset;
@@ -5919,7 +5974,7 @@ button.read-more {
     -ms-transition: unset;
     -o-transition: unset;
     transition: unset;
-  }
+  } */
 
   .interior-area .nav-pills {
     justify-content: center;
@@ -9452,10 +9507,10 @@ blockquote cite.name {
 /*******************************************************/
 /*********** ## Our Story Motion Enhancements ***********/
 /*******************************************************/
-/* .our-story-area {
+.our-story-area {
   background: radial-gradient(circle at 20% 20%, rgba(208, 71, 19, 0.08), transparent 45%),
     radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.06), transparent 50%);
-} */
+}
 
 .our-story-area .story-overlay {
   background: linear-gradient(120deg, rgba(10, 11, 9, 0.92) 0%, rgba(15, 16, 14, 0.78) 45%, rgba(15, 16, 14, 0.62) 100%);
@@ -9625,8 +9680,8 @@ blockquote cite.name {
 .interior-area {
   position: relative;
   overflow: hidden;
-  /* background: radial-gradient(circle at 15% 20%, rgba(208, 71, 19, 0.12), transparent 45%),
-    radial-gradient(circle at 80% 15%, rgba(255, 255, 255, 0.05), transparent 55%); */
+  background: radial-gradient(circle at 15% 20%, rgba(208, 71, 19, 0.12), transparent 45%),
+    radial-gradient(circle at 80% 15%, rgba(255, 255, 255, 0.05), transparent 55%);
 }
 
 .interior-area::after {
@@ -9712,9 +9767,40 @@ blockquote cite.name {
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
-.interior-area .carousel-item .interior-act:hover img {
+.interior-area .carousel-item .interior-act:nth-child(2):hover img {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
+}
+
+#future-projects .carousel-item .interior-act:nth-child(2):hover::before {
+  opacity: 0;
+}
+
+#future-projects .carousel-item .interior-act:nth-child(2):hover img {
+  transform: none;
+  filter: none;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+#future-projects .carousel-item .interior-act:nth-child(2):hover .carousel-caption {
+  transform: none;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+#future-projects .carousel-item .interior-act:first-child .carousel-caption,
+#future-projects .carousel-item .interior-act:last-child .carousel-caption {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: none;
+}
+
+#future-projects .carousel-item .interior-act:first-child:hover .carousel-caption,
+#future-projects .carousel-item .interior-act:last-child:hover .carousel-caption {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: none;
 }
 
 .interior-area .carousel-caption {

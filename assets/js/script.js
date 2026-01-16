@@ -300,6 +300,65 @@
             }
         }
 
+        // ## Future Projects Hover Follow Image
+        if ($('.interior-area .interior-act').length) {
+            function isCenterFutureCard($card) {
+                var $parent = $card.parent();
+                var $cards = $parent.children('.interior-act');
+                if ($cards.length <= 1) {
+                    return true;
+                }
+                return $cards.eq(1)[0] === $card[0];
+            }
+
+            $('.interior-area').on('mouseenter', '.interior-act', function () {
+                var $card = $(this);
+                if (!isCenterFutureCard($card)) {
+                    return;
+                }
+                var $thumb = $card.find('.future-hover-thumb');
+                if (!$thumb.length) {
+                    $thumb = $('<span class="future-hover-thumb"></span>');
+                    $card.append($thumb);
+                }
+                var $img = $card.find('img').first();
+                if ($img.length) {
+                    $thumb.css('background-image', 'url("' + $img.attr('src') + '")');
+                }
+                $card.addClass('future-thumb-active');
+            });
+
+            $('.interior-area').on('mousemove', '.interior-act', function (event) {
+                var $card = $(this);
+                if (!isCenterFutureCard($card)) {
+                    return;
+                }
+                var $thumb = $card.find('.future-hover-thumb');
+                if (!$thumb.length) {
+                    return;
+                }
+                var size = 40;
+                var offset = $card.offset();
+                var cardWidth = $card.outerWidth();
+                var cardHeight = $card.outerHeight();
+                var x = event.pageX - offset.left - size / 2;
+                var y = event.pageY - offset.top - size / 2;
+                var maxX = Math.max(0, cardWidth - size);
+                var maxY = Math.max(0, cardHeight - size);
+                x = Math.max(0, Math.min(x, maxX));
+                y = Math.max(0, Math.min(y, maxY));
+                $thumb.css('transform', 'translate(' + x + 'px, ' + y + 'px)');
+            });
+
+            $('.interior-area').on('mouseleave', '.interior-act', function () {
+                var $card = $(this);
+                if (!isCenterFutureCard($card)) {
+                    return;
+                }
+                $card.removeClass('future-thumb-active');
+            });
+        }
+
         // ## Team slider
         if ($('#teamCarousel .carousel-item').length) {
             let items = document.querySelectorAll('#teamCarousel .carousel-item')
