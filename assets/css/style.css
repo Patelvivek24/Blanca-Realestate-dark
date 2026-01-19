@@ -1354,10 +1354,10 @@ h4,
   }
 
   .big-text {
-    font-size: 120px;
-    line-height: 1.2;
+    font-size: 72px;
+    line-height: 1.4;
     font-weight: 900;
-    letter-spacing: -10px;
+    letter-spacing: -2px;
   }
 
   .our-story-area .story-bg-text {
@@ -3953,7 +3953,7 @@ header form.search-form button>* {
 }
 
 .about-area .small-image {
-  padding-left: 64px;
+  padding-left: 40px;
   z-index: 1;
   object-fit: cover;
 }
@@ -4601,6 +4601,13 @@ header form.search-form button>* {
   font-size: 16px;
   line-height: 1.5;
   text-align: justify;
+}
+
+.about-heading {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 2px;
 }
 
 .apartment-content {
