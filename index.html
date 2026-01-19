@@ -51,14 +51,52 @@
         <header class="main-header glass-header">
             <!--Header-Upper-->
             <div class="header-upper">
-                <div class="container clearfix">
+                <div class="header-container clearfix">
                     <div class="header-inner rel d-flex align-items-center gap-5 justify-content-between">
-                        <div class="logo-outer">
+                        <div class="header-desktop-nav header-nav-left">
+                            <ul class="header-links">
+                                <li class="header-link">
+                                    <a href="#about">About Us</a>
+                                </li>
+                                <li class="header-link has-submenu">
+                                    <a href="#our-story">Communities</a>
+                                    <ul class="header-submenu">
+                                        <li><a href="projects.html">New Launches</a></li>
+                                        <li><a href="projects.html">Coming Soon</a></li>
+                                        <li><a href="projects.html">Ongoing Projects</a></li>
+                                        <li><a href="projects.html">Completed</a></li>
+                                    </ul>
+                                </li>
+                                <li class="header-link has-submenu">
+                                    <a href="#our-projects">Properties</a>
+                                    <ul class="header-submenu">
+                                        <li><a href="projects.html">Commercial</a></li>
+                                        <li><a href="projects.html">Residential</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="logo-outer header-logo-center">
                             <div class="logo"><a href="index.html"><img class="header-logo-image"
                                         src="assets/images/logos/blanca-logo.png" alt="Logo" title="Logo"></a></div>
                         </div>
 
-                        <div class="nav-outer ms-auto clearfix">
+                        <div class="header-desktop-nav header-nav-right">
+                            <ul class="header-links">
+                                <li class="header-link">
+                                    <a href="mailto:reachus.blanca@gmail.com">Reach Us</a>
+                                </li>
+                                <li class="header-link">
+                                    <a href="mailto:reachus.blanca@gmail.com?subject=Career">Career</a>
+                                </li>
+                                <li class="header-link">
+                                    <a href="mailto:reachus.blanca@gmail.com?subject=Channel%20Partner">Channel Partner</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="nav-outer header-mobile-nav ms-auto clearfix">
                             <!-- Main Menu -->
                             <nav class="main-menu navbar-expand-lg">
                                 <div class="navbar-header py-10">
@@ -79,18 +117,34 @@
 
                                 <div class="navbar-collapse collapse clearfix">
                                     <ul class="navigation clearfix">
-                                        <li><a href="#about">ABOUT</a></li>
-                                        <li><a href="#our-projects">OUR PROJECTS</a></li>
-                                        <li><a href="#our-story">OUR STORY</a></li>
-                                        <li><a href="#future-projects">FUTURE PROJECTS</a></li>
-                                        <!-- <li><a href="#contact">CONTACT</a></li> -->
+                                        <li><a href="#about">About Us</a></li>
+                                        <li class="dropdown">
+                                            <a href="#our-story">Communities</a>
+                                            <ul>
+                                                <li><a href="projects.html">New Launches</a></li>
+                                                <li><a href="projects.html">Coming Soon</a></li>
+                                                <li><a href="projects.html">Ongoing Projects</a></li>
+                                                <li><a href="projects.html">Completed</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#our-projects">Properties</a>
+                                            <ul>
+                                                <li><a href="projects.html">New Launches</a></li>
+                                                <li><a href="projects.html">Coming Soon</a></li>
+                                                <li><a href="projects.html">Ongoing Projects</a></li>
+                                                <li><a href="projects.html">Completed</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="mailto:reachus.blanca@gmail.com">Reach Us</a></li>
+                                        <li><a href="mailto:reachus.blanca@gmail.com?subject=Career">Career</a></li>
+                                        <li><a href="mailto:reachus.blanca@gmail.com?subject=Channel%20Partner">Channel Partner</a></li>
                                     </ul>
                                 </div>
 
                             </nav>
                             <!-- Main Menu End-->
                         </div>
-                        <a class="light-btn header-contact-btn mt-0" href="contact.html">Contact Us</a>
                     </div>
                 </div>
             </div>
@@ -99,7 +153,7 @@
         <!-- End main header -->
 
         <!-- Hero Section Start -->
-        <section class="hero-area-2 black-120-bg">
+        <!-- <section class="hero-area-2 black-120-bg">
             <div class="hero-2-slider wow fadeInUp delay-0-4s">
                 <div class="hero-2-item justify-content-center" style="position: relative; overflow: hidden;">
                     <video autoplay muted loop playsinline
@@ -168,7 +222,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- Hero Section End -->
 
         <!-- About Area start -->

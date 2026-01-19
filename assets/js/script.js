@@ -104,6 +104,33 @@
         updateActiveNav();
         $(window).on('scroll', updateActiveNav);
 
+        // ## Header desktop dropdowns (click to open)
+        var $headerDropdowns = $('.header-desktop-nav .header-link.has-submenu');
+
+        if ($headerDropdowns.length) {
+            $headerDropdowns.on('click', '> a', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var $item = $(this).parent();
+                $headerDropdowns.not($item).removeClass('is-open');
+                $item.toggleClass('is-open');
+            });
+
+            $headerDropdowns.on('click', '.header-submenu a', function () {
+                $headerDropdowns.removeClass('is-open');
+            });
+
+            $(document).on('click', function () {
+                $headerDropdowns.removeClass('is-open');
+            });
+
+            $(document).on('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    $headerDropdowns.removeClass('is-open');
+                }
+            });
+        }
+
         // ## Dropdown menu
         var mobileWidth = 992;
         var navcollapse = $('.navigation li.dropdown');
