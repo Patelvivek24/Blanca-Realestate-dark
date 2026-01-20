@@ -41,8 +41,18 @@
             if ($('.main-header').length) {
                 var windowpos = $(window).scrollTop();
                 var siteHeader = $('.main-header');
+                var topStripe = $('.top-stripe');
                 var scrollLink = $('.scroll-top');
-                if (windowpos >= 250) {
+                var stripeThreshold = 10;
+                var headerThreshold = 250;
+
+                if (windowpos > stripeThreshold) {
+                    topStripe.addClass('is-solid');
+                } else {
+                    topStripe.removeClass('is-solid');
+                }
+
+                if (windowpos >= headerThreshold) {
                     siteHeader.addClass('fixed-header');
                     scrollLink.fadeIn(300);
                 } else {
@@ -598,8 +608,18 @@
             if ($('.main-header').length) {
                 var windowpos = $(window).scrollTop();
                 var siteHeader = $('.main-header');
+                var topStripe = $('.top-stripe');
                 var scrollLink = $('.scroll-top');
-                if (windowpos >= 100) {
+                var stripeThreshold = 10;
+                var headerThreshold = 250;
+
+                if (windowpos > stripeThreshold) {
+                    topStripe.addClass('is-solid');
+                } else {
+                    topStripe.removeClass('is-solid');
+                }
+
+                if (windowpos >= headerThreshold) {
                     siteHeader.addClass('fixed-header');
                     scrollLink.fadeIn(300);
                 } else {
