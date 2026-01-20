@@ -455,6 +455,33 @@ button.load-more>* {
   z-index: 2;
 }
 
+.secondary-btn {
+  padding: 16px 36px;
+  background: rgb(232 235 238);
+  color: var(--primary-color);
+  position: relative;
+  display: inline-flex;
+  font-weight: 600;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 999px;
+  border-image-source: linear-gradient(180deg, #ffffff 0%, #e8e8e8 100%);
+  border-image-slice: 1;
+  box-shadow: 0px 0px 9px 1px rgba(255, 255, 255, 1) inset, 0px 0px 15px 8px rgb(136 150 163 / 90%) inset;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.secondary-btn:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    -2px -2px 6px 0px rgba(255, 255, 255, 0.9) inset,
+    4px 4px 8px 0px rgba(136, 150, 163, 0.65) inset;
+}
+
 /* Liquid Glass Hover Effect for All Buttons */
 button:hover,
 .theme-btn:hover,
@@ -2486,7 +2513,7 @@ h4,
   position: relative;
 }
 
-.header-link.has-submenu > a {
+.header-link.has-submenu>a {
   cursor: pointer;
 }
 
@@ -4760,7 +4787,7 @@ header form.search-form button>* {
   position: relative;
   flex: 1 1 0;
   min-width: 160px;
-  height: 400px;
+  height: 500px;
   /* border-radius: 8px; */
   overflow: hidden;
   background: var(--black-10);
@@ -4838,6 +4865,12 @@ header form.search-form button>* {
   font-weight: 700;
   letter-spacing: 0px;
   color: var(--white);
+}
+
+.project-buttons-div {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
 }
 
 .homeproject-area .project-card__meta {
@@ -6100,6 +6133,7 @@ header form.search-form button>* {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   #future-projects .project-parallax-card,
   #future-projects .project-parallax-card img,
   #future-projects .project-parallax-card .carousel-caption {
