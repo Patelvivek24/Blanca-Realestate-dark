@@ -629,7 +629,6 @@ header form.search-form button:hover::before,
   margin: 0 auto;
   overflow: hidden;
   min-width: 300px;
-  --top-stripe-height: 34px;
 }
 
 @media only screen and (min-width: 1400px) {
@@ -2421,40 +2420,6 @@ h4,
   -webkit-transition: all 500ms ease;
   -o-transition: all 500ms ease;
   transition: all 500ms ease;
-  /* padding-top: var(--top-stripe-height); */
-}
-
-.top-stripe {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: var(--top-stripe-height);
-  z-index: 1001;
-  display: flex;
-  align-items: center;
-  background: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-  transition: background-color 300ms ease, background 300ms ease;
-}
-
-.top-stripe.is-solid {
-  background: rgba(10, 10, 10, 0.7);
-}
-
-.top-stripe-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.top-stripe-text {
-  color: rgba(255, 255, 255, 0.92);
-  font-size: 12px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  font-weight: 500;
 }
 
 .header-container {
@@ -2466,7 +2431,7 @@ h4,
   z-index: 5;
   width: 100%;
   position: absolute;
-  top: var(--top-stripe-height);
+  top: 0;
   -webkit-transition: all 500ms ease;
   -o-transition: all 500ms ease;
   transition: all 500ms ease;
@@ -2884,7 +2849,7 @@ a.light-btn.header-contact-btn:hover,
 }
 
 .main-header.fixed-header .header-upper {
-  top: var(--top-stripe-height);
+  top: 0;
   left: 0;
   position: fixed;
   -webkit-animation: sticky 1s;
@@ -2931,7 +2896,33 @@ a.light-btn.header-contact-btn:hover,
 }
 
 .header-top {
-  padding: 16px 0;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  left: 0;
+  position: absolute;
+  padding: 12px 0;
+  top: 0;
+  width: 100%;
+  z-index: 6;
+}
+
+.header-top .header-top-text {
+  color: var(--black-10);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  line-height: 1.2;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.header-top + .main-header .header-upper {
+  top: 40px;
+}
+
+.header-top + .main-header.fixed-header .header-upper {
+  top: 0;
 }
 
 .header-top .header-info {

@@ -41,16 +41,8 @@
             if ($('.main-header').length) {
                 var windowpos = $(window).scrollTop();
                 var siteHeader = $('.main-header');
-                var topStripe = $('.top-stripe');
                 var scrollLink = $('.scroll-top');
-                var stripeThreshold = 10;
                 var headerThreshold = 250;
-
-                if (windowpos > stripeThreshold) {
-                    topStripe.addClass('is-solid');
-                } else {
-                    topStripe.removeClass('is-solid');
-                }
 
                 if (windowpos >= headerThreshold) {
                     siteHeader.addClass('fixed-header');
@@ -608,16 +600,8 @@
             if ($('.main-header').length) {
                 var windowpos = $(window).scrollTop();
                 var siteHeader = $('.main-header');
-                var topStripe = $('.top-stripe');
                 var scrollLink = $('.scroll-top');
-                var stripeThreshold = 10;
                 var headerThreshold = 250;
-
-                if (windowpos > stripeThreshold) {
-                    topStripe.addClass('is-solid');
-                } else {
-                    topStripe.removeClass('is-solid');
-                }
 
                 if (windowpos >= headerThreshold) {
                     siteHeader.addClass('fixed-header');
