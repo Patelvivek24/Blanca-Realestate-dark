@@ -31,6 +31,27 @@
     ## Intro*/
 /* -------------------------------------------------------------- */
 /*******************************************************/
+/******************* ## Font Face Declarations ******************/
+/*******************************************************/
+@font-face {
+  font-family: 'Colgent Regular';
+  src: url('../fonts/Colgent Regular/Colgent Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*******************************************************/
+/******************* ## Bootstrap Variables ******************/
+/*******************************************************/
+:root {
+  --bs-font-colgent-regular: "Colgent Regular", serif;
+  --bs-font-playfair-display: "Playfair Display", serif;
+  --bs-font-montserrat: "Montserrat", sans-serif;
+  --bs-font-inter: "Inter", sans-serif;
+}
+
+/*******************************************************/
 /******************* ## Default Style ******************/
 /*******************************************************/
 * {
@@ -52,7 +73,7 @@ body {
   font-weight: 400;
   line-height: 28px;
   font-size: 16px;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--bs-font-inter);
   --primary-color: #D04713;
   --heading-color: #FFFFFF;
   --secondary-color: #131412;
@@ -1317,7 +1338,6 @@ h5,
 h6,
 .h6 {
   color: var(--black-30);
-  font-family: "Montserrat", sans-serif;
 }
 
 .light-mode .heading,
@@ -1337,17 +1357,7 @@ h6,
   color: var(--black-100);
 }
 
-.heading,
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4 {
-  font-weight: 900;
-}
+
 
 @media(min-width: 992px) {
 
@@ -2444,7 +2454,7 @@ h4,
 
 .glass-header .header-inner {
   position: relative;
-  padding: 10px 12px;
+  padding: 0px 12px;
   border-radius: 0;
   background: transparent;
   border: none;
@@ -2503,11 +2513,100 @@ h4,
   font-size: 14px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  transition: color 250ms ease;
+  padding: 8px 14px;
+  border-radius: 999px;
+  position: relative;
+  transition: all 250ms ease;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.header-link a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(4px);
+  filter: url(#lg-dist);
+  opacity: 0;
+  transition: all 280ms ease;
+  z-index: -1;
+  box-shadow: inset 1px 1px 0 var(--lg-highlight), inset 0 0 5px var(--lg-highlight);
+  inset: -10px;
+}
+
+.header-link a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 1px 0 0 rgba(255, 255, 255, 0.2),
+    inset -1px 0 0 rgba(255, 255, 255, 0.1),
+    0 0 20px rgba(255, 255, 255, 0.05),
+    inset 0 0 15px rgba(255, 255, 255, 0.03);
+  opacity: 0;
+  transition: all 250ms ease;
+  pointer-events: none;
+}
+
+.header-link a > * {
+  position: relative;
+  z-index: 2;
 }
 
 .header-link a:hover {
   color: #fff;
+  animation: liquidShimmer 2s ease-in-out infinite;
+}
+
+.header-link a:hover::before {
+  opacity: 1;
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  backdrop-filter: blur(12px) saturate(180%);
+  background: radial-gradient(circle at 30% 20%, rgb(255 255 255 / 8%), rgba(255, 255, 255, 0) 55%), radial-gradient(circle at 80% 80%, rgb(243 237 237 / 10%), rgba(0, 0, 0, 0) 60%), radial-gradient(circle, rgb(229 237 232 / 5%), rgb(249 244 244 / 0%) 55%);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-link a:hover::after {
+  opacity: 1;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.15),
+    inset 1px 0 0 rgba(255, 255, 255, 0.3),
+    inset -1px 0 0 rgba(255, 255, 255, 0.15),
+    0 0 30px rgba(255, 255, 255, 0.15),
+    inset 0 0 25px rgba(255, 255, 255, 0.08);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-link a:active {
+  transform: scale(0.98);
+}
+
+.header-link a:active::before {
+  opacity: 0.9;
+  -webkit-backdrop-filter: blur(8px) saturate(150%);
+  backdrop-filter: blur(8px) saturate(150%);
+  background: rgba(255, 255, 255, 0.18);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-link a:active::after {
+  opacity: 1;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 1px 0 0 rgba(255, 255, 255, 0.25),
+    inset -1px 0 0 rgba(255, 255, 255, 0.1),
+    0 0 15px rgba(255, 255, 255, 0.1),
+    inset 0 0 12px rgba(255, 255, 255, 0.05);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-link.has-submenu {
@@ -3657,6 +3756,28 @@ header form.search-form button>* {
 
 .hero-area-2 .container-fluid .row {
   min-height: 100%;
+  align-items: flex-start !important;
+}
+
+.hero-area-2 .container-fluid .row > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  width: 100%;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  height: 100vh;
+}
+
+.hero-area-2 .buttons {
+  margin-top: auto;
+  margin-bottom: 0;
+  margin-top: auto !important;
+}
+
+.hero-area-2 .buttons.mt-96 {
+  margin-top: auto !important;
 }
 
 .hero-area-2 .buttons a:not(:first-child) {
@@ -4888,7 +5009,7 @@ header form.search-form button>* {
   position: relative;
   z-index: 1;
   display: flex;
-  gap: 40px;
+  gap: 30px;
   align-items: flex-start;
   padding: 0 32px;
 }
@@ -5042,7 +5163,7 @@ header form.search-form button>* {
 
 .project-buttons-div {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   margin-top: 24px;
 }
 
@@ -5117,7 +5238,7 @@ header form.search-form button>* {
 
 @media only screen and (max-width: 1399px) {
   .homeproject-area .projects-shell {
-    gap: 40px;
+    gap: 30px;
     padding: 0 48px;
   }
 }

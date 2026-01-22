@@ -30,6 +30,10 @@
     --bs-dark: #212529;
     --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --bs-font-colgent-regular: "Colgent Regular", serif;
+    --bs-font-playfair-display: "Playfair Display", serif;
+    --bs-font-montserrat: "Montserrat", sans-serif;
+    --bs-font-inter: "Inter", sans-serif;
     --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0))
 }
 
@@ -8094,6 +8098,22 @@ fieldset:disabled .btn {
 
 .font-monospace {
     font-family: var(--bs-font-monospace) !important
+}
+
+.bs-font-colgent-regular {
+    font-family: var(--bs-font-colgent-regular) !important
+}
+
+.bs-font-playfair-display {
+    font-family: var(--bs-font-playfair-display) !important
+}
+
+.bs-font-montserrat {
+    font-family: var(--bs-font-montserrat) !important
+}
+
+.bs-font-inter {
+    font-family: var(--bs-font-inter) !important
 }
 
 .fs-1 {
