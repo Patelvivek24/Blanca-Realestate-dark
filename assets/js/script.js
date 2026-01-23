@@ -520,6 +520,35 @@
             });
         }
 
+        /* ## Hero Left Side Statistics Counter */
+        if ($('.hero-stat-box .stat-number').length) {
+            $('.hero-stat-box .stat-number').appear(function () {
+                var $t = $(this),
+                    n = parseInt($t.attr("data-count"), 10),
+                    duration = 2000;
+
+                if (!$t.hasClass("counted")) {
+                    $t.addClass("counted");
+                    $({
+                        countNum: 0
+                    }).animate({
+                        countNum: n
+                    }, {
+                        duration: duration,
+                        easing: "swing",
+                        step: function () {
+                            $t.text(Math.floor(this.countNum));
+                        },
+                        complete: function () {
+                            $t.text(this.countNum);
+                        }
+                    });
+                }
+            }, {
+                accY: 0
+            });
+        }
+
 
         // ## Before and After 
         if ($('.projects-02 .tab-content  .pro-02-images').length) {
