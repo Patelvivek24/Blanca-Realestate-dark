@@ -2543,7 +2543,7 @@ h6,
   inset: 0;
   z-index: 1;
   border-radius: inherit;
-  box-shadow: 
+  box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.4),
     inset 0 -1px 0 rgba(255, 255, 255, 0.1),
     inset 1px 0 0 rgba(255, 255, 255, 0.2),
@@ -2555,7 +2555,7 @@ h6,
   pointer-events: none;
 }
 
-.header-link a > * {
+.header-link a>* {
   position: relative;
   z-index: 2;
 }
@@ -2575,7 +2575,7 @@ h6,
 
 .header-link a:hover::after {
   opacity: 1;
-  box-shadow: 
+  box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.5),
     inset 0 -1px 0 rgba(255, 255, 255, 0.15),
     inset 1px 0 0 rgba(255, 255, 255, 0.3),
@@ -2599,7 +2599,7 @@ h6,
 
 .header-link a:active::after {
   opacity: 1;
-  box-shadow: 
+  box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.4),
     inset 0 -1px 0 rgba(255, 255, 255, 0.1),
     inset 1px 0 0 rgba(255, 255, 255, 0.25),
@@ -3042,16 +3042,17 @@ a.light-btn.header-contact-btn:hover,
   0% {
     transform: translateX(100%);
   }
+
   100% {
     transform: translateX(-100%);
   }
 }
 
-.header-top + .main-header .header-upper {
+.header-top+.main-header .header-upper {
   top: 40px;
 }
 
-.header-top + .main-header.fixed-header .header-upper {
+.header-top+.main-header.fixed-header .header-upper {
   top: 0;
 }
 
@@ -3790,7 +3791,7 @@ header form.search-form button>* {
   align-items: center !important;
 }
 
-.hero-area-2 .container-fluid .row > div {
+.hero-area-2 .container-fluid .row>div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -3905,7 +3906,7 @@ header form.search-form button>* {
 }
 
 /* Center content alignment */
-.hero-area-2 .container-fluid .row > div.col-lg-6 {
+.hero-area-2 .container-fluid .row>div.col-lg-6 {
   justify-content: center !important;
   min-height: unset !important;
   height: auto !important;
@@ -3951,7 +3952,7 @@ header form.search-form button>* {
   inset: 0;
   z-index: 1;
   border-radius: inherit;
-  box-shadow: 
+  box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.4),
     inset 0 -1px 0 rgba(255, 255, 255, 0.1),
     inset 1px 0 0 rgba(255, 255, 255, 0.2),
@@ -3994,7 +3995,7 @@ header form.search-form button>* {
 }
 
 .hero-stat-box:hover::after {
-  box-shadow: 
+  box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.5),
     inset 0 -1px 0 rgba(255, 255, 255, 0.15),
     inset 1px 0 0 rgba(255, 255, 255, 0.3),
@@ -4007,10 +4008,12 @@ header form.search-form button>* {
   color: var(--primary-color);
   text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
 }
-.right-side-content{
+
+.right-side-content {
   margin-left: 130px;
   width: calc(100% - 260px) !important;
 }
+
 @media(max-width:991px) {
   .hero-left-stats {
     display: none;
@@ -7682,16 +7685,16 @@ button.read-more {
   border-radius: 12px;
   /* border: 1px solid; */
   border-image-source: conic-gradient(from 102.21deg at 52.75% 38.75%,
-    rgba(249, 249, 249, 0.3) -32.95deg,
-    rgba(64, 64, 64, 0.5) 10.52deg,
-    rgba(64, 64, 64, 0.35) 32.12deg,
-    rgba(255, 255, 255, 0.3) 60.28deg,
-    rgba(255, 255, 255, 0.3) 107.79deg,
-    rgba(64, 64, 64, 0.35) 187.59deg,
-    rgba(249, 249, 249, 0.5) 207.58deg,
-    rgba(255, 255, 255, 0.3) 287.31deg,
-    rgba(249, 249, 249, 0.3) 327.05deg,
-    rgba(64, 64, 64, 0.5) 370.52deg);
+      rgba(249, 249, 249, 0.3) -32.95deg,
+      rgba(64, 64, 64, 0.5) 10.52deg,
+      rgba(64, 64, 64, 0.35) 32.12deg,
+      rgba(255, 255, 255, 0.3) 60.28deg,
+      rgba(255, 255, 255, 0.3) 107.79deg,
+      rgba(64, 64, 64, 0.35) 187.59deg,
+      rgba(249, 249, 249, 0.5) 207.58deg,
+      rgba(255, 255, 255, 0.3) 287.31deg,
+      rgba(249, 249, 249, 0.3) 327.05deg,
+      rgba(64, 64, 64, 0.5) 370.52deg);
   border-image-slice: 1;
   background: rgba(255, 255, 255, 0.1);
   color: #f5f5f5;
@@ -7734,7 +7737,7 @@ button.read-more {
   display: flex;
 }
 
-.testimonials-modern__slider .slick-slide > div {
+.testimonials-modern__slider .slick-slide>div {
   display: flex;
   height: 100%;
 }
@@ -7872,7 +7875,7 @@ button.read-more {
   margin-right: -160%;
 }
 
-.testimonials-head-part{
+.testimonials-head-part {
   display: flex;
   gap: 30px;
   align-items: center;
@@ -9947,7 +9950,7 @@ blockquote cite.name {
   overflow: hidden;
   display: flex;
   align-items: center;
-  padding: 80px 0 30px;
+  padding: 100px 0 30px;
 }
 
 /* Water Ripples Canvas - created by jQuery Ripples plugin */
@@ -9968,7 +9971,7 @@ blockquote cite.name {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.65) 100%); */
   z-index: 1;
 }
 
@@ -10026,6 +10029,7 @@ blockquote cite.name {
 .footer-container {
   position: relative;
   z-index: 3;
+  padding: 0 46px;
   width: 100%;
   /* max-width: 1200px;
   margin: 0 auto;
@@ -10040,11 +10044,11 @@ blockquote cite.name {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("../images/background/horse-svg.svg");
+  background-image: url(../images/background/horse.png);
   background-repeat: no-repeat;
-  background-position: 100px bottom;
-  background-size: 75% auto;
-  opacity: 0.2;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.3;
   pointer-events: none;
   z-index: 0;
 }
@@ -10057,6 +10061,19 @@ blockquote cite.name {
   flex-direction: column;
   /* justify-content: center; */
   margin-bottom: 50px;
+}
+
+/* Footer Intro */
+.footer-intro {
+  max-width: 420px;
+}
+
+.footer-heading {
+  font-size: 44px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 18px;
+  letter-spacing: 0px;
 }
 
 /* Brand Section */
@@ -10103,11 +10120,11 @@ blockquote cite.name {
 }
 
 .footer-description {
-  font-size: 14px;
-  line-height: 1.8;
+  font-size: 18px;
+  line-height: 1.6;
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 30px;
-  max-width: 355px;
+  max-width: 420px;
 }
 
 .light-mode .footer-description {
@@ -10120,12 +10137,22 @@ blockquote cite.name {
   justify-content: space-between;
   gap: 40px;
   flex-wrap: wrap;
+  align-items: flex-start;
   animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
-.footer-section {
+/* .footer-section {
   flex: 1;
   min-width: 250px;
+} */
+
+.footer-links-group {
+  display: flex;
+  gap: 48px;
+}
+
+.footer-links-column {
+  min-width: 160px;
 }
 
 .footer-brand-section {
@@ -10213,6 +10240,37 @@ blockquote cite.name {
   margin: 0;
 }
 
+.footer-contact-card {
+  flex: 0.9;
+  max-width: 380px;
+  padding: 30px;
+  border-left: none;
+  border-bottom-left-radius: 18px;
+  border-top-left-radius: 18px;
+  background: rgba(255, 255, 255, 0.1);
+  /* border: 1px solid rgba(255, 255, 255, 0.2); */
+  box-shadow: -2px 4px 10px 0 rgba(145, 145, 145, 0.05),
+    -7px 17px 18px 0 rgba(145, 145, 145, 0.04),
+    -15px 37px 24px 0 rgba(145, 145, 145, 0.03),
+    -27px 66px 29px 0 rgba(145, 145, 145, 0.01),
+    -42px 103px 31px 0 rgba(145, 145, 145, 0),
+    0 3px 4px 0 rgba(255, 255, 255, 0.15) inset,
+    0 -3px 4px 0 rgba(255, 255, 255, 0.15) inset;
+  backdrop-filter: blur(2px) saturate(50%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  align-self: flex-start;
+  /* position: absolute;
+  right: 0;
+  bottom: 120px; */
+}
+
+.footer-social-container-sec{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-right: -50px;
+}
+
 .footer-contact li {
   margin-bottom: 16px;
   opacity: 0;
@@ -10239,7 +10297,7 @@ blockquote cite.name {
 
 .contact-item i {
   color: rgba(255, 255, 255, 0.9);
-  font-size: 20px;
+  font-size: 24px;
   margin-top: 5px;
   flex-shrink: 0;
   transition: color 0.3s ease;
@@ -10252,8 +10310,8 @@ blockquote cite.name {
 .contact-item span,
 .contact-item a {
   color: rgba(255, 255, 255, 0.9);
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 16px;
+  line-height: 1.8;
   text-decoration: none;
   transition: color 0.3s ease;
   flex: 1;
@@ -10273,6 +10331,58 @@ blockquote cite.name {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+}
+
+.footer-social-center {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 20px;
+}
+
+.footer-social-center.footer-highlight {
+  justify-content: flex-start;
+}
+
+.footer-highlight-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-highlight-slash {
+  width: 2px;
+  height: 34px;
+  background: var(--primary-color);
+  display: inline-block;
+  transform: rotate(18deg);
+  box-shadow: 0 0 8px rgba(69, 121, 255, 0.45);
+}
+
+.footer-highlight-text {
+  display: inline-flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+}
+
+.footer-highlight-title {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-highlight-subtitle {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 600;
 }
 
 .social-link {
@@ -10448,8 +10558,19 @@ blockquote cite.name {
     max-width: 100%;
   }
 
-  .footer-brand-section {
+  .footer-intro {
     text-align: center;
+    margin: 0 auto;
+  }
+
+  .footer-links-group {
+    flex-wrap: wrap;
+    gap: 28px;
+    min-width: auto;
+  }
+
+  .footer-contact-card {
+    max-width: 100%;
   }
 
   .footer-links a:hover {
@@ -10471,8 +10592,8 @@ blockquote cite.name {
     padding: 0 15px;
   }
 
-  .brand-logo {
-    font-size: 36px;
+  .footer-heading {
+    font-size: 32px;
   }
 
   .footer-description {
