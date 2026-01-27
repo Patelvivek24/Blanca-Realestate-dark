@@ -3016,6 +3016,37 @@ a.light-btn.header-contact-btn:hover,
   text-transform: uppercase;
 }
 
+.header-top .header-top-marquee {
+  overflow: hidden;
+  text-align: left;
+  text-transform: none;
+}
+
+.header-top .header-top-marquee__track {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+  animation: header-top-marquee 36s linear infinite;
+}
+
+.header-top .header-top-marquee:hover .header-top-marquee__track {
+  animation-play-state: paused;
+}
+
+.header-top .header-top-sep {
+  margin: 0 20px;
+  opacity: 0.8;
+}
+
+@keyframes header-top-marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 .header-top + .main-header .header-upper {
   top: 40px;
 }
