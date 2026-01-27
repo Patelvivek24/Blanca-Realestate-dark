@@ -7409,7 +7409,7 @@ button.read-more {
 
   .reviews-area h2,
   .reviews2-area.black-110-bg h2 {
-    text-shadow: 2px 0 white;
+    /* text-shadow: 2px 0 white; */
   }
 }
 
@@ -7665,13 +7665,15 @@ button.read-more {
 
 .testimonials-modern__content .section-title {
   margin-bottom: 24px;
+  margin: 0px 16px 24px 16px;
 }
 
 .testimonials-modern__controls {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 12px;
   margin-top: 32px;
+  margin-right: 16px;
 }
 
 .testimonials-modern__controls button {
@@ -7716,10 +7718,39 @@ button.read-more {
   background: none;
 }
 
+.testimonials-modern__slider {
+  /* margin: 0 -16px; */
+}
+
+.testimonials-modern__slider .slick-track {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.testimonials-modern__slider .slick-slide {
+  padding: 24px;
+  height: auto;
+  display: flex;
+}
+
+.testimonials-modern__slider .slick-slide > div {
+  display: flex;
+  height: 100%;
+}
+
+.testimonials-modern__slider .testimonials-modern__card {
+  height: 100%;
+  /* margin-right: 0; */
+  display: flex;
+  flex-direction: column;
+  min-height: clamp(260px, 28vw, 285px);
+}
+
 .testimonials-modern__card {
   background: rgba(255, 255, 255, 0.1);
-  border: 1px solid;
-  border-image-source: conic-gradient(from 102.21deg at 52.75% 38.75%,
+  /* border: 1px solid; */
+  /* border-image-source: conic-gradient(from 102.21deg at 52.75% 38.75%,
     rgba(249, 249, 249, 0.3) -32.95deg,
     rgba(64, 64, 64, 0.5) 10.52deg,
     rgba(64, 64, 64, 0.35) 32.12deg,
@@ -7729,9 +7760,9 @@ button.read-more {
     rgba(249, 249, 249, 0.5) 207.58deg,
     rgba(255, 255, 255, 0.3) 287.31deg,
     rgba(249, 249, 249, 0.3) 327.05deg,
-    rgba(64, 64, 64, 0.5) 370.52deg);
+    rgba(64, 64, 64, 0.5) 370.52deg); */
   border-radius: 18px;
-  margin-right: 30px;
+  /* margin-right: 30px; */
   max-width: 800px;
   width: 100%;
   padding: 32px;
@@ -7778,6 +7809,11 @@ button.read-more {
   margin-bottom: 6px;
   color: #f5f5f5;
   opacity: 0.7;
+  max-width: 243px;
+  text-overflow: ellipsis;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .testimonials-modern__rating {
@@ -7790,8 +7826,8 @@ button.read-more {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* background: rgba(255, 255, 255, 0.1); */
+  /* border: 1px solid rgba(255, 255, 255, 0.2); */
   backdrop-filter: blur(12px) saturate(160%);
   -webkit-backdrop-filter: blur(12px) saturate(160%);
   background-clip: padding-box;
@@ -9903,7 +9939,7 @@ blockquote cite.name {
 .modern-footer {
   position: relative;
   min-height: 100vh;
-  background-image: url('../images/background/footer-bg.jpg');
+  /* background-image: url('../images/background/footer-bg.jpg'); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

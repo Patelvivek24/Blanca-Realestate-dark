@@ -276,6 +276,35 @@
             });
         }
 
+        // ## Testimonials Slider
+        if ($('.testimonials-modern__slider').length) {
+            $('.testimonials-modern__slider').slick({
+                infinite: true,
+                arrows: true,
+                dots: false,
+                autoplay: false,
+                speed: 600,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                prevArrow: $('.testimonials-modern__controls .prev'),
+                nextArrow: $('.testimonials-modern__controls .next'),
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: 2,
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                        }
+                    }
+                ]
+            });
+        }
+
         // ## Service area slider
         if ($('#servicerecipeCarousel .carousel-item').length) {
             let serviceitems = document.querySelectorAll('#servicerecipeCarousel .carousel-item')
