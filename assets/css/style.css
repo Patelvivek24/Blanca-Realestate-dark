@@ -1363,22 +1363,22 @@ h6,
 
   h1,
   .h1 {
-    text-shadow: 2px 0 var(--black-30);
+    /* text-shadow: 2px 0 var(--black-30); */
   }
 
   h1.text-white,
   .h1.text-white {
-    text-shadow: 2px 0 var(--heading-color);
+    /* text-shadow: 2px 0 var(--heading-color); */
   }
 
   h2,
   .h2 {
-    text-shadow: 2px 0 var(--black-30);
+    /* text-shadow: 2px 0 var(--black-30); */
   }
 
   .light-mode h2,
   .light-mode .h2 {
-    text-shadow: 2px 0 var(--black-90);
+    /* text-shadow: 2px 0 var(--black-90); */
   }
 }
 
@@ -1562,7 +1562,7 @@ h6,
     line-height: 1.2;
     font-size: 46px;
     letter-spacing: -2px;
-    text-shadow: unset;
+    /* text-shadow: unset; */
   }
 
   h2,
@@ -1570,14 +1570,14 @@ h6,
     line-height: 1.2;
     font-size: 38px;
     letter-spacing: -2px;
-    text-shadow: unset;
+    /* text-shadow: unset; */
   }
 
   .light-mode h1,
   .light-mode .h1,
   .light-mode h2,
   .light-mode .h2 {
-    text-shadow: unset;
+    /* text-shadow: unset; */
   }
 }
 
@@ -3584,7 +3584,7 @@ header form.search-form button>* {
 }
 
 .header-logo-image {
-  max-width: 130px;
+  max-width: 180px;
   width: 100%;
   height: auto;
 }
@@ -4621,7 +4621,7 @@ header form.search-form button>* {
 
 @media(min-width: 992px) {
   .light-mode .about-area-2 h1 {
-    text-shadow: 2px 0 var(--black-100);
+    /* text-shadow: 2px 0 var(--black-100); */
   }
 }
 
@@ -7557,7 +7557,7 @@ button.read-more {
 
   .light-mode .error-area h1,
   .light-mode .error-area .h1 {
-    text-shadow: 2px 0 var(--black-100);
+    /* text-shadow: 2px 0 var(--black-100); */
   }
 }
 
