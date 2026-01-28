@@ -34,25 +34,42 @@
 
     "use strict";
 
-    $(document).ready(function () {
-        
-        // ## Header Style and Scroll to Top
-        function headerStyle() {
-            if ($('.main-header').length) {
-                var windowpos = $(window).scrollTop();
-                var siteHeader = $('.main-header');
-                var scrollLink = $('.scroll-top');
-                var headerThreshold = 250;
+    var lastScrollTop = 0;
+    var headerThreshold = 250;
+    var headerHideOffset = 80;
 
-                if (windowpos >= headerThreshold) {
-                    siteHeader.addClass('fixed-header');
-                    scrollLink.fadeIn(300);
-                } else {
-                    siteHeader.removeClass('fixed-header');
-                    scrollLink.fadeOut(300);
-                }
+    function headerStyle() {
+        if ($('.main-header').length) {
+            var windowpos = $(window).scrollTop();
+            var siteHeader = $('.main-header');
+            var scrollLink = $('.scroll-top');
+
+            if (windowpos >= headerThreshold) {
+                siteHeader.addClass('fixed-header');
+                scrollLink.fadeIn(300);
+            } else {
+                siteHeader.removeClass('fixed-header');
+                scrollLink.fadeOut(300);
             }
+
+            var scrollingDown = windowpos > lastScrollTop + 5;
+            var scrollingUp = windowpos < lastScrollTop - 5;
+
+            if (windowpos <= headerThreshold) {
+                siteHeader.removeClass('is-hidden');
+            } else if (scrollingDown && windowpos > headerThreshold + headerHideOffset) {
+                siteHeader.addClass('is-hidden');
+            } else if (scrollingUp) {
+                siteHeader.removeClass('is-hidden');
+            }
+
+            lastScrollTop = windowpos;
         }
+    }
+
+    $(document).ready(function () {
+        lastScrollTop = $(window).scrollTop();
+        // ## Header Style and Scroll to Top
         headerStyle();
 
         // ## Active Navigation on Click and Scroll
@@ -652,27 +669,8 @@
        ========================================================================== */
 
     $(window).on('scroll', function () {
-
         // Header Style and Scroll to Top
-        function headerStyle() {
-            if ($('.main-header').length) {
-                var windowpos = $(window).scrollTop();
-                var siteHeader = $('.main-header');
-                var scrollLink = $('.scroll-top');
-                var headerThreshold = 250;
-
-                if (windowpos >= headerThreshold) {
-                    siteHeader.addClass('fixed-header');
-                    scrollLink.fadeIn(300);
-                } else {
-                    siteHeader.removeClass('fixed-header');
-                    scrollLink.fadeOut(300);
-                }
-            }
-        }
-
         headerStyle();
-
     });
 
     /* ==========================================================================

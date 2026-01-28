@@ -2957,6 +2957,10 @@ a.light-btn.header-contact-btn:hover,
   box-shadow: 0px 0px 30px 0px rgba(87, 95, 245, 0.1); */
 }
 
+.main-header.fixed-header.is-hidden .header-upper {
+  transform: translateY(-110%);
+}
+
 @media only screen and (min-width: 1200px) {
   .nav-outer+.search-btns {
     margin-left: 64px;
