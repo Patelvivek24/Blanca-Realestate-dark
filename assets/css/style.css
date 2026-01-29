@@ -7401,6 +7401,184 @@ button.read-more {
 }
 
 /*******************************************************/
+/**************** ## Meet the Team Area *****************/
+/*******************************************************/
+
+.story-section-top-content {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.meet-team-area.black-110-bg .section-title .common-subtitle {
+  color: var(--primary-color);
+}
+
+.meet-team-area.black-110-bg .section-title h2 {
+  color: var(--heading-color);
+}
+
+.meet-team-area .meet-team-desc {
+  color: var(--black-40);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+.meet-team-card {
+  padding: 24px 16px;
+  border-left: none;
+  background-image: url('../images/work-process/property-investments-8.jpg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 450px;
+  width: 100%;
+  box-shadow: -2px 4px 10px 0 rgba(145, 145, 145, 0.05), -7px 17px 18px 0 rgba(145, 145, 145, 0.04), -15px 37px 24px 0 rgba(145, 145, 145, 0.03), -27px 66px 29px 0 rgba(145, 145, 145, 0.01), -42px 103px 31px 0 rgba(145, 145, 145, 0), 0 3px 4px 0 rgba(255, 255, 255, 0.15) inset, 0 -3px 4px 0 rgba(255, 255, 255, 0.15) inset;
+  backdrop-filter: blur(2px) saturate(50%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-radius: 24px;
+}
+
+.meet-team-grid .col-lg-4:nth-child(1) .meet-team-card {
+  background-image: url('../images/work-process/design-groth-1.png');
+}
+
+.meet-team-grid .col-lg-4:nth-child(2) .meet-team-card {
+  background-image: url('../images/work-process/proven-legacy-2.png');
+}
+
+.meet-team-grid .col-lg-4:nth-child(3) .meet-team-card {
+  background-image: url('../images/work-process/statagical-location-3.png');
+}
+
+.meet-team-grid .col-lg-4:nth-child(4) .meet-team-card {
+  background-image: url('../images/work-process/smart-planning-4.png');
+}
+
+.meet-team-grid .col-lg-4:nth-child(5) .meet-team-card {
+  background-image: url('../images/work-process/rare-complaint-5.png');
+}
+
+.meet-team-grid .col-lg-4:nth-child(6) .meet-team-card {
+  background-image: url('../images/work-process/resale-office-6.png');
+}
+
+.meet-team-card-bg-7 {
+  background-image: url('../images/work-process/maintanence-7.jpg');
+}
+
+.meet-team-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(19, 20, 18, 0.7);
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.meet-team-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Restore gap between cards: global .row resets --bs-gutter-x, so g-4 had no horizontal gap */
+.row.meet-team-grid {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 1.5rem;
+}
+
+.meet-team-grid .col-lg-4,
+.meet-team-grid .col-md-4,
+.meet-team-grid .col-sm-6 {
+  display: flex;
+}
+
+.meet-team-grid .meet-team-card {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.meet-team-avatar {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--black-80);
+  flex-shrink: 0;
+}
+
+.meet-team-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.meet-team-name {
+  color: var(--heading-color);
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-family: var(--bs-font-inter);
+  letter-spacing: 0px;
+}
+
+.meet-team-role {
+  color: var(--white-100);
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.meet-team-linkedin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: var(--black-90);
+  color: var(--lg-text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.meet-team-linkedin:hover {
+  background: var(--primary-color);
+  color: var(--lg-text);
+}
+
+.light-mode .meet-team-area .meet-team-desc {
+  color: var(--black-60);
+}
+
+.light-mode .meet-team-area .meet-team-name {
+  color: var(--black-90);
+}
+
+.light-mode .meet-team-area .meet-team-avatar {
+  border-color: var(--border-color);
+}
+
+.light-mode .meet-team-area .meet-team-linkedin {
+  background: var(--black-90);
+  color: white;
+}
+
+.light-mode .meet-team-area .meet-team-linkedin:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/*******************************************************/
 /**************** ## Testimonials Area - Reviews Area*****************/
 /*******************************************************/
 .light-mode .reviews-area {
@@ -8209,8 +8387,11 @@ button.read-more {
 }
 
 .feature-card-inner {
-  background: rgba(26, 26, 26, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: none;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: -2px 4px 10px 0 rgba(145, 145, 145, 0.05), -7px 17px 18px 0 rgba(145, 145, 145, 0.04), -15px 37px 24px 0 rgba(145, 145, 145, 0.03), -27px 66px 29px 0 rgba(145, 145, 145, 0.01), -42px 103px 31px 0 rgba(145, 145, 145, 0), 0 3px 4px 0 rgba(255, 255, 255, 0.15) inset, 0 -3px 4px 0 rgba(255, 255, 255, 0.15) inset;
+  backdrop-filter: blur(2px) saturate(50%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
   padding: 48px 40px;
   height: 100%;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -10268,7 +10449,7 @@ blockquote cite.name {
   bottom: 120px; */
 }
 
-.footer-social-container-sec{
+.footer-social-container-sec {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
