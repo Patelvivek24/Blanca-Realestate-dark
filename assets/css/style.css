@@ -11567,7 +11567,7 @@ blockquote cite.name {
   /* 
      y-offset spread:
   */
-  --y-offset: calc(var(--active) * 450px);
+  --y-offset: calc(var(--active) * -450px);
 
   /* Rotation */
   --rotate-y: calc(var(--active) * 50deg);
@@ -11645,7 +11645,7 @@ blockquote cite.name {
 }
 
 /* The Big Number (01, 02...) */
-.team-carousel-item::before {
+/* .team-carousel-item::before {
   content: counter(team-counter, decimal-leading-zero);
   position: absolute;
   top: 20px;
@@ -11654,11 +11654,9 @@ blockquote cite.name {
   font-size: 80px;
   line-height: 1;
   color: rgba(255, 255, 255, 0.15);
-  /* Faint white */
   z-index: 2;
-  /* On top of background, below content */
   pointer-events: none;
-}
+} */
 
 /* Content Styling */
 .team-carousel-item .meet-team-name {
