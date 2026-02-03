@@ -7412,7 +7412,7 @@ button.read-more {
 
 .story-section-top-content {
   text-align: center;
-  margin-bottom: 60px;
+  margin-top: 60px;
 }
 
 .meet-team-area.black-110-bg .section-title .common-subtitle {
@@ -8034,6 +8034,7 @@ button.read-more {
 
 .testimonials-modern__text {
   margin-top: 20px;
+  margin-bottom: 0px;
   color: #f5f5f5;
   line-height: 1.7;
 }
@@ -11439,4 +11440,295 @@ blockquote cite.name {
     width: 46px;
     height: 46px;
   }
+}
+
+/* =========================================
+   Team Carousel Styles (Supah Style)
+   ========================================= */
+
+.meet-team-area {
+  overflow: hidden;
+  position: relative;
+  /* Use a fixed height or min-height to accommodate the 3D items */
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================================
+   Team Carousel Styles (Supah Style Refined)
+   ========================================= */
+
+/* =========================================
+   Team Carousel Styles (Supah Style Refined)
+   ========================================= */
+
+.meet-team-area {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  /* Set to full viewport height as requested */
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  /* Stack children vertical */
+  justify-content: center;
+  /* Center content vertically */
+  background-color: var(--black-100);
+}
+
+.meet-team-area-title-sec {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--black-100);
+}
+
+/* 
+   Ensure the container fluid takes full width and doesn't get squashed
+   if it's the direct child of the flex container.
+*/
+.meet-team-area>.container-fluid {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.meet-team-area .row {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.meet-team-area .col-12 {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.meet-team-area .section-title {
+  position: relative;
+  z-index: 10;
+  margin-top: 40px;
+  margin-bottom: 100px;
+  /* Space from top */
+  flex-shrink: 0;
+  /* Convert title to static size */
+}
+
+/* Reset counter for the carousel items */
+.team-carousel {
+  counter-reset: team-counter;
+  width: 100%;
+  /* Take remaining height */
+  flex-grow: 1;
+  position: relative;
+  /* Changed from absolute to flow naturally */
+  perspective: 1600px;
+  transform-style: preserve-3d;
+  /* Adjust top to align center of rotation lower if needed */
+  /* margin-top: 20px; */
+}
+
+.team-carousel-item {
+  counter-increment: team-counter;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 450px;
+  /* Increased width as requested */
+  height: 550px;
+  /* Increased height to maintain aspect ratio */
+  transform: translate(-50%, -50%);
+  user-select: none;
+  pointer-events: none;
+  transition: transform 0.8s cubic-bezier(0.1, 0.9, 0.2, 1), opacity 0.8s ease;
+  z-index: var(--zIndex);
+
+  /* Supah logic variables default */
+  --zIndex: 0;
+  --active: 0;
+}
+
+/* Logic mimicking the JS calculation for visual state */
+.team-carousel-item {
+  /* 
+     x-offset spread: 
+     Adjusted for wider cards. 
+     With width 450px: 800% * 0.125 = 100% of 1920? No.
+     Let's use 850% to give a bit more breath than "half overlap".
+  */
+  --x-offset: calc(var(--active) * 850%);
+
+  /* 
+     y-offset spread:
+  */
+  --y-offset: calc(var(--active) * 450px);
+
+  /* Rotation */
+  --rotate-y: calc(var(--active) * 50deg);
+
+  /* Scale factor */
+  --abs-active: max(var(--active), calc(var(--active) * -1));
+  --scale: calc(1 - (var(--abs-active) * 0.2));
+  /* Less scaling reduction to keep "full" feel */
+
+  /* Opacity factor */
+  --opacity: calc(1 - (var(--abs-active) * 0.7));
+
+  transform: translate(-50%, -50%) translate(var(--x-offset), var(--y-offset)) scale(var(--scale)) rotateY(var(--rotate-y));
+  opacity: var(--opacity);
+  will-change: transform, opacity;
+}
+
+/* Card Styling to match the "Image Card" look */
+.team-carousel-item .meet-team-card {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  border: none;
+  border-radius: 20px;
+  /* More rounded as requested */
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* Text at bottom */
+  align-items: flex-start;
+  /* Left align */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* Add background image placeholder effect */
+/* Add background image placeholder effect */
+.team-carousel-item .meet-team-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--bg-img);
+  /* Use injected variable */
+  background-size: cover;
+  background-position: center;
+  /* Light overlay effect: */
+  /* If the text is white, we need a dark overlay, BUT user asked for "light color overlay" */
+  /* Assuming they mean a light tint on top of the image to make it look "washed out" or similar? */
+  /* But text is white. Let's stick to standard overlay. */
+  opacity: 0.6;
+  z-index: 0;
+  /* mix-blend-mode: overlay; <-- This often makes dark images too dark or transparent */
+  /* Remove mix-blend-mode for clearer image visibility */
+  transition: opacity 0.5s ease;
+}
+
+/* Dark overlay gradient for text readability */
+.team-carousel-item .meet-team-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+  z-index: 1;
+}
+
+/* The Big Number (01, 02...) */
+.team-carousel-item::before {
+  content: counter(team-counter, decimal-leading-zero);
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-family: var(--bs-font-playfair-display);
+  font-size: 80px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.15);
+  /* Faint white */
+  z-index: 2;
+  /* On top of background, below content */
+  pointer-events: none;
+}
+
+/* Content Styling */
+.team-carousel-item .meet-team-name {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: var(--heading-color);
+  font-family: var(--bs-font-playfair-display);
+  z-index: 2;
+  position: relative;
+  text-align: left;
+}
+
+.team-carousel-item .meet-team-role {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  font-weight: 300;
+  line-height: 1.5;
+  z-index: 2;
+  position: relative;
+  text-align: left;
+
+  /* Collapsed state (hidden) */
+  opacity: 0;
+  max-height: 0;
+  margin: 0;
+  overflow: hidden;
+  transform: translateY(20px);
+
+  /* Transition for smooth expand/collapse */
+  transition: all 0.5s ease;
+}
+
+/* Specific highlighting for active item */
+/* Use .active class instead of value matching for robustness */
+.team-carousel-item.active .meet-team-card {
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.team-carousel-item.active .meet-team-role {
+  /* Expanded state (visible) */
+  opacity: 1;
+  max-height: 200px;
+  /* Enough to fit the content */
+  transform: translateY(0);
+  margin-top: 10px;
+  /* Add some spacing when visible */
+}
+
+/* Custom Cursor */
+.cursor {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  --size: 40px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: calc(var(--size) * -0.5) 0 0 calc(var(--size) * -0.5);
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1);
+  pointer-events: none;
+}
+
+.cursor2 {
+  --size: 2px;
+  background-color: var(--heading-color);
+  transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+  border: none;
 }

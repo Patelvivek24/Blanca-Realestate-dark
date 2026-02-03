@@ -188,30 +188,30 @@
         // ## Video Popup
         if ($('.video-play').length) {
             $('.video-play').magnificPopup({
-              type: 'iframe',
-              mainClass: 'mfp-fade',
-              removalDelay: 160,
-              preloader: false,
-              iframe:{
-                patterns:{
-                  youtube:{
-                  index: 'youtube.com',
-                  id: 'v=',
-                  src: 'https://www.youtube.com/embed/%id%'
+                type: 'iframe',
+                mainClass: 'mfp-fade',
+                removalDelay: 160,
+                preloader: false,
+                iframe: {
+                    patterns: {
+                        youtube: {
+                            index: 'youtube.com',
+                            id: 'v=',
+                            src: 'https://www.youtube.com/embed/%id%'
+                        },
+                    },
+                    srcAction: 'iframe_src',
                 },
-              },
-              srcAction:'iframe_src',
-            },
-              fixedContentPos: false
+                fixedContentPos: false
             });
         }
 
 
         // ## Hero Search
-        $(".header-inner .search-btns").on('click', function () {  
+        $(".header-inner .search-btns").on('click', function () {
             if (document.getElementById("project-search").classList.contains("current")) {
                 $(".search-project.search-form").removeClass("current");
-            } else{
+            } else {
                 $(".search-project.search-form").addClass("current");
             }
         });
@@ -243,7 +243,7 @@
                 $(".project-active").isotope({
                     itemSelector: '.item',
                     filter: selector,
-                }); 
+                });
             });
 
         });
@@ -327,46 +327,46 @@
             let serviceitems = document.querySelectorAll('#servicerecipeCarousel .carousel-item')
             serviceitems.forEach((el) => {
                 const minPerSlide = 4
-                let next = el.nextElementSibling            
-                for (var i=1; i<minPerSlide; i++) {
+                let next = el.nextElementSibling
+                for (var i = 1; i < minPerSlide; i++) {
                     if (!next) {
                         next = serviceitems[0]
-                    }   
+                    }
                     let cloneChild = next.cloneNode(true)
                     el.appendChild(cloneChild.children[0])
                     next = next.nextElementSibling
                 }
             })
         }
-        
+
         if ($('#service2Carousel .carousel-item').length) {
             let items = document.querySelectorAll('#service2Carousel .carousel-item')
             items.forEach((el) => {
                 const minPerSlide = 3
-                let next = el.nextElementSibling            
-                for (var i=1; i<minPerSlide; i++) {
+                let next = el.nextElementSibling
+                for (var i = 1; i < minPerSlide; i++) {
                     if (!next) {
                         next = items[0]
-                    }   
+                    }
                     let cloneChild = next.cloneNode(true)
                     el.appendChild(cloneChild.children[0])
                     next = next.nextElementSibling
                 }
             })
         }
-        
+
         // ## Interior Area Slider
         if ($('.interior-area .carousel-item').length) {
-            let numbernavs = document.getElementsByClassName("interior-nav").length;            
-            for(var d=1;d<=numbernavs;d++){
-                let interitems = document.querySelectorAll('#interiorrecipeCarousel'+d+' .carousel-item')
+            let numbernavs = document.getElementsByClassName("interior-nav").length;
+            for (var d = 1; d <= numbernavs; d++) {
+                let interitems = document.querySelectorAll('#interiorrecipeCarousel' + d + ' .carousel-item')
                 interitems.forEach((el) => {
                     const minPerSlide = 3
-                    let next = el.nextElementSibling            
-                    for (var i=1; i<minPerSlide; i++) {
+                    let next = el.nextElementSibling
+                    for (var i = 1; i < minPerSlide; i++) {
                         if (!next) {
                             next = interitems[0]
-                        }   
+                        }
                         let cloneChild = next.cloneNode(true)
                         el.appendChild(cloneChild.children[0])
                         next = next.nextElementSibling
@@ -461,11 +461,11 @@
             let items = document.querySelectorAll('#teamCarousel .carousel-item')
             items.forEach((el) => {
                 const minPerSlide = 3
-                let next = el.nextElementSibling            
-                for (var i=1; i<minPerSlide; i++) {
+                let next = el.nextElementSibling
+                for (var i = 1; i < minPerSlide; i++) {
                     if (!next) {
                         next = items[0]
-                    }   
+                    }
                     let cloneChild = next.cloneNode(true)
                     el.appendChild(cloneChild.children[0])
                     next = next.nextElementSibling
@@ -479,11 +479,11 @@
             let items = document.querySelectorAll('#testiCarousel .carousel-item')
             items.forEach((el) => {
                 const minPerSlide = 1
-                let next = el.nextElementSibling            
-                for (var i=1; i<minPerSlide; i++) {
+                let next = el.nextElementSibling
+                for (var i = 1; i < minPerSlide; i++) {
                     if (!next) {
                         next = items[0]
-                    }   
+                    }
                     let cloneChild = next.cloneNode(true)
                     el.appendChild(cloneChild.children[0])
                     next = next.nextElementSibling
@@ -494,11 +494,11 @@
             let items = document.querySelectorAll('#testi2Carousel .carousel-item')
             items.forEach((el) => {
                 const minPerSlide = 2
-                let next = el.nextElementSibling            
-                for (var i=1; i<minPerSlide; i++) {
+                let next = el.nextElementSibling
+                for (var i = 1; i < minPerSlide; i++) {
                     if (!next) {
                         next = items[0]
-                    }   
+                    }
                     let cloneChild = next.cloneNode(true)
                     el.appendChild(cloneChild.children[0])
                     next = next.nextElementSibling
@@ -598,15 +598,15 @@
 
         // ## Before and After 
         if ($('.projects-02 .tab-content  .pro-02-images').length) {
-            let pro02items = $('.projects-02 .tab-content  .pro-02-images').length;    
-            for(var cout=1;cout<=pro02items;cout++){
-                let imgcontainer = document.querySelector('.pro-02-images-'+cout);
-                document.querySelector('.buttonslider'+cout).addEventListener('input', (e) => {
-                  imgcontainer.style.setProperty('--position', `${e.target.value}%`);
+            let pro02items = $('.projects-02 .tab-content  .pro-02-images').length;
+            for (var cout = 1; cout <= pro02items; cout++) {
+                let imgcontainer = document.querySelector('.pro-02-images-' + cout);
+                document.querySelector('.buttonslider' + cout).addEventListener('input', (e) => {
+                    imgcontainer.style.setProperty('--position', `${e.target.value}%`);
                 })
             }
         }
-    
+
         // ## Scroll to Top
         if ($('.scroll-to-target').length) {
             $(".scroll-to-target").on('click', function () {
@@ -641,11 +641,11 @@
                     interactive: true,
                     crossOrigin: ''
                 });
-            } catch(e) {
+            } catch (e) {
                 console.log('Ripples effect initialization error:', e);
             }
         }
-        
+
 
 
     });
@@ -693,9 +693,108 @@
 
 })(window.jQuery);
 
+/* =========================================
+   Team Carousel Logic (Supah Style)
+   ========================================= */
+document.addEventListener('DOMContentLoaded', () => {
+    const $teamCarousel = document.querySelector('.team-carousel');
+    if (!$teamCarousel) return;
+
+    let progress = 50;
+    let startX = 0;
+    let active = 0;
+    let isDown = false;
+
+    /* Constants */
+    const speedWheel = 0.02;
+    const speedDrag = -0.1;
+
+    /* Get Z Index */
+    const getZindex = (array, index) => (array.map((_, i) => (index === i) ? array.length : array.length - Math.abs(index - i)));
+
+    /* Items */
+    const $items = document.querySelectorAll('.team-carousel-item');
+    const $cursors = document.querySelectorAll('.cursor');
+
+    const displayItems = (item, index, active) => {
+        const zIndex = getZindex([...$items], active)[index];
+        item.style.setProperty('--zIndex', zIndex);
+        item.style.setProperty('--active', (index - active) / $items.length);
+
+        // Add explicit active class for CSS targeting
+        if (index === active) {
+            item.classList.add('active');
+        } else {
+            item.classList.remove('active');
+        }
+    };
+
+    /* Animate */
+    const animate = () => {
+        progress = Math.max(0, Math.min(progress, 100));
+        active = Math.floor(progress / 100 * ($items.length - 1));
+
+        $items.forEach((item, index) => displayItems(item, index, active));
+    };
+    animate();
+
+    /* Click on Items */
+    $items.forEach((item, i) => {
+        item.addEventListener('click', () => {
+            progress = (i / $items.length) * 100 + 10;
+            animate();
+        });
+    });
+
+    /* Handlers */
+    const handleWheel = e => {
+        // Only if hovering over the carousel
+        if (!$teamCarousel.contains(e.target)) return;
+
+        const wheelProgress = e.deltaY * speedWheel;
+        progress = progress + wheelProgress;
+        animate();
+    };
+
+    const handleMouseMove = (e) => {
+        if (e.type === 'mousemove') {
+            $cursors.forEach(($cursor) => {
+                $cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+            });
+        }
+        if (!isDown) return;
+        const x = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+        const mouseProgress = (x - startX) * speedDrag;
+        progress = progress + mouseProgress;
+        startX = x;
+        animate();
+    };
+
+    const handleMouseDown = e => {
+        if (!$teamCarousel.contains(e.target)) return;
+        // e.preventDefault(); // Prevent default text selection
+        isDown = true;
+        startX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+    };
+
+    const handleMouseUp = () => {
+        isDown = false;
+    };
+
+    /* Listeners */
+    document.addEventListener('wheel', handleWheel);
+    document.addEventListener('mousedown', handleMouseDown);
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
+    document.addEventListener('touchstart', handleMouseDown);
+    document.addEventListener('touchmove', handleMouseMove);
+    document.addEventListener('touchend', handleMouseUp);
+});
 
 
-    
+
+
+
 
 
 
