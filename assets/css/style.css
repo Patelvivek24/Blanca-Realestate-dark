@@ -10525,8 +10525,8 @@ blockquote cite.name {
 
 .footer-contact-card {
   flex: 0.9;
-  max-width: 380px;
-  padding: 30px;
+  max-width: 400px;
+  padding: 28px;
   border-left: none;
   border-bottom-left-radius: 18px;
   border-top-left-radius: 18px;
