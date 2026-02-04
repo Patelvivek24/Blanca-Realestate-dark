@@ -7808,10 +7808,10 @@ button.read-more {
   z-index: 1;
 }
 
-.testimonials-modern .row {
+/* .testimonials-modern .row {
   position: relative;
   z-index: 1;
-}
+} */
 
 /* .testimonials-modern__image-wrap {
   background: rgba(255, 255, 255, 0.08);
@@ -7861,7 +7861,7 @@ button.read-more {
 
 .testimonials-modern__content .section-title {
   margin-bottom: 24px;
-  margin: 0px 16px 24px 16px;
+  /* margin: 0px 16px 24px 16px; */
 }
 
 .testimonials-modern__controls {
@@ -7876,20 +7876,8 @@ button.read-more {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  /* border: 1px solid; */
-  border-image-source: conic-gradient(from 102.21deg at 52.75% 38.75%,
-      rgba(249, 249, 249, 0.3) -32.95deg,
-      rgba(64, 64, 64, 0.5) 10.52deg,
-      rgba(64, 64, 64, 0.35) 32.12deg,
-      rgba(255, 255, 255, 0.3) 60.28deg,
-      rgba(255, 255, 255, 0.3) 107.79deg,
-      rgba(64, 64, 64, 0.35) 187.59deg,
-      rgba(249, 249, 249, 0.5) 207.58deg,
-      rgba(255, 255, 255, 0.3) 287.31deg,
-      rgba(249, 249, 249, 0.3) 327.05deg,
-      rgba(64, 64, 64, 0.5) 370.52deg);
-  border-image-slice: 1;
-  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   color: #f5f5f5;
   display: inline-flex;
   align-items: center;
@@ -7897,11 +7885,7 @@ button.read-more {
   transition: all 0.2s ease-in-out;
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  box-shadow:
-    -2px 4px 10px 0 rgba(145, 145, 145, 0.05),
-    -7px 17px 18px 0 rgba(145, 145, 145, 0.04),
-    0 3px 4px 0 rgba(255, 255, 255, 0.12) inset,
-    0 -3px 4px 0 rgba(255, 255, 255, 0.12) inset;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .testimonials-modern__controls button:hover {
@@ -7944,34 +7928,24 @@ button.read-more {
 }
 
 .testimonials-modern__card {
-  background: rgba(255, 255, 255, 0.1);
-  /* border: 1px solid; */
-  /* border-image-source: conic-gradient(from 102.21deg at 52.75% 38.75%,
-    rgba(249, 249, 249, 0.3) -32.95deg,
-    rgba(64, 64, 64, 0.5) 10.52deg,
-    rgba(64, 64, 64, 0.35) 32.12deg,
-    rgba(255, 255, 255, 0.3) 60.28deg,
-    rgba(255, 255, 255, 0.3) 107.79deg,
-    rgba(64, 64, 64, 0.35) 187.59deg,
-    rgba(249, 249, 249, 0.5) 207.58deg,
-    rgba(255, 255, 255, 0.3) 287.31deg,
-    rgba(249, 249, 249, 0.3) 327.05deg,
-    rgba(64, 64, 64, 0.5) 370.52deg); */
-  border-radius: 18px;
-  /* margin-right: 30px; */
-  max-width: 800px;
+  background: rgba(255, 255, 255, 0.05);
+  /* border: 1px solid rgba(255, 255, 255, 0.15); */
+  border-radius: 24px;
+  max-width: 500px;
   width: 100%;
   padding: 32px;
-  backdrop-filter: blur(20px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-  box-shadow:
-    -2px 4px 10px 0 rgba(145, 145, 145, 0.05),
-    -7px 17px 18px 0 rgba(145, 145, 145, 0.04),
-    -15px 37px 24px 0 rgba(145, 145, 145, 0.03),
-    -27px 66px 29px 0 rgba(145, 145, 145, 0.01),
-    -42px 103px 31px 0 rgba(145, 145, 145, 0),
-    0 3px 4px 0 rgba(255, 255, 255, 0.15) inset,
-    0 -3px 4px 0 rgba(255, 255, 255, 0.15) inset;
+  /* backdrop-filter: blur(20px) saturate(180%) !important; */
+  /* -webkit-backdrop-filter: blur(20px) saturate(180%) !important; */
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); */
+
+
+  border: 1px solid var(--lg-highlight);
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease, border-color 0.2s ease, backdrop-filter 0.4s ease;
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .testimonials-modern__card-top {
@@ -8005,16 +7979,23 @@ button.read-more {
   margin-bottom: 6px;
   color: #f5f5f5;
   opacity: 0.7;
-  max-width: 243px;
-  text-overflow: ellipsis;
+  max-width: 200px;
+  /* text-overflow: ellipsis; */
   width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
+  /* white-space: nowrap; */
+  /* overflow: hidden; */
 }
 
 .testimonials-modern__rating {
-  color: #f4b400;
+  color: #3b82f6;
   font-size: 14px;
+  display: flex;
+  gap: 2px;
+}
+
+.testimonials-modern__rating .fa-star {
+  -webkit-text-stroke: 1px #3b82f6;
+  color: transparent;
 }
 
 .testimonials-modern__quote {
@@ -8022,8 +8003,8 @@ button.read-more {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  /* background: rgba(255, 255, 255, 0.1); */
-  /* border: 1px solid rgba(255, 255, 255, 0.2); */
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px) saturate(160%);
   -webkit-backdrop-filter: blur(12px) saturate(160%);
   background-clip: padding-box;
