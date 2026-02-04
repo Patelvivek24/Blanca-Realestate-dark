@@ -11893,8 +11893,8 @@ blockquote cite.name {
   /* Mask Properties */
   -webkit-mask-image: url('../images/background/transparant-horse.png');
   mask-image: url('../images/background/transparant-horse.png');
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
+  -webkit-mask-size: contain;
+  mask-size: contain;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-position: center;
