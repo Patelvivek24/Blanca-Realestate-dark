@@ -11891,8 +11891,8 @@ blockquote cite.name {
   height: 100%;
   object-fit: cover;
   /* Mask Properties */
-  -webkit-mask-image: url('../images/background/transparant-horse.png');
-  mask-image: url('../images/background/transparant-horse.png');
+  -webkit-mask-image: url('../images/background/transperant.svg');
+  mask-image: url('../images/background/transperant.svg');
   -webkit-mask-size: contain;
   mask-size: contain;
   -webkit-mask-repeat: no-repeat;
