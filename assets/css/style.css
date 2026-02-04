@@ -11874,3 +11874,29 @@ blockquote cite.name {
     /* Hide on mobile if too crowded, or adjust further */
   }
 }
+
+/* Video Mask Styles */
+.video-mask-wrapper {
+  width: 100%;
+  position: relative;
+  /* Aspect ratio is important to give the container height */
+  aspect-ratio: 16 / 12;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-mask-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Mask Properties */
+  -webkit-mask-image: url('../images/background/transparant-horse.png');
+  mask-image: url('../images/background/transparant-horse.png');
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
