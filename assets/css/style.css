@@ -3938,9 +3938,9 @@ header form.search-form button>* {
   isolation: isolate;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
-  max-width: 140px;
+  max-width: 120px;
   width: 100%;
-  height: 140px;
+  height: 120px;
 }
 
 .hero-stat-box::before {
@@ -3974,7 +3974,7 @@ header form.search-form button>* {
 }
 
 .hero-stat-box .stat-number {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
   color: var(--lg-text);
   line-height: 1;
@@ -3988,10 +3988,15 @@ header form.search-form button>* {
   font-size: 12px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.9);
-  line-height: 1.4;
+  line-height: 1.3;
   text-transform: uppercase;
   position: relative;
   z-index: 2;
+}
+
+.vision-title {
+  font-size: 74px;
+  letter-spacing: -2px;
 }
 
 .hero-stat-box:hover {
@@ -11729,4 +11734,122 @@ blockquote cite.name {
   background-color: var(--heading-color);
   transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
   border: none;
+}
+
+/* Expertise Badge Styles */
+.hero-expert-badge {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  z-index: 10;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+
+  /* Liquid Glass Effect */
+  color: var(--lg-text);
+  border: 1px solid var(--lg-highlight);
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease, border-color 0.2s ease, backdrop-filter 0.4s ease;
+  overflow: hidden;
+  isolation: isolate;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  animation: badgeFloat 6s ease-in-out infinite;
+}
+
+/* Inner liquid shine */
+.hero-expert-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 50%, rgba(255, 255, 255, 0.05) 100%);
+  pointer-events: none;
+}
+
+.badge-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-year {
+  position: absolute;
+  font-family: var(--bs-font-playfair-display);
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--heading-color);
+  z-index: 2;
+  margin-bottom: 20px;
+  /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  filter: url(#lg-dist); */
+}
+
+.badge-text-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* animation: rotateText 20s linear infinite; */
+  z-index: 1;
+}
+
+/* Animations */
+@keyframes rotateText {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes badgeFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Responsive adjustment */
+@media only screen and (max-width: 991px) {
+  .hero-expert-badge {
+    top: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .badge-year {
+    font-size: 36px;
+  }
+
+  .badge-text-ring text {
+    font-size: 12px;
+    /* visual adjustment for smaller scale */
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .hero-expert-badge {
+    display: none;
+    /* Hide on mobile if too crowded, or adjust further */
+  }
 }
