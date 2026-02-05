@@ -651,7 +651,7 @@
         if ($('.projects-strip').length) {
             $('.projects-strip').slick({
                 infinite: true,
-                autoplay: false,
+                autoplay: true,
                 autoplaySpeed: 3000,
                 slidesToShow: 2,
                 slidesToScroll: 1,
