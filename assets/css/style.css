@@ -8115,7 +8115,7 @@ button.read-more {
 
 .testimonials-modern__text {
   margin-top: 20px;
-  margin-bottom: 0px;
+  margin-bottom: 50px;
   color: #f5f5f5;
   line-height: 1.7;
 }
@@ -10257,10 +10257,10 @@ blockquote cite.name {
 }
 
 .footer-logo-image {
-    max-width: 350px;
-    width: 100%;
-    margin-left: 80px;
-    margin-bottom: 50px;
+  max-width: 350px;
+  width: 100%;
+  margin-left: 80px;
+  margin-bottom: 50px;
 }
 
 /* Animated Background Overlay */
@@ -12007,4 +12007,462 @@ blockquote cite.name {
   mask-repeat: no-repeat;
   -webkit-mask-position: center;
   mask-position: center;
+}
+
+
+
+
+/* -- Carousel */
+
+.js-transitions-disabled * {
+  transition: none !important;
+}
+
+.why_carousel {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  perspective: 50vw;
+  perspective-origin: 50% 50%;
+}
+
+.carousel__control {
+  position: absolute;
+  height: 160px;
+  width: 40px;
+  background: #fff;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 1;
+}
+
+.carousel__control a {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-top: 75%;
+  box-sizing: border-box;
+}
+
+.carousel__control a:first-child {
+  margin-top: 15px;
+}
+
+.carousel__control a:before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 50%;
+  padding-top: 25%;
+  width: 25%;
+  background: rgba(0, 0, 0, 0.2);
+  content: "";
+  display: block;
+  margin-top: -12.5%;
+}
+
+.carousel__control a:hover:before {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.carousel__control a.active:before,
+.carousel__control a.active:hover:before {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.carousel__stage {
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  margin: auto;
+  transform-style: preserve-3d;
+  transform: translateZ(calc(-50vh + 20px));
+}
+
+.spinner {
+  position: absolute;
+  width: calc(50vw - 20px);
+  height: calc(100vh - 40px);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  backface-visibility: hidden;
+  transform-origin: 50% 50%;
+  transform: rotateX(0);
+}
+
+.js-spin-fwd .spinner {
+  transform: rotateX(-90deg);
+}
+
+.js-spin-bwd .spinner {
+  transform: rotateX(90deg);
+}
+
+.spinner--right {
+  right: 0;
+  left: auto;
+}
+
+.js-spin-fwd .spinner--right {
+  transform: rotateX(90deg);
+}
+
+.js-spin-bwd .spinner--right {
+  transform: rotateX(-90deg);
+}
+
+.spinner__face {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.spinner__face.js-next {
+  display: block;
+  transform: rotateX(90deg) translateZ(calc(50vh - 20px));
+}
+
+.spinner--right .spinner__face.js-next {
+  transform: rotateX(270deg) translateZ(calc(50vh - 20px));
+}
+
+.js-spin-bwd .spinner__face.js-next {
+  transform: rotateX(-90deg) translateZ(calc(50vh - 20px));
+}
+
+.js-spin-bwd .spinner--right .spinner__face.js-next {
+  transform: rotateX(-270deg) translateZ(calc(50vh - 20px));
+}
+
+.js-active {
+  display: block;
+  transform: translateZ(calc(50vh - 20px));
+}
+
+/* -- Content */
+
+.content {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  left: 0;
+}
+
+.spinner--right .content {
+  left: -100%;
+}
+
+.content__left,
+.content__right {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.content__right {
+  right: 0;
+  left: auto;
+}
+
+.content__left {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content__left:after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.content__left h1 {
+  position: absolute;
+  top: 50%;
+  margin-top: -3vw;
+  text-align: center;
+  font-family: Oswald;
+  font-size: 5vw;
+  height: 10vw;
+  color: #fff;
+  width: 100%;
+  letter-spacing: 0.15em;
+  line-height: 0.6;
+}
+
+.content__left span {
+  font-size: 1vw;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  opacity: 0.9;
+  font-family: Merriweather;
+}
+
+.content__right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content__right .content__main {
+  position: absolute;
+  font-family: Merriweather, serif;
+  text-align: left;
+  color: #fff;
+  font-size: 1.3vw;
+  padding: 0 8vw;
+  line-height: 1.65;
+  font-weight: 300;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.content__right .content__main p:last-child {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.85em;
+}
+
+.content__right .content__index {
+  font-size: 30vh;
+  position: absolute;
+  right: -1vh;
+  top: 35vh;
+  opacity: 0.04;
+  font-family: Oswald;
+  color: #fff;
+}
+
+/* -- Background Images */
+
+[data-type="iceland"] .content__left {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/iceland.jpg");
+}
+
+[data-type="china"] .content__left {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/china.jpg");
+}
+
+[data-type="usa"] .content__left {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/usa.jpg");
+}
+
+[data-type="peru"] .content__left {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/peru.jpg");
+}
+
+.spinner--right [data-type] .content__left {
+  background-image: none;
+}
+
+/* -------------------------------------------------------------- */
+/* Skewed 3D Slider Styles */
+/* -------------------------------------------------------------- */
+
+.skewed-slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
+  background-color: var(--black-110);
+  padding: 0;
+}
+
+.slider-container {
+  position: relative;
+  width: 120%;
+  /* Extra width to cover skew */
+  height: 100%;
+  transform: skewX(-15deg);
+  transform-origin: center;
+  overflow: hidden;
+  margin-left: -10%;
+  /* Center alignment attempt */
+}
+
+/* Slide Definition */
+.skewed-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.skewed-slide.active {
+  pointer-events: auto;
+  z-index: 2;
+}
+
+/* 
+   We do NOT show the main image directly. 
+   We generate segments. 
+*/
+
+/* Segments Container (Implicitly the slide) */
+
+.skewed-slide__segment {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+  /* Borders for that segmented look (optional) */
+  /* border-left: 1px solid rgba(255,255,255,0.05); */
+
+  /* Transformation for animation */
+  transition: transform 1s cubic-bezier(0.7, 0, 0.3, 1), opacity 0.5s ease;
+}
+
+.skewed-slide__segment-inner {
+  position: absolute;
+  top: 0;
+  /* Left is set explicitly in JS based on segment position to align image */
+  width: 100vw;
+  /* Spans full viewport width conceptually to hold full bg */
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+
+  /* Counter skew */
+  transform: skewX(15deg);
+  transform-origin: center;
+}
+
+/* Animation States */
+/* When leaving: Segment moves DOWN/UP or scales */
+.skewed-slide.prev-slide .skewed-slide__segment {
+  transform: translateY(100%) skewX(0deg);
+  /* Skew 0 might break alignment? No, we animate translation. */
+  /* Actually better to just translate. Transform originates from the skew of parent? 
+       Parent '.slider-container' is skewed. 
+       Segment is child. 
+       If we translate Y, it moves along the skewed axis? No, Y is global if not rotated.
+       Skew changes the coordinate system. Y axis is still vertical. X axis is tilted? 
+       SkewX tilts the vertical lines. Y axis remains vertical. X axis remains horizontal?
+       No. skewX(a) : x' = x + y*tan(a), y' = y.
+       Vertical lines become slanted. Horizontal lines stay horizontal.
+       So translateY moves vertically.
+    */
+  transform: translateY(100%);
+}
+
+/* Content */
+.skewed-slide-content {
+  position: absolute;
+  bottom: 20%;
+  left: 15%;
+  z-index: 20;
+  max-width: 600px;
+  opacity: 0;
+  transform: skewX(15deg) translateY(50px);
+  transition: all 0.8s ease 0.5s;
+  /* Delay for content */
+  pointer-events: auto;
+}
+
+.skewed-slide.active .skewed-slide-content {
+  opacity: 1;
+  transform: skewX(15deg) translateY(0);
+}
+
+.meet-team-name {
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: white;
+  text-transform: uppercase;
+  font-family: var(--bs-font-playfair-display);
+  line-height: 1.1;
+}
+
+.meet-team-role {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--bs-font-inter);
+}
+
+/* Controls */
+.slider-controls {
+  position: absolute;
+  bottom: 50px;
+  right: 15%;
+  z-index: 30;
+  display: flex;
+  gap: 15px;
+  transform: skewX(0deg);
+  /* Counter skew */
+}
+
+.slider-controls button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-controls button:hover {
+  background: white;
+  color: black;
+  border-color: white;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .skewed-slider-wrapper {
+    height: 700px;
+  }
+
+  .slider-container {
+    width: 100%;
+    margin-left: 0;
+    transform: skewX(0);
+    /* Remove skew on mobile for simpler layout */
+  }
+
+  .skewed-slide__segment-inner {
+    transform: skewX(0);
+  }
+
+  .skewed-slide-content {
+    transform: skewX(0) translateY(20px);
+    left: 5%;
+    right: 5%;
+    bottom: 15%;
+  }
+
+  .skewed-slide.active .skewed-slide-content {
+    transform: skewX(0) translateY(0);
+  }
+
+  .slider-controls {
+    transform: skewX(0);
+    right: 5%;
+    bottom: 30px;
+  }
 }

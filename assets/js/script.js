@@ -862,3 +862,132 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+/* =========================================
+   Skewed 3D Slider Logic
+   ========================================= */
+document.addEventListener('DOMContentLoaded', () => {
+    class Skewed3DSlider {
+        constructor(wrapper) {
+            this.wrapper = wrapper;
+            this.slides = Array.from(wrapper.querySelectorAll('.skewed-slide'));
+            this.nextBtn = wrapper.querySelector('.next-slide');
+            this.prevBtn = wrapper.querySelector('.prev-slide');
+
+            this.currentIndex = 0;
+            this.isAnimating = false;
+            this.segmentsPerSlide = 5;
+
+            this.init();
+        }
+
+        init() {
+            if (!this.slides.length) return;
+
+            this.slides.forEach(slide => this.createSegments(slide));
+
+            // Ensure proper initial state
+            this.slides.forEach((slide, index) => {
+                if (index === 0) {
+                    slide.classList.add('active');
+                    slide.style.display = 'block';
+                    slide.style.zIndex = 2;
+                } else {
+                    slide.classList.remove('active');
+                    slide.style.display = 'none';
+                    slide.style.zIndex = 0;
+                }
+            });
+
+            if (this.nextBtn) this.nextBtn.addEventListener('click', () => this.goToSlide(this.currentIndex + 1));
+            if (this.prevBtn) this.prevBtn.addEventListener('click', () => this.goToSlide(this.currentIndex - 1));
+        }
+
+        createSegments(slide) {
+            const bgImage = slide.dataset.image;
+            if (!bgImage) return;
+
+            const segmentContainer = document.createElement('div');
+            segmentContainer.className = 'skewed-segments-container';
+            // Insert at the beginning so content sits on top
+            slide.insertBefore(segmentContainer, slide.firstChild);
+
+            for (let i = 0; i < this.segmentsPerSlide; i++) {
+                const segment = document.createElement('div');
+                segment.className = 'skewed-slide__segment';
+                segment.style.width = `${100 / this.segmentsPerSlide}%`;
+                segment.style.left = `${i * (100 / this.segmentsPerSlide)}%`;
+                // Staggered delay for wave effect
+                // segment.style.transitionDelay = `${i * 0.1}s`; 
+                // We set transition delay in the animation function to control IN vs OUT timing
+
+                const inner = document.createElement('div');
+                inner.className = 'skewed-slide__segment-inner';
+                inner.style.backgroundImage = `url(${bgImage})`;
+                // Inner width needs to be 100% of the SLIDE, so relative to segment (20%) it is 500%
+                inner.style.width = `${this.segmentsPerSlide * 100}%`;
+                // Pull back by the segment's offset
+                inner.style.left = `${-i * 100}%`;
+
+                segment.appendChild(inner);
+                segmentContainer.appendChild(segment);
+            }
+        }
+
+        goToSlide(index) {
+            if (this.isAnimating) return;
+
+            let nextIndex = index;
+            if (nextIndex >= this.slides.length) nextIndex = 0;
+            if (nextIndex < 0) nextIndex = this.slides.length - 1;
+
+            if (nextIndex === this.currentIndex) return;
+
+            this.isAnimating = true;
+
+            const currentSlide = this.slides[this.currentIndex];
+            const nextSlide = this.slides[nextIndex];
+
+            // 1. Prepare Next Slide logic
+            nextSlide.style.display = 'block';
+            nextSlide.style.zIndex = 1;
+
+            // 2. Animate OUT Current Slide
+            const currentSegments = currentSlide.querySelectorAll('.skewed-slide__segment');
+
+            currentSegments.forEach((seg, i) => {
+                seg.style.transition = 'transform 0.8s cubic-bezier(0.7, 0, 0.3, 1)';
+                seg.style.transitionDelay = `${i * 0.08}s`;
+                seg.style.transform = 'translateY(100%)';
+            });
+
+            // 3. Wait for animation to finish
+            const totalTime = (this.segmentsPerSlide * 0.08 * 1000) + 800; // ~1200ms
+
+            setTimeout(() => {
+                // Reset Current Slide
+                currentSlide.classList.remove('active');
+                currentSlide.style.display = 'none';
+                currentSlide.style.zIndex = 0;
+
+                currentSegments.forEach(seg => {
+                    seg.style.transition = 'none'; // Disable transition for reset
+                    seg.style.transform = 'translateY(0)';
+                });
+
+                // Promote Next Slide
+                nextSlide.classList.add('active');
+                nextSlide.style.zIndex = 2;
+
+                this.currentIndex = nextIndex;
+                this.isAnimating = false;
+
+            }, totalTime);
+        }
+    }
+
+    // Initialize
+    const sliderWrapper = document.querySelector('.skewed-slider-wrapper');
+    if (sliderWrapper) {
+        new Skewed3DSlider(sliderWrapper);
+    }
+});
