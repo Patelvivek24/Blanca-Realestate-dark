@@ -647,7 +647,41 @@
             }
         }
 
-
+        // ## Our Projects card Carousel
+        if ($('.projects-strip').length) {
+            $('.projects-strip').slick({
+                infinite: true,
+                autoplay: false,
+                autoplaySpeed: 3000,
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                arrows: false,
+                dots: true,
+                prevArrow: '<button class="prev" style="left: -50px; position: absolute; top: 50%; transform: translateY(-50%); z-index: 10;"><span class="carousel-control-prev-icon"><i class="fa fa-long-arrow-left"></i></span></button>',
+                nextArrow: '<button class="next" style="right: -50px; position: absolute; top: 50%; transform: translateY(-50%); z-index: 10;"><span class="carousel-control-next-icon"><i class="fa fa-long-arrow-right"></i></span></button>',
+                responsive: [{
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                        centerMode: true,
+                        centerPadding: '30px'
+                    }
+                }
+                ]
+            });
+        }
 
     });
 
