@@ -10223,10 +10223,10 @@ blockquote cite.name {
   overflow: hidden;
   display: flex;
   align-items: center;
-  padding: 30px 0 0px;
+  padding: 30px 0 10px;
 
   @media screen and (min-width:1600px) {
-    padding: 40px 0 10px;
+    padding: 40px 0 10px 0;
   }
 }
 
@@ -10254,6 +10254,13 @@ blockquote cite.name {
 
 .light-mode .modern-footer::before {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.75) 100%);
+}
+
+.footer-logo-image {
+    max-width: 350px;
+    width: 100%;
+    margin-left: 80px;
+    margin-bottom: 50px;
 }
 
 /* Animated Background Overlay */
@@ -10333,7 +10340,7 @@ blockquote cite.name {
   background-size: contain;
   opacity: 0.3;
   pointer-events: none;
-  z-index: 0;
+  z-index: -1;
 }
 
 /* Footer Content */
@@ -10343,7 +10350,7 @@ blockquote cite.name {
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
-  margin-bottom: 24px;
+  margin-bottom: 40px;
 
   @media screen and (min-width:1600px) {
     margin-bottom: 50px;
@@ -10662,8 +10669,9 @@ blockquote cite.name {
 .footer-social-container-sec {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   margin-right: -50px;
+  margin-bottom: 30px;
 }
 
 .footer-contact li {
