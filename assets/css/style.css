@@ -12275,13 +12275,22 @@ blockquote cite.name {
 /* Skewed 3D Slider Styles */
 /* -------------------------------------------------------------- */
 
+.meet-team-full-section-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 50px 100px 50px;
+}
+
 .skewed-slider-wrapper {
   position: relative;
   width: 100%;
-  height: 800px;
+  height: 100vh;
   overflow: hidden;
   background-color: var(--black-110);
-  padding: 0;
+  /* padding: 0px 50px 50px 50px; */
+  border-radius: 50px;
 }
 
 .slider-container {
@@ -12367,14 +12376,13 @@ blockquote cite.name {
 /* Content */
 .skewed-slide-content {
   position: absolute;
-  bottom: 20%;
-  left: 15%;
+  bottom: 15%;
+  left: 13%;
   z-index: 20;
-  max-width: 600px;
+  max-width: 450px;
   opacity: 0;
   transform: skewX(15deg) translateY(50px);
   transition: all 0.8s ease 0.5s;
-  /* Delay for content */
   pointer-events: auto;
 }
 
@@ -12384,8 +12392,8 @@ blockquote cite.name {
 }
 
 .meet-team-name {
-  font-size: 56px;
-  font-weight: 700;
+  font-size: 42px;
+  font-weight: 600;
   margin-bottom: 20px;
   color: white;
   text-transform: uppercase;
@@ -12394,7 +12402,8 @@ blockquote cite.name {
 }
 
 .meet-team-role {
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.8);
   font-family: var(--bs-font-inter);
 }
@@ -12402,13 +12411,12 @@ blockquote cite.name {
 /* Controls */
 .slider-controls {
   position: absolute;
-  bottom: 50px;
-  right: 15%;
+  bottom: 90px;
+  right: 10%;
   z-index: 30;
   display: flex;
   gap: 15px;
   transform: skewX(0deg);
-  /* Counter skew */
 }
 
 .slider-controls button {
