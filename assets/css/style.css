@@ -12286,7 +12286,7 @@ blockquote cite.name {
 .skewed-slider-wrapper {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   overflow: hidden;
   background-color: var(--black-110);
   /* padding: 0px 50px 50px 50px; */
