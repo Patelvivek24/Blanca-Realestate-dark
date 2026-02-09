@@ -320,9 +320,227 @@
     display: none;
 }
 
+
+/* About Area Section 3 Styles */
+.about-page-section-three {
+    background-color: var(--black-100);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-vision-banner {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.vision-banner-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.vision-banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.vision-banner-top-right {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    z-index: 5;
+}
+
+.banner-highlight-list {
+    display: flex;
+    gap: 40px;
+}
+
+.banner-highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.banner-highlight-slash {
+    width: 1.5px;
+    height: 30px;
+    background-color: var(--primary-color);
+    transform: rotate(25deg);
+}
+
+.banner-highlight-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.banner-highlight-title {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+}
+
+.banner-highlight-subtitle {
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.vision-banner-content {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    z-index: 5;
+}
+
+.banner-logo-branding {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.banner-logo-icon {
+    width: 90px;
+    height: auto;
+}
+
+.banner-title {
+    font-size: 68px;
+    line-height: 1.1;
+    color: #fff;
+    text-transform: none;
+    letter-spacing: 1px;
+}
+
+.about-values-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease, border-color 0.2s ease, backdrop-filter 0.4s ease;
+    overflow: hidden;
+    isolation: isolate;
+    /* White background for the values row as per screenshot */
+    padding: 60px 0;
+}
+
+.about-values-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1400px;
+    gap: 24px;
+    margin: 0 auto;
+}
+
+.value-card {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 0 15px;
+}
+
+.value-icon-box {
+    width: 70px;
+    height: 70px;
+    background-color: #0c1a40;
+    /* Dark blue icon background from screenshot */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.value-icon-box i {
+    font-size: 32px;
+    color: #fff;
+}
+
+.value-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #fff;
+    /* Dark text matching icon box */
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Responsive Styles for Section 3 */
+@media (max-width: 1199px) {
+    .banner-title {
+        font-size: 56px;
+    }
+
+    .banner-highlight-list {
+        gap: 20px;
+    }
+}
+
 @media (max-width: 991px) {
-    .about-section-info-part {
-        margin-left: 0;
-        margin-top: 40px;
+    .about-vision-banner {
+        height: 500px;
+    }
+
+    .vision-banner-top-right {
+        top: 20px;
+        right: 20px;
+    }
+
+    .banner-highlight-list {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .banner-title {
+        font-size: 44px;
+    }
+
+    .about-values-row {
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .value-card {
+        flex: 0 0 calc(33.33% - 40px);
+    }
+}
+
+@media (max-width: 767px) {
+    .vision-banner-top-right {
+        display: none;
+    }
+
+    .vision-banner-content {
+        left: 20px;
+        bottom: 40px;
+    }
+
+    .banner-title {
+        font-size: 36px;
+    }
+
+    .value-card {
+        flex: 0 0 calc(50% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .value-card {
+        flex: 0 0 100%;
     }
 }
