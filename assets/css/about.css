@@ -544,3 +544,164 @@
         flex: 0 0 100%;
     }
 }
+
+/* About Area Section 4 Our Vision Styles */
+.about-vision-section-four {
+    padding: 100px 0;
+    /* background-color: #000; */
+    overflow: hidden;
+}
+
+.vision-content-part .sub-title {
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: capitalize !important;
+}
+
+.vision-title {
+    font-size: 64px;
+    line-height: 1.1;
+}
+
+.vision-text {
+    font-size: 16px;
+    /* line-height: 1.6; */
+    text-align: justify;
+}
+
+.vision-list {
+    padding: 0;
+    margin: 0;
+}
+
+.vision-list li {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.vision-list li:hover {
+    transform: translateX(10px);
+    color: #fff;
+}
+
+.vision-list li i {
+    font-size: 18px;
+    color: #28a745 !important;
+    margin-right: 15px;
+}
+
+/* Image Collage Styles */
+.vision-image-collage {
+    position: relative;
+    width: 100%;
+}
+
+/* .collage-item {
+    position: absolute;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border: 10px solid #111;
+    transition: all 0.5s ease;
+} */
+
+.collage-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.collage-item-1 {
+    position: absolute;
+    right: 0;
+    top: -268px;
+    width: 450px;
+    height: 536px;
+    z-index: 1;
+    /* transform: translateX(-80px); */
+}
+
+.collage-item-2 {
+    position: absolute;
+    left: 0;
+    top: -168px;
+    width: 390px;
+    height: 324px;
+    z-index: 2;
+    border: 16px solid #131412;
+    /* transform: translateX(80px) translateY(40px); */
+    border-radius: 20px 42px 42px 20px;
+}
+
+.collage-item-2 img {
+    border-radius: 24px 24px 24px 24px;
+}
+
+/* .collage-item:hover {
+    z-index: 3;
+    transform: scale(1.05) translateZ(0);
+    border-color: #fff;
+} */
+
+/* Responsive adjustments */
+@media (max-width: 1199px) {
+    .vision-title {
+        font-size: 48px;
+    }
+
+    .collage-item-1 {
+        width: 300px;
+        height: 400px;
+    }
+
+    .collage-item-2 {
+        width: 380px;
+        height: 480px;
+    }
+}
+
+@media (max-width: 991px) {
+    .about-vision-section-four {
+        padding: 80px 0;
+    }
+
+    .vision-content-part {
+        margin-bottom: 60px;
+    }
+
+    .vision-image-collage {
+        height: 500px;
+    }
+}
+
+@media (max-width: 767px) {
+    .vision-title {
+        font-size: 36px;
+    }
+
+    .vision-text {
+        font-size: 16px;
+    }
+
+    .vision-list li {
+        font-size: 18px;
+    }
+
+    .collage-item-1 {
+        width: 240px;
+        height: 320px;
+        transform: translateX(-40px);
+    }
+
+    .collage-item-2 {
+        width: 280px;
+        height: 380px;
+        transform: translateX(40px) translateY(20px);
+    }
+}
