@@ -1,3 +1,9 @@
+.container-fluid {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 /* Expertise Badge Styles */
 #about {
     scroll-margin-top: 120px;
@@ -84,7 +90,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 150px;
+    gap: 80px;
+    padding: 100px 0px;
 }
 
 .about-page-section-main .container {
@@ -92,7 +99,11 @@
 }
 
 .about-section-info-part {
-    margin-left: 260px;
+    margin-left: 68px;
+
+    @media (max-width: 1600px) {
+        margin-left: 20px;
+    }
 }
 
 @media only screen and (max-width: 991px) {
@@ -274,5 +285,54 @@
 
     60% {
         transform: translateY(-5px);
+    }
+}
+
+/* About Details Slider */
+.about-details-slider {
+    margin-top: 30px;
+}
+
+.about-detail-item {
+    padding-right: 20px;
+}
+
+.about-detail-item h5 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.about-details-slider .slick-dots {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 30px;
+    padding: 0;
+    list-style: none;
+}
+
+.about-details-slider .slick-dots li {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.about-details-slider .slick-dots li.slick-active {
+    background: #fff;
+    transform: scale(1.2);
+}
+
+.about-details-slider .slick-dots li button {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .about-section-info-part {
+        margin-left: 0;
+        margin-top: 40px;
     }
 }

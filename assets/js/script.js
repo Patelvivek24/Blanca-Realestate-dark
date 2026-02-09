@@ -712,6 +712,24 @@
             });
         }
 
+        // ## About Details Slider
+        if ($('.about-details-slider').length) {
+            $('.about-details-slider').slick({
+                infinite: true,
+                autoplay: true,
+                autoplaySpeed: 4000,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                dots: true,
+                fade: false,
+                speed: 1000,
+                cssEase: 'ease-in-out',
+                pauseOnHover: true,
+                rtl: false
+            });
+        }
+
     });
 
 
