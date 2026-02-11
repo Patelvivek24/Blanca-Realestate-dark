@@ -21,7 +21,7 @@
     overflow-y: hidden;
     overflow-x: auto;
     /* Enable native horizontal scroll */
-    padding: 120px 0;
+    padding: 80px 0;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -122,7 +122,7 @@
 /* Project Info Content */
 .project-card {
     position: absolute;
-    width: 350px;
+    width: 420px;
     white-space: normal;
     background: rgba(17, 17, 17, 0.8);
     backdrop-filter: blur(10px);
@@ -145,7 +145,7 @@
     position: absolute;
     width: 2px;
     border-left: 2px dashed rgba(30, 75, 181, 0.4);
-    height: 100px;
+    height: 70px;
     transition: all 0.3s ease;
 }
 
@@ -156,22 +156,22 @@
 
 /* Above the line */
 .project-card.above {
-    bottom: 80px;
+    bottom: 50px;
 }
 
 .project-card.above::before {
-    bottom: -100px;
-    left: 180px;
+    bottom: -70px;
+    left: 200px;
 }
 
 /* Below the line */
 .project-card.below {
-    top: 80px;
+    top: 50px;
 }
 
 .project-card.below::before {
-    top: -100px;
-    left: 180px;
+    top: -70px;
+    left: 200px;
 }
 
 .project-title {
@@ -222,12 +222,19 @@
 /* Image styling if any */
 .project-image {
     width: 100%;
-    height: 150px;
+    max-height: 150px;
+    height: 100%;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 15px;
     opacity: 0.9;
     transition: all 0.3s ease;
+}
+
+@media (max-width: 1600px) {
+    .project-image {
+        max-height: 124px;
+    }
 }
 
 .journey-item:hover .project-image {
