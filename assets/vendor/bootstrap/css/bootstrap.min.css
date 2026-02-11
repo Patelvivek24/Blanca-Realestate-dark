@@ -32,7 +32,8 @@
     --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --bs-font-colgent-regular: "Colgent Regular", serif;
     --bs-font-playfair-display: "Playfair Display", serif;
-    --bs-font-bilaterral: "Bilaterral", serif;
+    --bs-font-Smothing: "Smothing", serif;
+    --bs-font-Beauty-Story: "Beauty Story", serif;
     --bs-font-montserrat: "Montserrat", sans-serif;
     --bs-font-inter: "Inter", sans-serif;
     --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0))
@@ -8109,8 +8110,12 @@ fieldset:disabled .btn {
     font-family: var(--bs-font-playfair-display) !important
 }
 
-.bs-font-bilaterral {
-    font-family: var(--bs-font-bilaterral);
+.bs-font-Smothing {
+    font-family: var(--bs-font-Smothing);
+}
+
+.bs-font-Beauty-Story {
+    font-family: var(--bs-font-Beauty-Story);
 }
 
 .bs-font-Marjorie-regular {
