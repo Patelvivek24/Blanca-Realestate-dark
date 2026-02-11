@@ -151,7 +151,8 @@
 
 .journey-item:hover .project-card::before {
     border-left-color: #1e4bb5;
-    height: 110px;
+    height: 70px;
+    z-index: 0;
 }
 
 /* Above the line */
