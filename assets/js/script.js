@@ -730,6 +730,23 @@
             });
         }
 
+        // ## Project Overview Slider
+        if ($('.overview-slider').length) {
+            $('.overview-slider').slick({
+                infinite: true,
+                autoplay: true,
+                autoplaySpeed: 4000,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                dots: true,
+                fade: true,
+                speed: 1000,
+                cssEase: 'ease-in-out',
+                pauseOnHover: true
+            });
+        }
+
     });
 
 

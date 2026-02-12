@@ -4508,7 +4508,7 @@ header form.search-form button>* {
 }
 
 .about-area.about-modern {
-  background: var(--black-100);
+  /* background: var(--black-100); */
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -5254,14 +5254,14 @@ header form.search-form button>* {
 .sub-title.common-subtitle::before,
 .sub-title.common-subtitle::after {
   content: "";
-  width: 52px;
-  /* height: 1px;
-  background: var(--primary-color); */
-  height: 34px;
+  width: 32px;
+  height: 1px;
+  background: var(--primary-color);
+  /* height: 34px;
   background-image: url('../images/logos/favicon.png');
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center;
+  background-position: center; */
 }
 
 /* .homeproject-area .projects-intro .sub-title-wrapper::before,
@@ -10064,7 +10064,7 @@ blockquote cite.name {
 .contact-form .form-control {
   background: transparent;
   border: unset;
-  border-bottom: 1px solid var(--black-80);
+  /* border-bottom: 1px solid var(--black-80); */
   color: white;
 }
 
@@ -11677,7 +11677,7 @@ blockquote cite.name {
   /* Stack children vertical */
   justify-content: center;
   /* Center content vertically */
-  background-color: var(--black-100);
+  /* background-color: var(--black-100); */
 }
 
 .meet-team-area-title-sec {
@@ -11686,7 +11686,7 @@ blockquote cite.name {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: var(--black-100);
+  /* background-color: var(--black-100); */
 }
 
 /* 
