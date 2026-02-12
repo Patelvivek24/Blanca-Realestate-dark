@@ -5435,7 +5435,7 @@ header form.search-form button>* {
   /* transition: opacity 0.3s ease, transform 0.3s ease; */
 }
 
-
+/* 
 .homeproject-area .project-card__content {
   padding: 26px 24px 24px;
   background: #ffffff0f;
@@ -5445,15 +5445,15 @@ header form.search-form button>* {
     min-height: 205px;
     height: 100%;
   }
-}
+} */
 
-/* .homeproject-area .project-card__content {
+.homeproject-area .project-card__content {
   padding: 26px 24px 24px;
   background: #ffffff0f;
   border-radius: 0 0 24px 24px;
   color: var(--lg-text);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid var(--lg-highlight);
+  background: rgba(255, 255, 255, 0.03);
+  /* border: 1px solid var(--lg-highlight); */
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -5473,7 +5473,7 @@ header form.search-form button>* {
   position: absolute;
   inset: -10px;
   background: radial-gradient(circle at 30% 20%, rgb(255 255 255 / 8%), rgba(255, 255, 255, 0) 55%), radial-gradient(circle at 80% 80%, rgb(243 237 237 / 10%), rgba(0, 0, 0, 0) 60%), radial-gradient(circle, rgb(229 237 232 / 5%), rgb(249 244 244 / 0%) 55%);
-  opacity: 0.9;
+  opacity: 0.5;
   pointer-events: none;
 }
 
@@ -5482,10 +5482,10 @@ header form.search-form button>* {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  box-shadow: inset 1px 1px 0 var(--lg-highlight), inset 0 0 5px var(--lg-highlight);
+  box-shadow: inset 0px 0px 0 var(--lg-highlight), inset 0 0 5px var(--lg-highlight);
   pointer-events: none;
   z-index: 1;
-} */
+}
 
 .homeproject-area .project-card__icon {
   width: 34px;
