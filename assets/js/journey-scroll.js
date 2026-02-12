@@ -5,10 +5,9 @@
  */
 
 document.addEventListener('DOMContentLoaded', function () {
-    const journeyContainer = document.querySelector('.journey-container');
-    const marquee = document.querySelector('.journey-marquee');
+    const journeyContainer = document.querySelector('.journey-container.journey-marquee');
 
-    if (!journeyContainer || !marquee) return;
+    if (!journeyContainer) return;
 
     // --- 1. Click and Drag to Scroll (Grab to Scroll) ---
     let isDown = false;
@@ -17,14 +16,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const startDrag = (e) => {
         isDown = true;
-        marquee.classList.add('grabbing');
+        journeyContainer.classList.add('grabbing');
         startX = (e.pageX || e.touches[0].pageX) - journeyContainer.offsetLeft;
         scrollLeft = journeyContainer.scrollLeft;
     };
 
     const endDrag = () => {
         isDown = false;
-        marquee.classList.remove('grabbing');
+        journeyContainer.classList.remove('grabbing');
     };
 
     const moveDrag = (e) => {
@@ -36,10 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // Mouse Events
-    marquee.addEventListener('mousedown', startDrag);
+    journeyContainer.addEventListener('mousedown', startDrag);
     window.addEventListener('mouseup', endDrag);
-    marquee.addEventListener('mouseleave', endDrag);
-    marquee.addEventListener('mousemove', (e) => {
+    journeyContainer.addEventListener('mouseleave', endDrag);
+    journeyContainer.addEventListener('mousemove', (e) => {
         if (isDown) {
             e.preventDefault();
             moveDrag(e);
@@ -47,11 +46,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Touch Events
-    marquee.addEventListener('touchstart', startDrag, { passive: true });
-    marquee.addEventListener('touchend', endDrag, { passive: true });
-    marquee.addEventListener('touchmove', (e) => {
+    journeyContainer.addEventListener('touchstart', startDrag, { passive: true });
+    journeyContainer.addEventListener('touchend', endDrag, { passive: true });
+    journeyContainer.addEventListener('touchmove', (e) => {
         if (isDown) {
             moveDrag(e);
         }
     }, { passive: true });
 });
+
