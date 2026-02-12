@@ -5254,9 +5254,14 @@ header form.search-form button>* {
 .sub-title.common-subtitle::before,
 .sub-title.common-subtitle::after {
   content: "";
-  width: 28px;
-  height: 1px;
-  background: var(--primary-color);
+  width: 52px;
+  /* height: 1px;
+  background: var(--primary-color); */
+  height: 34px;
+  background-image: url('../images/logos/favicon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
 /* .homeproject-area .projects-intro .sub-title-wrapper::before,
