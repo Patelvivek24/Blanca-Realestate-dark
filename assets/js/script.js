@@ -782,7 +782,7 @@
       $(".overview-slider").slick({
         infinite: true,
         autoplay: true,
-        autoplaySpeed: 4000,
+        autoplaySpeed: 2000,
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
@@ -791,6 +791,60 @@
         speed: 1000,
         cssEase: "ease-in-out",
         pauseOnHover: true,
+      });
+    }
+
+    // ## Interior Main Slider
+    if ($("#interior-main-slider").length) {
+      $("#interior-main-slider").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: "#interior-thumb-slider",
+        dots: true,
+      });
+      $("#interior-thumb-slider").slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        asNavFor: "#interior-main-slider",
+        dots: false,
+        arrows: false,
+        focusOnSelect: true,
+      });
+
+      $(".interior-prev").on("click", function () {
+        $("#interior-main-slider").slick("slickPrev");
+      });
+      $(".interior-next").on("click", function () {
+        $("#interior-main-slider").slick("slickNext");
+      });
+    }
+
+    // ## Exterior Main Slider
+    if ($("#exterior-main-slider").length) {
+      $("#exterior-main-slider").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: "#exterior-thumb-slider",
+        dots: true,
+      });
+      $("#exterior-thumb-slider").slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        asNavFor: "#exterior-main-slider",
+        dots: false,
+        arrows: false,
+        focusOnSelect: true,
+      });
+
+      $(".exterior-prev").on("click", function () {
+        $("#exterior-main-slider").slick("slickPrev");
+      });
+      $(".exterior-next").on("click", function () {
+        $("#exterior-main-slider").slick("slickNext");
       });
     }
   });
