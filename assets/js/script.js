@@ -794,63 +794,86 @@
       });
     }
 
-    // ## Interior Main Slider
-    if ($("#interior-main-slider").length) {
-      $("#interior-main-slider").slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 4000,
-        arrows: false,
-        fade: true,
-        asNavFor: "#interior-thumb-slider",
-        dots: true,
-      });
-      $("#interior-thumb-slider").slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        asNavFor: "#interior-main-slider",
-        dots: false,
-        arrows: false,
-        focusOnSelect: true,
-      });
+      function updateThumbOrder($thumbSlider, activeIndex) {
+        const $thumbs = $thumbSlider.find(".thumb-slide");
+        const total = $thumbs.length;
+        if (total === 0) return;
 
-      $(".interior-prev").on("click", function () {
-        $("#interior-main-slider").slick("slickPrev");
-      });
-      $(".interior-next").on("click", function () {
-        $("#interior-main-slider").slick("slickNext");
-      });
-    }
+        $thumbs.each(function () {
+          const index = parseInt($(this).data("index"));
+          let order = (index - activeIndex + total) % total;
+          $(this).css("order", order);
+          if (index === activeIndex) {
+            $(this).addClass("active");
+          } else {
+            $(this).removeClass("active");
+          }
+        });
+      }
 
-    // ## Exterior Main Slider
-    if ($("#exterior-main-slider").length) {
-      $("#exterior-main-slider").slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 4000,
-        arrows: false,
-        fade: true,
-        asNavFor: "#exterior-thumb-slider",
-        dots: true,
-      });
-      $("#exterior-thumb-slider").slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        asNavFor: "#exterior-main-slider",
-        dots: false,
-        arrows: false,
-        focusOnSelect: true,
-      });
+      // ## Interior Main Slider
+      if ($("#interior-main-slider").length) {
+        const $interiorMain = $("#interior-main-slider");
+        const $interiorThumb = $("#interior-thumb-slider");
 
-      $(".exterior-prev").on("click", function () {
-        $("#exterior-main-slider").slick("slickPrev");
-      });
-      $(".exterior-next").on("click", function () {
-        $("#exterior-main-slider").slick("slickNext");
-      });
-    }
+        $interiorMain.on("init afterChange", function (event, slick, currentSlide) {
+          updateThumbOrder($interiorThumb, currentSlide || 0);
+        });
+
+        $interiorMain.slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 4000,
+          arrows: false,
+          fade: true,
+          dots: true,
+        });
+
+        $interiorThumb.find(".thumb-slide").on("click", function () {
+          const index = $(this).data("index");
+          $interiorMain.slick("slickGoTo", index);
+        });
+
+        $(".interior-prev").on("click", function () {
+          $interiorMain.slick("slickPrev");
+        });
+        $(".interior-next").on("click", function () {
+          $interiorMain.slick("slickNext");
+        });
+      }
+
+      // ## Exterior Main Slider
+      if ($("#exterior-main-slider").length) {
+        const $exteriorMain = $("#exterior-main-slider");
+        const $exteriorThumb = $("#exterior-thumb-slider");
+
+        $exteriorMain.on("init afterChange", function (event, slick, currentSlide) {
+          updateThumbOrder($exteriorThumb, currentSlide || 0);
+        });
+
+        $exteriorMain.slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 4000,
+          arrows: false,
+          fade: true,
+          dots: true,
+        });
+
+        $exteriorThumb.find(".thumb-slide").on("click", function () {
+          const index = $(this).data("index");
+          $exteriorMain.slick("slickGoTo", index);
+        });
+
+        $(".exterior-prev").on("click", function () {
+          $exteriorMain.slick("slickPrev");
+        });
+        $(".exterior-next").on("click", function () {
+          $exteriorMain.slick("slickNext");
+        });
+      }
   });
 
   /* ==========================================================================
