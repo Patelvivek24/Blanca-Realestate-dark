@@ -4512,6 +4512,7 @@ header form.search-form button>* {
   min-height: 100vh;
   display: flex;
   align-items: center;
+  padding-top: 80px;
 }
 
 .about-area.about-modern .container {
