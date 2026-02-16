@@ -1,0 +1,192 @@
+/* Projects Listing Page Styles */
+
+.projects-hero {
+    position: relative;
+    padding: 100px 0 100px;
+    background-image: url('../images/projects/lendscpae-images/blanca-tower.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    overflow: hidden;
+    min-height: 82vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(17, 17, 17, 0.7);
+    /* Dark overlay */
+    z-index: 0;
+}
+
+.projects-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.projects-hero h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.filter-container {
+    padding: 40px 0;
+    text-align: center;
+    position: sticky;
+    top: 80px;
+    z-index: 100;
+    background: rgba(19, 20, 18, 0.8);
+    backdrop-filter: blur(10px);
+    margin-bottom: 50px;
+}
+
+.filter-btns {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    border-radius: 30px;
+    background: var(--black-90);
+    color: var(--black-30);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(74, 118, 201, 0.3);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 30px;
+    padding-bottom: 100px;
+}
+
+.project-card-item {
+    background: var(--black-110);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: 1px solid var(--black-90);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card-item:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.project-img-wrapper {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.project-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.project-card-item:hover .project-img-wrapper img {
+    transform: scale(1.1);
+}
+
+.project-status-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+}
+
+.status-ongoing {
+    background: rgba(74, 118, 201, 0.8);
+    color: #fff;
+}
+
+.status-sold-out {
+    background: rgba(184, 185, 184, 0.2);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.project-content-body {
+    padding: 30px;
+}
+
+.project-content-body h4 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.project-info-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.info-item span {
+    display: block;
+    font-size: 12px;
+    color: var(--black-50);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+}
+
+.info-item strong {
+    font-size: 15px;
+    color: var(--black-10);
+    font-weight: 500;
+}
+
+.project-card-footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-hero h1 {
+        font-size: 40px;
+    }
+}
