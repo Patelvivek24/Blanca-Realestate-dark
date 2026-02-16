@@ -874,6 +874,28 @@
           $exteriorMain.slick("slickNext");
         });
       }
+
+      // ## Gallery Lightbox
+      if ($(".gallery-lightbox").length) {
+        $(".gallery-main-slider-wrap").each(function () {
+          $(this)
+            .find(".gallery-lightbox")
+            .magnificPopup({
+              type: "image",
+              gallery: {
+                enabled: true,
+                navigateByImgClick: true,
+                preload: [0, 1],
+              },
+              image: {
+                tError:
+                  '<a href="%url%">The image #%curr%</a> could not be loaded.',
+              },
+              mainClass: "mfp-fade",
+              removalDelay: 300,
+            });
+        });
+      }
   });
 
   /* ==========================================================================

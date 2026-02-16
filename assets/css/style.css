@@ -6048,7 +6048,7 @@ header form.search-form button>* {
 .our-story-area .amenities-section {
   position: relative;
   z-index: 2;
-  margin-top: 96px;
+  margin-top: 0px;
 }
 
 .our-story-area .amenities-heading {
