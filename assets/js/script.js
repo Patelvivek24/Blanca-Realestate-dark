@@ -1190,4 +1190,20 @@ document.addEventListener("DOMContentLoaded", () => {
   if (sliderWrapper) {
     new Skewed3DSlider(sliderWrapper);
   }
+
+  // ## Luxurious Amenities Interactivity
+  $(".lux-amenity-item").on("mouseenter", function () {
+    const $this = $(this);
+    const newSrc = $this.data("preview");
+    const $previewImg = $("#lux-preview-img");
+
+    if (!$this.hasClass("active")) {
+      $(".lux-amenity-item").removeClass("active");
+      $this.addClass("active");
+
+      $previewImg.fadeOut(200, function () {
+        $(this).attr("src", newSrc).fadeIn(200);
+      });
+    }
+  });
 });
