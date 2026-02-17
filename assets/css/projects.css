@@ -43,12 +43,12 @@
 .filter-container {
     padding: 40px 0;
     text-align: center;
-    position: sticky;
+    /* position: sticky;
     top: 80px;
-    z-index: 100;
+    z-index: 100; */
     background: rgba(19, 20, 18, 0.8);
     backdrop-filter: blur(10px);
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .filter-btns {
@@ -188,5 +188,82 @@
 
     .projects-hero h1 {
         font-size: 40px;
+    }
+}
+
+/* Scroll Down Button */
+.scroll-down-btn {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    /* transform: translateX(-50%); */
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    /* backdrop-filter: blur(10px); */
+    border-radius: 50%;
+    /* color: #fff; */
+    font-size: 18px;
+    /* border: 1px solid rgba(255, 255, 255, 0.1); */
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(255, 255, 255, 0.05); */
+    z-index: 5;
+    /* transition: all 0.3s ease; */
+    animation: bounce 2s infinite;
+    color: var(--lg-text);
+    border: 1px solid var(--lg-highlight);
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease, border-color 0.2s ease, backdrop-filter 0.4s ease;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.scroll-down-btn::before {
+    content: "";
+    position: absolute;
+    inset: -10px;
+    background: radial-gradient(circle at 30% 20%, rgb(255 255 255 / 8%), rgba(255, 255, 255, 0) 55%), radial-gradient(circle at 80% 80%, rgb(243 237 237 / 10%), rgba(0, 0, 0, 0) 60%), radial-gradient(circle, rgb(229 237 232 / 5%), rgb(249 244 244 / 0%) 55%);
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+.scroll-down-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 1px 1px 0 var(--lg-highlight), inset 0 0 5px var(--lg-highlight);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* .scroll-down-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(-50%) translateY(-5px);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), inset 0 0 15px rgba(255, 255, 255, 0.1);
+} */
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+
+    60% {
+        transform: translateX(-50%) translateY(-5px);
     }
 }
