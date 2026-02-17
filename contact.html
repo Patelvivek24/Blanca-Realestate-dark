@@ -189,10 +189,10 @@
         <section class="contact-hero">
             <div class="container">
                 <h1 class="bs-font-playfair-display text-white wow fadeInUp">
-                    Our Projects
+                    Contact Us
                 </h1>
                 <p class="text-white-50 wow fadeInUp" data-wow-delay="0.2s">
-                    Discover Blanca's signature creations across Mumbai and Navi Mumbai.
+                    Get in touch with Blanca for your dream property or investment.
                 </p>
             </div>
         </section>
@@ -248,12 +248,10 @@
                                 </h2>
                             </div>
                             <p class="text-white-50 contact-desc">
-                                Thank you for visiting our website! We would love to hear from
-                                you. Whether you have a question, feedback, or simply want to
-                                say hello we're here to help. Please feel free to get in touch
-                                with us using the contact information below or by filling out
-                                the contact form. We strive to respond to all inquiries
-                                promptly.
+                                Thank you for exploring our website! We’re always happy to connect with you. Whether you
+                                have a question, need assistance, or would like to share your feedback, our team is
+                                ready to help. Reach out to us through the contact details below or simply complete the
+                                contact form. We aim to respond to every inquiry as quickly as possible.
                             </p>
 
                             <div class="contact-items">
@@ -305,35 +303,17 @@
                                     <div class="col-md-6">
                                         <div class="form-group-new">
                                             <label>FIRST NAME</label>
-                                            <input type="text" class="form-control-new" placeholder="FIRST NAME"
-                                                required />
+                                            <div class="glass-input-wrapper">
+                                                <input type="text" class="form-control-new" placeholder="FIRST NAME"
+                                                    required />
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group-new">
                                             <label>LAST NAME</label>
-                                            <input type="text" class="form-control-new" placeholder="LAST NAME"
-                                                required />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row gap-4">
-                                    <div class="col-md-6">
-                                        <div class="form-group-new">
-                                            <label>EMAIL</label>
-                                            <input type="email" class="form-control-new" placeholder="YOUR EMAIL"
-                                                required />
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group-new">
-                                            <label>PHONE NUMBER</label>
-                                            <div class="phone-input-wrapper">
-                                                <div class="country-code">
-                                                    <img src="https://flagcdn.com/w20/ae.png" alt="UAE Flag" />
-                                                    <i class="fas fa-caret-down"></i>
-                                                </div>
-                                                <input type="text" class="form-control-new" placeholder="XXXXXXXXX"
+                                            <div class="glass-input-wrapper">
+                                                <input type="text" class="form-control-new" placeholder="LAST NAME"
                                                     required />
                                             </div>
                                         </div>
@@ -342,13 +322,110 @@
                                 <div class="row gap-4">
                                     <div class="col-md-6">
                                         <div class="form-group-new">
+                                            <label>EMAIL</label>
+                                            <div class="glass-input-wrapper">
+                                                <input type="email" class="form-control-new" placeholder="YOUR EMAIL"
+                                                    required />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group-new">
+                                            <label>PHONE NUMBER</label>
+                                            <div class="phone-input-wrapper glass-input-wrapper">
+                                                <div class="country-code">
+                                                    <img src="https://flagcdn.com/w20/in.png" alt="India Flag"
+                                                        class="selected-flag" />
+                                                    <i class="fas fa-caret-down"></i>
+                                                    <ul class="country-dropdown">
+                                                        <li data-flag="https://flagcdn.com/w20/in.png"
+                                                            data-name="India">
+                                                            <img src="https://flagcdn.com/w20/in.png" alt="India" />
+                                                            India
+                                                        </li>
+                                                        <li data-flag="https://flagcdn.com/w20/ae.png" data-name="UAE">
+                                                            <img src="https://flagcdn.com/w20/ae.png" alt="UAE" /> UAE
+                                                        </li>
+                                                        <li data-flag="https://flagcdn.com/w20/us.png" data-name="USA">
+                                                            <img src="https://flagcdn.com/w20/us.png" alt="USA" /> USA
+                                                        </li>
+                                                        <li data-flag="https://flagcdn.com/w20/gb.png" data-name="UK">
+                                                            <img src="https://flagcdn.com/w20/gb.png" alt="UK" /> UK
+                                                        </li>
+                                                        <li data-flag="https://flagcdn.com/w20/ca.png"
+                                                            data-name="Canada">
+                                                            <img src="https://flagcdn.com/w20/ca.png" alt="Canada" />
+                                                            Canada
+                                                        </li>
+                                                        <li data-flag="https://flagcdn.com/w20/au.png"
+                                                            data-name="Australia">
+                                                            <img src="https://flagcdn.com/w20/au.png" alt="Australia" />
+                                                            Australia
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <input type="text" class="form-control-new" placeholder="XXXXXXXXX"
+                                                    required />
+                                            </div>
+
+                                            <script>
+                                                document.addEventListener('DOMContentLoaded', function () {
+                                                    const wrappers = document.querySelectorAll('.phone-input-wrapper');
+
+                                                    wrappers.forEach(wrapper => {
+                                                        const opener = wrapper.querySelector('.country-code');
+                                                        const dropdown = wrapper.querySelector('.country-dropdown');
+                                                        const selectedFlag = wrapper.querySelector('.selected-flag');
+
+                                                        opener.addEventListener('click', function (e) {
+                                                            e.stopPropagation();
+                                                            // Close other dropdowns first
+                                                            document.querySelectorAll('.country-dropdown.show').forEach(d => {
+                                                                if (d !== dropdown) {
+                                                                    d.classList.remove('show');
+                                                                    d.closest('.glass-input-wrapper').classList.remove('z-index-high');
+                                                                }
+                                                            });
+                                                            dropdown.classList.toggle('show');
+                                                            wrapper.classList.toggle('z-index-high');
+                                                        });
+
+                                                        dropdown.querySelectorAll('li').forEach(item => {
+                                                            item.addEventListener('click', function (e) {
+                                                                e.stopPropagation();
+                                                                const flagUrl = this.getAttribute('data-flag');
+                                                                const flagAlt = this.getAttribute('data-name');
+                                                                selectedFlag.src = flagUrl;
+                                                                selectedFlag.alt = flagAlt + " Flag";
+                                                                dropdown.classList.remove('show');
+                                                                wrapper.classList.remove('z-index-high');
+                                                            });
+                                                        });
+                                                    });
+
+                                                    document.addEventListener('click', function () {
+                                                        document.querySelectorAll('.country-dropdown.show').forEach(d => {
+                                                            d.classList.remove('show');
+                                                            d.closest('.glass-input-wrapper').classList.remove('z-index-high');
+                                                        });
+                                                    });
+                                                });
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row gap-4">
+                                    <div class="col-md-6">
+                                        <div class="form-group-new">
                                             <label>COUNTRY</label>
-                                            <select class="form-control-new custom-select">
-                                                <option value="">-- select one --</option>
-                                                <option value="UAE">United Arab Emirates</option>
-                                                <option value="India">India</option>
-                                                <!-- Add more as needed -->
-                                            </select>
+                                            <div class="glass-input-wrapper">
+                                                <select class="form-control-new custom-select">
+                                                    <option value="">-- select one --</option>
+                                                    <option value="UAE">United Arab Emirates</option>
+                                                    <option value="India">India</option>
+                                                    <!-- Add more as needed -->
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col">

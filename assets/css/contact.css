@@ -140,9 +140,59 @@
     color: #fff;
 }
 
+:root {
+    --lg-text: #fff;
+    --lg-highlight: rgba(255, 255, 255, 0.15);
+    --lg-bg: rgba(255, 255, 255, 0.05);
+}
+
 /* Form Styles */
 .contact-form-wrapper-new {
     background: transparent;
+}
+
+.glass-input-wrapper {
+    position: relative;
+    border-radius: 5px;
+    background: var(--lg-bg);
+    border: 1px solid var(--lg-highlight);
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease, border-color 0.2s ease, backdrop-filter 0.4s ease;
+    /* Removed overflow: hidden to allow dropdown visibility */
+}
+
+.glass-input-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* Changed from -10px to 0 to prevent spill after removing overflow: hidden */
+    background: radial-gradient(circle at 30% 20%, rgb(255 255 255 / 8%), rgba(255, 255, 255, 0) 55%),
+        radial-gradient(circle at 80% 80%, rgb(243 237 237 / 10%), rgba(0, 0, 0, 0) 60%),
+        radial-gradient(circle, rgb(229 237 232 / 5%), rgb(249 244 244 / 0%) 55%);
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+.glass-input-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 1px 1px 0 var(--lg-highlight), inset 0 0 5px var(--lg-highlight);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.glass-input-wrapper:focus-within {
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.glass-input-wrapper.z-index-high {
+    z-index: 99999 !important;
 }
 
 .form-group-new {
@@ -161,17 +211,19 @@
 
 .form-control-new {
     width: 100%;
-    background-color: #fff;
+    background-color: transparent;
     border: none;
     border-radius: 5px;
     padding: 15px 20px;
-    color: #333;
+    color: var(--lg-text);
     font-size: 14px;
     height: 55px;
+    position: relative;
+    z-index: 2;
 }
 
 .form-control-new::placeholder {
-    color: #ccc;
+    color: rgba(255, 255, 255, 0.5);
     font-weight: 400;
 }
 
@@ -181,17 +233,22 @@
 
 select.form-control-new {
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 20px center;
+}
+
+select.form-control-new option {
+    background-color: #1a1a1a;
+    color: #fff;
 }
 
 /* Phone Input */
 .phone-input-wrapper {
     display: flex;
-    background-color: #fff;
+    background-color: transparent;
     border-radius: 5px;
-    overflow: hidden;
+    /* Removed overflow: hidden to allow dropdown visibility */
 }
 
 .country-code {
@@ -199,10 +256,12 @@ select.form-control-new {
     align-items: center;
     gap: 8px;
     padding: 0 15px;
-    border-right: 1px solid #eee;
-    color: #666;
+    border-right: 1px solid var(--lg-highlight);
+    color: var(--lg-text);
     cursor: pointer;
     min-width: 80px;
+    position: relative;
+    z-index: 2;
 }
 
 .country-code img {
@@ -211,6 +270,46 @@ select.form-control-new {
 
 .phone-input-wrapper .form-control-new {
     border-radius: 0;
+}
+
+/* Country Dropdown Styles */
+.country-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    margin: 10px 0 0 0;
+    padding: 8px 0;
+    list-style: none;
+    display: none;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    /* Ensure it's above everything */
+}
+
+.country-dropdown.show {
+    display: block;
+}
+
+.country-dropdown li {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.country-dropdown li:hover {
+    background: var(--lg-highlight);
+}
+
+.country-dropdown li img {
+    width: 20px;
 }
 
 /* Radio and Checkbox */
