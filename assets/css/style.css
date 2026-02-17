@@ -950,6 +950,7 @@ a.theme-btn i {
   a.theme-btn {
     padding-left: 40px;
     padding-right: 40px;
+    gap: 10px;
   }
 }
 
