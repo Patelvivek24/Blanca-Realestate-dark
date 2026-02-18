@@ -1,0 +1,175 @@
+/* Team Showcase Section */
+.team-showcase-section {
+    position: relative;
+    width: 100%;
+    background: transparent;
+    overflow: hidden;
+}
+
+.team-slides-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+.team-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    visibility: hidden;
+    z-index: 1;
+}
+
+.team-slide.active {
+    visibility: visible;
+    z-index: 2;
+}
+
+/* Left side: Image */
+.team-slide-image {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.team-slide-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    /* For parallax */
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Image Overlay Typography */
+.image-overlay-text {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    z-index: 5;
+    color: #fff;
+}
+
+.image-overlay-text h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 5rem;
+    text-transform: uppercase;
+    line-height: 0.9;
+    margin: 0;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+/* Right side: Text Panel */
+.team-slide-content {
+    width: 50%;
+    height: 100%;
+    background: #131412;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10% 8%;
+    color: #fff;
+    position: relative;
+}
+
+.team-slide-content .member-role {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: #c9a050;
+    /* Gold accent */
+    margin-bottom: 2rem;
+    display: block;
+}
+
+.team-slide-content .member-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    line-height: 1.2;
+    letter-spacing: 0px;
+}
+
+.team-slide-content .member-quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    border-left: 2px solid #c9a050;
+    padding-left: 32px;
+    max-width: 500px;
+    letter-spacing: 1px;
+}
+
+/* Curtain Reveal Animation Helper */
+.curtain-revealer {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1a1e26;
+    z-index: 10;
+}
+
+/* Progress Indicator */
+.team-progress {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.progress-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.progress-dot.active {
+    background: #c9a050;
+    transform: scale(1.5);
+}
+
+@media (max-width: 991px) {
+    .team-slide {
+        flex-direction: column;
+    }
+
+    .team-slide-image,
+    .team-slide-content {
+        width: 100%;
+        height: 50%;
+    }
+
+    .image-overlay-text h2 {
+        font-size: 3rem;
+    }
+
+    .team-slide-content .member-name {
+        font-size: 2.5rem;
+    }
+
+    .team-slide-content .member-quote {
+        font-size: 1.2rem;
+    }
+}

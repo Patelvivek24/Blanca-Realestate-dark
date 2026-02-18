@@ -279,7 +279,7 @@
 }
 
 .amenities-main {
-    padding: 100px 0px;
+    padding: 100px 0px 120px;
 }
 
 .lux-amenities-container {
@@ -619,7 +619,7 @@
 
 /* Location */
 .project-location {
-    padding: 0px 0px 100px;
+    padding: 120px 0px 100px;
     /* background: var(--black-100); */
 }
 
