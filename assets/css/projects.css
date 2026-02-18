@@ -206,8 +206,9 @@
 }
 
 .project-content-body h4 {
-    font-size: 24px;
+    font-size: 26px;
     margin-bottom: 15px;
+    letter-spacing: 0px;
     color: #fff;
 }
 
