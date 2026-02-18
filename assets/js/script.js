@@ -631,6 +631,41 @@
       );
     }
 
+    /* ## about Left Side Statistics Counter */
+    if ($(".about-stat-box .stat-number").length) {
+      $(".about-stat-box .stat-number").appear(
+        function () {
+          var $t = $(this),
+            n = parseInt($t.attr("data-count"), 10),
+            duration = 2000;
+
+          if (!$t.hasClass("counted")) {
+            $t.addClass("counted");
+            $({
+              countNum: 0,
+            }).animate(
+              {
+                countNum: n,
+              },
+              {
+                duration: duration,
+                easing: "swing",
+                step: function () {
+                  $t.text(Math.floor(this.countNum));
+                },
+                complete: function () {
+                  $t.text(this.countNum);
+                },
+              },
+            );
+          }
+        },
+        {
+          accY: 0,
+        },
+      );
+    }
+
     /* ## Hero Expert Badge Counter */
     if ($(".badge-year").length) {
       $(".badge-year").appear(
@@ -794,108 +829,114 @@
       });
     }
 
-      function updateThumbOrder($thumbSlider, activeIndex) {
-        const $thumbs = $thumbSlider.find(".thumb-slide");
-        const total = $thumbs.length;
-        if (total === 0) return;
+    function updateThumbOrder($thumbSlider, activeIndex) {
+      const $thumbs = $thumbSlider.find(".thumb-slide");
+      const total = $thumbs.length;
+      if (total === 0) return;
 
-        $thumbs.each(function () {
-          const index = parseInt($(this).data("index"));
-          let order = (index - activeIndex + total) % total;
-          $(this).css("order", order);
-          if (index === activeIndex) {
-            $(this).addClass("active");
-          } else {
-            $(this).removeClass("active");
-          }
-        });
-      }
+      $thumbs.each(function () {
+        const index = parseInt($(this).data("index"));
+        let order = (index - activeIndex + total) % total;
+        $(this).css("order", order);
+        if (index === activeIndex) {
+          $(this).addClass("active");
+        } else {
+          $(this).removeClass("active");
+        }
+      });
+    }
 
-      // ## Interior Main Slider
-      if ($("#interior-main-slider").length) {
-        const $interiorMain = $("#interior-main-slider");
-        const $interiorThumb = $("#interior-thumb-slider");
+    // ## Interior Main Slider
+    if ($("#interior-main-slider").length) {
+      const $interiorMain = $("#interior-main-slider");
+      const $interiorThumb = $("#interior-thumb-slider");
 
-        $interiorMain.on("init afterChange", function (event, slick, currentSlide) {
+      $interiorMain.on(
+        "init afterChange",
+        function (event, slick, currentSlide) {
           updateThumbOrder($interiorThumb, currentSlide || 0);
-        });
+        },
+      );
 
-        $interiorMain.slick({
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          autoplay: true,
-          autoplaySpeed: 4000,
-          arrows: false,
-          fade: true,
-          dots: true,
-        });
+      $interiorMain.slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        arrows: false,
+        fade: true,
+        dots: true,
+      });
 
-        $interiorThumb.find(".thumb-slide").on("click", function () {
-          const index = $(this).data("index");
-          $interiorMain.slick("slickGoTo", index);
-        });
+      $interiorThumb.find(".thumb-slide").on("click", function () {
+        const index = $(this).data("index");
+        $interiorMain.slick("slickGoTo", index);
+      });
 
-        $(".interior-prev").on("click", function () {
-          $interiorMain.slick("slickPrev");
-        });
-        $(".interior-next").on("click", function () {
-          $interiorMain.slick("slickNext");
-        });
-      }
+      $(".interior-prev").on("click", function () {
+        $interiorMain.slick("slickPrev");
+      });
+      $(".interior-next").on("click", function () {
+        $interiorMain.slick("slickNext");
+      });
+    }
 
-      // ## Exterior Main Slider
-      if ($("#exterior-main-slider").length) {
-        const $exteriorMain = $("#exterior-main-slider");
-        const $exteriorThumb = $("#exterior-thumb-slider");
+    // ## Exterior Main Slider
+    if ($("#exterior-main-slider").length) {
+      const $exteriorMain = $("#exterior-main-slider");
+      const $exteriorThumb = $("#exterior-thumb-slider");
 
-        $exteriorMain.on("init afterChange", function (event, slick, currentSlide) {
+      $exteriorMain.on(
+        "init afterChange",
+        function (event, slick, currentSlide) {
           updateThumbOrder($exteriorThumb, currentSlide || 0);
-        });
+        },
+      );
 
-        $exteriorMain.slick({
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          autoplay: true,
-          autoplaySpeed: 4000,
-          arrows: false,
-          fade: true,
-          dots: true,
-        });
+      $exteriorMain.slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        arrows: false,
+        fade: true,
+        dots: true,
+      });
 
-        $exteriorThumb.find(".thumb-slide").on("click", function () {
-          const index = $(this).data("index");
-          $exteriorMain.slick("slickGoTo", index);
-        });
+      $exteriorThumb.find(".thumb-slide").on("click", function () {
+        const index = $(this).data("index");
+        $exteriorMain.slick("slickGoTo", index);
+      });
 
-        $(".exterior-prev").on("click", function () {
-          $exteriorMain.slick("slickPrev");
-        });
-        $(".exterior-next").on("click", function () {
-          $exteriorMain.slick("slickNext");
-        });
-      }
+      $(".exterior-prev").on("click", function () {
+        $exteriorMain.slick("slickPrev");
+      });
+      $(".exterior-next").on("click", function () {
+        $exteriorMain.slick("slickNext");
+      });
+    }
 
-      // ## Gallery Lightbox
-      if ($(".gallery-lightbox").length) {
-        $(".gallery-main-slider-wrap").each(function () {
-          $(this)
-            .find(".gallery-lightbox")
-            .magnificPopup({
-              type: "image",
-              gallery: {
-                enabled: true,
-                navigateByImgClick: true,
-                preload: [0, 1],
-              },
-              image: {
-                tError:
-                  '<a href="%url%">The image #%curr%</a> could not be loaded.',
-              },
-              mainClass: "mfp-fade",
-              removalDelay: 300,
-            });
-        });
-      }
+    // ## Gallery Lightbox
+    if ($(".gallery-lightbox").length) {
+      $(".gallery-main-slider-wrap").each(function () {
+        $(this)
+          .find(".gallery-lightbox")
+          .magnificPopup({
+            type: "image",
+            gallery: {
+              enabled: true,
+              navigateByImgClick: true,
+              preload: [0, 1],
+            },
+            image: {
+              tError:
+                '<a href="%url%">The image #%curr%</a> could not be loaded.',
+            },
+            mainClass: "mfp-fade",
+            removalDelay: 300,
+          });
+      });
+    }
   });
 
   /* ==========================================================================
