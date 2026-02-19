@@ -73,54 +73,26 @@
 .cp-modal-left {
     flex: 1;
     position: relative;
-    /* color: #fff; */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: center; */
     padding: 60px 40px;
-    /* background-size: cover; */
-    /* background-position: center; */
-    /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/background/hero-1.png); */
+    background-image: url(../images/background/popup-left-bg.png);
+    background-size: cover;
+    background-position: center;
     color: var(--lg-text);
-    background: transparent;
-    /* border: 1px solid var(--lg-highlight); */
-    /* box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1); */
-    /* backdrop-filter: blur(4px); */
-    -webkit-backdrop-filter: blur(4px);
     transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease, border-color 0.2s ease, backdrop-filter 0.4s ease;
     overflow: hidden;
     isolation: isolate;
 }
 
-/* .cp-modal-left::before {
+.cp-modal-left::before {
     content: "";
-    position: absolute;
-    inset: -10px;
-    background: radial-gradient(circle at 30% 20%, rgb(255 255 255 / 8%), rgba(255, 255, 255, 0) 55%), radial-gradient(circle at 80% 80%, rgb(243 237 237 / 10%), rgba(0, 0, 0, 0) 60%), radial-gradient(circle, rgb(229 237 232 / 5%), rgb(249 244 244 / 0%) 55%);
-    opacity: 0.9;
-    pointer-events: none;
-}
-
-.cp-modal-left::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    box-shadow: inset 1px 1px 0 var(--lg-highlight), inset 0 0 5px var(--lg-highlight);
-    pointer-events: none;
-    z-index: 1;
-} */
-
-/* .cp-modal-left::before {
-    content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.6);
     z-index: 1;
-} */
+}
 
 .cp-left-inner {
     position: relative;
