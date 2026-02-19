@@ -1247,4 +1247,26 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
+  // ## Channel Partner Modal Logic
+  const cpModal = $("#channelPartnerModal");
+  const openCPModalBtns = $(".channel-partner-btn");
+  const closeCPModalBtn = $("#closeCPModal");
+
+  openCPModalBtns.on("click", function (e) {
+    e.preventDefault();
+    cpModal.addClass("show");
+    $("body").css("overflow", "hidden");
+  });
+
+  closeCPModalBtn.on("click", function () {
+    cpModal.removeClass("show");
+    $("body").css("overflow", "auto");
+  });
+
+  $(window).on("click", function (e) {
+    if ($(e.target).is(cpModal)) {
+      cpModal.removeClass("show");
+      $("body").css("overflow", "auto");
+    }
+  });
 });

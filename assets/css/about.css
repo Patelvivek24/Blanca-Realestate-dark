@@ -223,6 +223,12 @@
     }
 }
 
+@media(min-width:1600px) {
+    .about-left-stats {
+        padding-left: 0px;
+    }
+}
+
 @media(max-width:767px) {
     .about-page-modern-title {
         font-size: clamp(30px, 6vw, 44px);
