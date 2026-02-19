@@ -183,12 +183,18 @@
         <!-- Filter Section -->
         <div class="filter-container" id="filter-section">
             <div class="container">
-                <div class="filter-btns wow fadeInUp">
-                    <button class="filter-btn active" data-filter="all">All Projects</button>
-                    <button class="filter-btn" data-filter="residential">Residential</button>
-                    <button class="filter-btn" data-filter="commercial">Commercial</button>
-                    <button class="filter-btn" data-filter="ongoing">Ongoing</button>
-                    <button class="filter-btn" data-filter="sold-out">Sold Out</button>
+                <div class="filter-row wow fadeInUp">
+                    <div class="filter-btns">
+                        <button class="filter-btn active" data-filter="all">All Projects</button>
+                        <button class="filter-btn" data-filter="residential">Residential</button>
+                        <button class="filter-btn" data-filter="commercial">Commercial</button>
+                        <button class="filter-btn" data-filter="ongoing">Ongoing</button>
+                        <button class="filter-btn" data-filter="sold-out">Sold Out</button>
+                    </div>
+                    <div class="view-toggles">
+                        <button class="view-toggle-btn active" data-view="grid">GRID VIEW</button>
+                        <button class="view-toggle-btn" data-view="map">MAP VIEW</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -196,8 +202,7 @@
         <!-- Projects List Section -->
         <section class="projects-list-area pb-100">
             <div class="container">
-                <div class="projects-grid">
-
+                <div class="projects-grid view-section active-view" id="grid-view">
                     <!-- Blanca : Ekaiva -->
                     <div class="project-card-item wow fadeInUp commercial ongoing" data-wow-delay="0.1s">
                         <div class="project-img-wrapper">
@@ -225,8 +230,33 @@
                                     <strong>425 – 1400 Sqft</strong>
                                 </div>
                             </div>
-                            <div class="project-card-footer">
-                                <a href="project-details.html" class="theme-btn bs-font-montserrat">View Details</a>
+                            <div class="project-download-options">
+                                <a href="#" class="download-link brochure">
+                                    <div class="download-icon">
+                                        <img src="assets/images/projects/brochures.svg" alt="Brochure">
+                                    </div>
+                                    <div class="download-text">
+                                        <span class="title">PROJECT BROCHURE</span>
+                                        <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                    </div>
+                                </a>
+                                <a href="#" class="download-link fact-sheet">
+                                    <div class="download-icon">
+                                        <img src="assets/images/projects/sheet.svg" alt="Fact Sheet">
+                                    </div>
+                                    <div class="download-text">
+                                        <span class="title">FACT SHEET</span>
+                                        <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="project-card-button-section">
+                                <div class="project-card-btn">
+                                    <a href="project-details.html" class="theme-btn bs-font-montserrat">View Details</a>
+                                </div>
+                                <div class="project-card-btn">
+                                    <a href="project-details.html" class="theme-btn bs-font-montserrat">Enquireies</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -257,8 +287,33 @@
                                     <strong>350 – 550 Sqft</strong>
                                 </div>
                             </div>
-                            <div class="project-card-footer">
-                                <a href="project-details.html" class="theme-btn bs-font-montserrat">View Details</a>
+                            <div class="project-download-options">
+                                <a href="#" class="download-link brochure">
+                                    <div class="download-icon">
+                                        <img src="assets/images/projects/brochures.svg" alt="Brochure">
+                                    </div>
+                                    <div class="download-text">
+                                        <span class="title">PROJECT BROCHURE</span>
+                                        <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                    </div>
+                                </a>
+                                <a href="#" class="download-link fact-sheet">
+                                    <div class="download-icon">
+                                        <img src="assets/images/projects/sheet.svg" alt="Fact Sheet">
+                                    </div>
+                                    <div class="download-text">
+                                        <span class="title">FACT SHEET</span>
+                                        <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="project-card-button-section">
+                                <div class="project-card-btn">
+                                    <a href="project-details.html" class="theme-btn bs-font-montserrat">View Details</a>
+                                </div>
+                                <div class="project-card-btn">
+                                    <a href="project-details.html" class="theme-btn bs-font-montserrat">Enquireies</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -289,8 +344,33 @@
                                     <strong>420 – 450 Sqft</strong>
                                 </div>
                             </div>
-                            <div class="project-card-footer">
-                                <a href="project-details.html" class="theme-btn bs-font-montserrat">View Details</a>
+                            <div class="project-download-options">
+                                <a href="#" class="download-link brochure">
+                                    <div class="download-icon">
+                                        <img src="assets/images/projects/brochures.svg" alt="Brochure">
+                                    </div>
+                                    <div class="download-text">
+                                        <span class="title">PROJECT BROCHURE</span>
+                                        <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                    </div>
+                                </a>
+                                <a href="#" class="download-link fact-sheet">
+                                    <div class="download-icon">
+                                        <img src="assets/images/projects/sheet.svg" alt="Fact Sheet">
+                                    </div>
+                                    <div class="download-text">
+                                        <span class="title">FACT SHEET</span>
+                                        <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="project-card-button-section">
+                                <div class="project-card-btn">
+                                    <a href="project-details.html" class="theme-btn bs-font-montserrat">View Details</a>
+                                </div>
+                                <div class="project-card-btn">
+                                    <a href="project-details.html" class="theme-btn bs-font-montserrat">Enquireies</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -322,8 +402,33 @@
                                     <strong>420 – 450 Sqft</strong>
                                 </div>
                             </div>
-                            <div class="project-card-footer">
-                                <a href="project-details.html" class="theme-btn bs-font-montserrat">View Details</a>
+                            <div class="project-download-options">
+                                <a href="#" class="download-link brochure">
+                                    <div class="download-icon">
+                                        <img src="assets/images/projects/brochures.svg" alt="Brochure">
+                                    </div>
+                                    <div class="download-text">
+                                        <span class="title">PROJECT BROCHURE</span>
+                                        <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                    </div>
+                                </a>
+                                <a href="#" class="download-link fact-sheet">
+                                    <div class="download-icon">
+                                        <img src="assets/images/projects/sheet.svg" alt="Fact Sheet">
+                                    </div>
+                                    <div class="download-text">
+                                        <span class="title">FACT SHEET</span>
+                                        <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="project-card-button-section">
+                                <div class="project-card-btn">
+                                    <a href="project-details.html" class="theme-btn bs-font-montserrat">View Details</a>
+                                </div>
+                                <div class="project-card-btn">
+                                    <a href="project-details.html" class="theme-btn bs-font-montserrat">Enquireies</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -354,8 +459,33 @@
                                     <strong>430 – 460 Sqft</strong>
                                 </div>
                             </div>
-                            <div class="project-card-footer">
-                                <a href="project-details.html" class="theme-btn bs-font-montserrat">View Details</a>
+                            <div class="project-download-options">
+                                <a href="#" class="download-link brochure">
+                                    <div class="download-icon">
+                                        <img src="assets/images/projects/brochures.svg" alt="Brochure">
+                                    </div>
+                                    <div class="download-text">
+                                        <span class="title">PROJECT BROCHURE</span>
+                                        <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                    </div>
+                                </a>
+                                <a href="#" class="download-link fact-sheet">
+                                    <div class="download-icon">
+                                        <img src="assets/images/projects/sheet.svg" alt="Fact Sheet">
+                                    </div>
+                                    <div class="download-text">
+                                        <span class="title">FACT SHEET</span>
+                                        <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="project-card-button-section">
+                                <div class="project-card-btn">
+                                    <a href="project-details.html" class="theme-btn bs-font-montserrat">View Details</a>
+                                </div>
+                                <div class="project-card-btn">
+                                    <a href="project-details.html" class="theme-btn bs-font-montserrat">Enquireies</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -386,12 +516,275 @@
                                     <strong>400 Sqft</strong>
                                 </div>
                             </div>
-                            <div class="project-card-footer">
-                                <a href="project-details.html" class="theme-btn bs-font-montserrat">View Details</a>
+                            <div class="project-download-options">
+                                <a href="#" class="download-link brochure">
+                                    <div class="download-icon">
+                                        <img src="assets/images/projects/brochures.svg" alt="Brochure">
+                                    </div>
+                                    <div class="download-text">
+                                        <span class="title">PROJECT BROCHURE</span>
+                                        <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                    </div>
+                                </a>
+                                <a href="#" class="download-link fact-sheet">
+                                    <div class="download-icon">
+                                        <img src="assets/images/projects/sheet.svg" alt="Fact Sheet">
+                                    </div>
+                                    <div class="download-text">
+                                        <span class="title">FACT SHEET</span>
+                                        <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="project-card-button-section">
+                                <div class="project-card-btn">
+                                    <a href="project-details.html" class="theme-btn bs-font-montserrat">View Details</a>
+                                </div>
+                                <div class="project-card-btn">
+                                    <a href="project-details.html" class="theme-btn bs-font-montserrat">Enquireies</a>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
+                <div class="map-view-container view-section" id="map-view">
+                    <div class="map-side-list">
+                        <!-- Blanca : Ekaiva -->
+                        <div class="project-card-horizontal commercial ongoing active-property"
+                            data-map-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.1895648839014!2d73.0039268!3d19.0554522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c10f545465bb%3A0x6e2689c1f604473d!2sTurbhe%2C%20Navi%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin">
+                            <div class="horiz-img-wrapper">
+                                <img src="assets/images/projects/lendscpae-images/blancs-business-hub.png"
+                                    alt="Blanca : Ekaiva">
+                            </div>
+                            <div class="horiz-content">
+                                <!-- <h5 class="bs-font-playfair-display">Blanca : Ekaiva</h5> -->
+                                <h5>Blanca : Ekaiva</h5>
+                                <p class="horiz-desc">Experience luxury commercial spaces in the heart of Navi Mumbai.
+                                    Smart planning for your business future.</p>
+                                <div class="horiz-meta">
+                                    <span><i class="fas fa-map-marker-alt"></i> Turbhe, Navi Mumbai</span>
+                                </div>
+                                <div class="project-download-options-horizontal">
+                                    <a href="#" class="download-link brochure">
+                                        <div class="download-icon">
+                                            <img src="assets/images/projects/brochures.svg" alt="Brochure">
+                                        </div>
+                                        <div class="download-text">
+                                            <span class="title">PROJECT BROCHURE</span>
+                                            <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="download-link fact-sheet">
+                                        <div class="download-icon">
+                                            <img src="assets/images/projects/sheet.svg" alt="Fact Sheet">
+                                        </div>
+                                        <div class="download-text">
+                                            <span class="title">FACT SHEET</span>
+                                            <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="project-details.html" class="read-more-link">Read More</a>
+                            </div>
+                        </div>
+
+                        <!-- Blanca Tower -->
+                        <div class="project-card-horizontal commercial ongoing"
+                            data-map-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.1234567890123!2d72.856789!3d19.223456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b06666666667%3A0x6666666666666666!2sBorivali%20West%2C%20Mumbai!5e0!3m2!1sen!2sin!4v1700000000001!5m2!1sen!2sin">
+                            <div class="horiz-img-wrapper">
+                                <img src="assets/images/projects/lendscpae-images/blanca-tower.png" alt="Blanca Tower">
+                            </div>
+                            <div class="horiz-content">
+                                <h5>Blanca Tower</h5>
+                                <p class="horiz-desc">Premium office spaces in Borivali. Designed for modern businesses
+                                    seeking excellence.</p>
+                                <div class="horiz-meta">
+                                    <span><i class="fas fa-map-marker-alt"></i> Borivali - Mumbai</span>
+                                </div>
+                                <div class="project-download-options-horizontal">
+                                    <a href="#" class="download-link brochure">
+                                        <div class="download-icon">
+                                            <img src="assets/images/projects/brochures.svg" alt="Brochure">
+                                        </div>
+                                        <div class="download-text">
+                                            <span class="title">PROJECT BROCHURE</span>
+                                            <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="download-link fact-sheet">
+                                        <div class="download-icon">
+                                            <img src="assets/images/projects/sheet.svg" alt="Fact Sheet">
+                                        </div>
+                                        <div class="download-text">
+                                            <span class="title">FACT SHEET</span>
+                                            <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="project-details.html" class="read-more-link">Read More</a>
+                            </div>
+                        </div>
+
+                        <!-- ND Pearl -->
+                        <div class="project-card-horizontal residential sold-out"
+                            data-map-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.1234567890123!2d73.086789!3d19.023456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c06666666667%3A0x7777777777777777!2sKamothe%2C%20Navi%20Mumbai!5e0!3m2!1sen!2sin!4v1700000000002!5m2!1sen!2sin">
+                            <div class="horiz-img-wrapper">
+                                <img src="assets/images/projects/lendscpae-images/nd-pearl.png" alt="ND Pearl">
+                            </div>
+                            <div class="horiz-content">
+                                <h5>ND Pearl</h5>
+                                <p class="horiz-desc">Exceptional residential living in Kamothe. A perfect blend of
+                                    comfort and style.</p>
+                                <div class="horiz-meta">
+                                    <span><i class="fas fa-map-marker-alt"></i> Kamothe, Navi Mumbai</span>
+                                </div>
+                                <div class="project-download-options-horizontal">
+                                    <a href="#" class="download-link brochure">
+                                        <div class="download-icon">
+                                            <img src="assets/images/projects/brochures.svg" alt="Brochure">
+                                        </div>
+                                        <div class="download-text">
+                                            <span class="title">PROJECT BROCHURE</span>
+                                            <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="download-link fact-sheet">
+                                        <div class="download-icon">
+                                            <img src="assets/images/projects/sheet.svg" alt="Fact Sheet">
+                                        </div>
+                                        <div class="download-text">
+                                            <span class="title">FACT SHEET</span>
+                                            <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="project-details.html" class="read-more-link">Read More</a>
+                            </div>
+                        </div>
+
+                        <!-- ND Garden Tower -->
+                        <div class="project-card-horizontal residential sold-out"
+                            data-map-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.1234567890123!2d72.986789!3d18.983456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c00000000001%3A0x8888888888888888!2sUlwe%2C%20Navi%20Mumbai!5e0!3m2!1sen!2sin!4v1700000000003!5m2!1sen!2sin">
+                            <div class="horiz-img-wrapper">
+                                <img src="assets/images/projects/lendscpae-images/nd-garden-tower.png"
+                                    alt="ND Garden Tower">
+                            </div>
+                            <div class="horiz-content">
+                                <h5>ND Garden Tower</h5>
+                                <p class="horiz-desc">Luxurious 1BHK & 2BHK apartments in Ulwe. Smart investment for a
+                                    strong future.</p>
+                                <div class="horiz-meta">
+                                    <span><i class="fas fa-map-marker-alt"></i> Ulwe, Navi Mumbai</span>
+                                </div>
+                                <div class="project-download-options-horizontal">
+                                    <a href="#" class="download-link brochure">
+                                        <div class="download-icon">
+                                            <img src="assets/images/projects/brochures.svg" alt="Brochure">
+                                        </div>
+                                        <div class="download-text">
+                                            <span class="title">PROJECT BROCHURE</span>
+                                            <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="download-link fact-sheet">
+                                        <div class="download-icon">
+                                            <img src="assets/images/projects/sheet.svg" alt="Fact Sheet">
+                                        </div>
+                                        <div class="download-text">
+                                            <span class="title">FACT SHEET</span>
+                                            <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="project-details.html" class="read-more-link">Read More</a>
+                            </div>
+                        </div>
+
+                        <!-- ND Garden -->
+                        <div class="project-card-horizontal residential sold-out"
+                            data-map-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.1234567890123!2d72.986789!3d18.983456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c00000000001%3A0x8888888888888888!2sUlwe%2C%20Navi%20Mumbai!5e0!3m2!1sen!2sin!4v1700000000004!5m2!1sen!2sin">
+                            <div class="horiz-img-wrapper">
+                                <img src="assets/images/projects/lendscpae-images/nd-garden.png" alt="ND Garden">
+                            </div>
+                            <div class="horiz-content">
+                                <h5>ND Garden</h5>
+                                <p class="horiz-desc">Beautiful 1BHK residences in Ulwe. Every detail matters for your
+                                    life inside.</p>
+                                <div class="horiz-meta">
+                                    <span><i class="fas fa-map-marker-alt"></i> Ulwe, Navi Mumbai</span>
+                                </div>
+                                <div class="project-download-options-horizontal">
+                                    <a href="#" class="download-link brochure">
+                                        <div class="download-icon">
+                                            <img src="assets/images/projects/brochures.svg" alt="Brochure">
+                                        </div>
+                                        <div class="download-text">
+                                            <span class="title">PROJECT BROCHURE</span>
+                                            <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="download-link fact-sheet">
+                                        <div class="download-icon">
+                                            <img src="assets/images/projects/sheet.svg" alt="Fact Sheet">
+                                        </div>
+                                        <div class="download-text">
+                                            <span class="title">FACT SHEET</span>
+                                            <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="project-details.html" class="read-more-link">Read More</a>
+                            </div>
+                        </div>
+
+                        <!-- Gajanand Krupa -->
+                        <div class="project-card-horizontal residential sold-out"
+                            data-map-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.1234567890123!2d72.986789!3d18.983456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c00000000001%3A0x8888888888888888!2sUlwe%2C%20Navi%20Mumbai!5e0!3m2!1sen!2sin!4v1700000000005!5m2!1sen!2sin">
+                            <div class="horiz-img-wrapper">
+                                <img src="assets/images/projects/lendscpae-images/gajanand krupa.png"
+                                    alt="Gajanand Krupa">
+                            </div>
+                            <div class="horiz-content">
+                                <h5>Gajanand Krupa</h5>
+                                <p class="horiz-desc">Elegant 1BHK living in the growing community of Ulwe. Reliable
+                                    quality you can trust.</p>
+                                <div class="horiz-meta">
+                                    <span><i class="fas fa-map-marker-alt"></i> Ulwe, Navi Mumbai</span>
+                                </div>
+                                <div class="project-download-options-horizontal">
+                                    <a href="#" class="download-link brochure">
+                                        <div class="download-icon">
+                                            <img src="assets/images/projects/brochures.svg" alt="Brochure">
+                                        </div>
+                                        <div class="download-text">
+                                            <span class="title">PROJECT BROCHURE</span>
+                                            <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="download-link fact-sheet">
+                                        <div class="download-icon">
+                                            <img src="assets/images/projects/sheet.svg" alt="Fact Sheet">
+                                        </div>
+                                        <div class="download-text">
+                                            <span class="title">FACT SHEET</span>
+                                            <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="project-details.html" class="read-more-link">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-side-view">
+                        <div id="project-map-placeholder">
+                            <iframe id="project-map-iframe"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.1895648839014!2d73.0039268!3d19.0554522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c10f545465bb%3A0x6e2689c1f604473d!2sTurbhe%2C%20Navi%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -577,11 +970,29 @@
 
                 var filterValue = $(this).attr('data-filter');
                 if (filterValue == 'all') {
-                    $('.project-card-item').fadeIn(400);
+                    $('.project-card-item, .project-card-horizontal').fadeIn(400);
                 } else {
-                    $('.project-card-item').hide();
+                    $('.project-card-item, .project-card-horizontal').hide();
                     $('.' + filterValue).fadeIn(400);
                 }
+            });
+
+            // View Toggle Logic
+            $('.view-toggle-btn').on('click', function () {
+                $('.view-toggle-btn').removeClass('active');
+                $(this).addClass('active');
+
+                var view = $(this).attr('data-view');
+                $('.view-section').removeClass('active-view');
+                $('#' + view + '-view').addClass('active-view');
+            });
+
+            // Map Interactive Logic
+            $('.project-card-horizontal').on('click', function () {
+                var mapUrl = $(this).attr('data-map-url');
+                $('.project-card-horizontal').removeClass('active-property');
+                $(this).addClass('active-property');
+                $('#project-map-iframe').attr('src', mapUrl);
             });
 
             // Preloader
