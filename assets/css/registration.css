@@ -8,13 +8,13 @@
     position: relative;
     padding: 100px 0;
     /* Reuse contact hero background or similar */
-    background-image: url('../images/background/contect-us.png');
+    background-image: url('../images/background/ragistration-bg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     text-align: center;
     overflow: hidden;
-    min-height: 40vh;
+    min-height: 56vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
