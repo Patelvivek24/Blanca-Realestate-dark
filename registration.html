@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="zxx">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="description" content="Registration for Blanca Realestate Channel Partners." />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Title -->
+    <title>Registration | Blanca - Channel Partner</title>
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" href="assets/images/logos/favicon.png" type="image/x-icon" />
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/vendor/fontawesome-5.14.0.min.css" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="assets/vendor/magnific-popup/css/magnific-popup.min.css" />
+    <!-- Animate -->
+    <link rel="stylesheet" href="assets/vendor/animate.min.css" />
+    <!-- Slick -->
+    <link rel="stylesheet" href="assets/vendor/slick/css/slick.min.css" />
+    <!-- Main Style -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Custom CSS for Registration Page -->
+    <link rel="stylesheet" href="assets/css/registration.css" />
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <!-- Preloader -->
+        <div class="preloader">
+            <div class="custom-loader"></div>
+        </div>
+
+        <!-- Registration Hero -->
+        <section class="registration-hero">
+            <div class="container">
+                <h1 class="bs-font-playfair-display">Channel Partner Registration</h1>
+                <!-- Go to Website Button -->
+                <a href="index.html" class="go-to-website-btn">
+                    <i class="fas fa-arrow-left"></i> Go to Website
+                </a>
+            </div>
+        </section>
+
+        <!-- Registration Form Section -->
+        <section class="registration-form-section">
+            <div class="container">
+                <div class="registration-tab-wrapper">
+                    <!-- Sidebar Navigation -->
+                    <div class="reg-sidebar">
+                        <div class="reg-tab-btn active" data-tab="personal-details">
+                            <div class="tab-icon"><i class="fas fa-user"></i></div>
+                            <div class="tab-text">
+                                <span class="tab-title">Personal Details</span>
+                                <span class="tab-sub">Enter Basic info</span>
+                            </div>
+                        </div>
+                        <div class="reg-tab-btn" data-tab="address-details">
+                            <div class="tab-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="tab-text">
+                                <span class="tab-title">Address</span>
+                                <span class="tab-sub">Add Address</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Form Area -->
+                    <div class="reg-main-content">
+                        <form class="registration-form wow fadeInRight">
+                            <!-- Tab 1: Personal Details -->
+                            <div id="personal-details" class="tab-content active">
+                                <div class="section-header">| Personal Details</div>
+                                <div class="agent-form-row" style="margin-bottom: 40px">
+                                    <div class="form-col">
+                                        <div class="form-group-reg mb-0">
+                                            <label>Real Estate Agent Type<span>*</span></label>
+                                            <div class="glass-input-wrapper">
+                                                <select class="reg-input reg-select" id="agentType">
+                                                    <option value="agency">Agency Registration</option>
+                                                    <option value="individual">
+                                                        Individual Registration
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-col">
+                                        <div id="gstinSection">
+                                            <div class="form-group-reg mb-0">
+                                                <!-- <label> GSTIN <span></span></label> -->
+                                                <div class="input-container glass-input-wrapper">
+                                                    <input type="text" class="reg-input" placeholder="GSTIN" />
+                                                    <button type="button" class="validate-btn">
+                                                        Validate
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="aadhaarNoteSection" style="display: none; margin-bottom: 30px">
+                                    <p class="aadhaar-note">
+                                        Note: After verifying through DigiLocker, proceed by
+                                        selecting <strong>Check Status</strong>.
+                                    </p>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-col">
+                                        <div class="form-group-reg">
+                                            <label>Name <span>*</span></label>
+                                            <div class="glass-input-wrapper">
+                                                <input type="text" class="reg-input" placeholder="Enter Name"
+                                                    required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group-reg">
+                                            <label>Mobile Number <span>*</span></label>
+                                            <div class="input-container glass-input-wrapper">
+                                                <input type="tel" class="reg-input" placeholder="Enter Mobile Number"
+                                                    required />
+                                                <button type="button" class="otp-btn">
+                                                    Send OTP
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="form-group-reg">
+                                            <label>Email <span>*</span></label>
+                                            <div class="glass-input-wrapper">
+                                                <input type="email" class="reg-input" placeholder="Enter Email"
+                                                    required />
+                                            </div>
+                                        </div>
+                                        <div id="aadhaarSection" style="display: none;">
+                                            <div class="form-group-reg mb-0">
+                                                <div class="aadhaar-group mt-0 mb-0">
+                                                    <button type="button" class="aadhaar-btn">Verify
+                                                        Aadhaar</button>
+                                                    <button type="button" class="check-status-btn">Check
+                                                        Status</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-col">
+                                        <div class="form-group-reg" id="contactPersonField">
+                                            <label>Contact Person Name</label>
+                                            <div class="glass-input-wrapper">
+                                                <input type="text" class="reg-input"
+                                                    placeholder="Enter Contact Person" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group-reg">
+                                            <label>RERA Registration No.</label>
+                                            <div class="glass-input-wrapper">
+                                                <input type="text" class="reg-input" placeholder="Enter RERA Number" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group-reg">
+                                            <label>PAN</label>
+                                            <div class="glass-input-wrapper">
+                                                <input type="text" class="reg-input" placeholder="Enter PAN Number" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-nav-btns">
+                                    <button type="button" class="theme-btn next-tab" data-next="address-details">
+                                        Next: Address
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Tab 2: Address -->
+                            <div id="address-details" class="tab-content">
+                                <div class="section-header">| Address Details</div>
+                                <div class="form-row">
+                                    <div class="form-col">
+                                        <div class="form-group-reg">
+                                            <label>Country <span>*</span></label>
+                                            <div class="glass-input-wrapper">
+                                                <select class="reg-input reg-select" required>
+                                                    <option value="India">India</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group-reg">
+                                            <label>State <span>*</span></label>
+                                            <div class="glass-input-wrapper">
+                                                <select class="reg-input reg-select" required>
+                                                    <option value="">Select State</option>
+                                                    <option value="Maharashtra">Maharashtra</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group-reg">
+                                            <label>City <span>*</span></label>
+                                            <div class="glass-input-wrapper">
+                                                <select class="reg-input reg-select" required>
+                                                    <option value="">Select City</option>
+                                                    <option value="Mumbai">Mumbai</option>
+                                                    <option value="Navi Mumbai">Navi Mumbai</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-col">
+                                        <div class="form-group-reg">
+                                            <label>Address <span>*</span></label>
+                                            <div class="glass-input-wrapper">
+                                                <input type="text" class="reg-input" placeholder="Enter Address"
+                                                    required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group-reg">
+                                            <label>PinCode <span>*</span></label>
+                                            <div class="glass-input-wrapper">
+                                                <input type="text" class="reg-input" placeholder="Enter PinCode"
+                                                    required />
+                                            </div>
+                                        </div>
+                                        <p class="note-text">
+                                            Note*:Please enter 0 in PinCode if you don't have
+                                            Pincode
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="tab-nav-btns d-flex justify-content-between">
+                                    <button type="button" class="theme-btn prev-tab" data-prev="personal-details">
+                                        Previous
+                                    </button>
+                                    <button type="submit" class="theme-btn bs-font-montserrat">
+                                        Register Now
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scroll Top Button -->
+        <button class="scroll-top scroll-to-target" data-target="html">
+            <span class="fas fa-angle-double-up"></span>
+        </button>
+
+        <!-- Channel Partner Modal -->
+        <div id="channelPartnerModal" class="channel-partner-modal">
+            <div class="cp-modal-content">
+                <button class="cp-close-btn" id="closeCPModal">&times;</button>
+                <div class="cp-modal-left">
+                    <div class="cp-left-inner">
+                        <img src="assets/images/logos/blanca-logo.png" alt="Blanca Logo" class="cp-logo" />
+                        <h2>
+                            BECOME A CHANNEL PARTNER <br />
+                            AND JOIN OUR NETWORK
+                        </h2>
+                        <p>
+                            Are you an ambitious broker seeking new growth? Join Blanca
+                            Developers and work with one of the region’s most trusted
+                            developers. Enjoy a dynamic environment, solid support, and real
+                            opportunities to succeed.
+                        </p>
+                        <p>
+                            Our expert team equips you with the training and support to
+                            succeed in a competitive market. Grow your career with Blanca
+                            Developers and reach new heights.
+                        </p>
+                    </div>
+                </div>
+                <div class="cp-modal-right">
+                    <div class="cp-right-inner">
+                        <h3>Choose Options Below For Registration</h3>
+                        <div class="cp-registration-btns">
+                            <a class="theme-btn pop-up-btn bs-font-montserrat"
+                                href="registration.html?type=agency">AGENCY REGISTRATION <i
+                                    class="fas fa-external-link-alt"></i></a>
+                            <a class="theme-btn pop-up-btn bs-font-montserrat"
+                                href="registration.html?type=individual">INDIVIDUAL REGISTRATION
+                                <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery -->
+    <script src="assets/vendor/jquery-3.7.1.min.js"></script>
+    <!-- Popper -->
+    <script src="assets/vendor/bootstrap/js/popper.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Appear Js -->
+    <script src="assets/vendor/appear.min.js"></script>
+    <!--  WOW Animation -->
+    <script src="assets/vendor/wow.min.js"></script>
+
+    <!-- Custom script -->
+    <script src="assets/js/script.js"></script>
+    <script>
+        $(document).ready(function () {
+            // New WOW instance
+            new WOW().init();
+
+            // Preloader
+            $(window).on("load", function () {
+                $(".preloader").fadeOut(500);
+            });
+
+            // Tab Switching Logic
+            $(".reg-tab-btn").on("click", function () {
+                const targetTab = $(this).data("tab");
+
+                // Update buttons
+                $(".reg-tab-btn").removeClass("active");
+                $(this).addClass("active");
+
+                // Update content
+                $(".tab-content").removeClass("active");
+                $(`#${targetTab}`).addClass("active");
+            });
+
+            $(".next-tab").on("click", function () {
+                const nextTab = $(this).data("next");
+                $(`.reg-tab-btn[data-tab="${nextTab}"]`).click();
+            });
+
+            $(".prev-tab").on("click", function () {
+                const prevTab = $(this).data("prev");
+                $(`.reg-tab-btn[data-tab="${prevTab}"]`).click();
+            });
+
+            // Field visibility based on Agent Type
+            $("#agentType").on("change", function () {
+                if ($(this).val() === "individual") {
+                    $("#aadhaarSection").show();
+                    $("#aadhaarNoteSection").show();
+                    $("#gstinSection").hide();
+                } else {
+                    $("#aadhaarSection").hide();
+                    $("#aadhaarNoteSection").hide();
+                    $("#gstinSection").show();
+                }
+                // Contact Person Name should always be visible as per user request
+                $("#contactPersonField").show();
+            });
+
+            // Check URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const type = urlParams.get("type");
+            if (type) {
+                $("#agentType").val(type).trigger("change");
+            }
+        });
+    </script>
+</body>
+
+</html>
