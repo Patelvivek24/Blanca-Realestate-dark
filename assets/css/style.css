@@ -5241,6 +5241,9 @@ header form.search-form button>* {
   display: flex;
   gap: 30px;
   align-items: flex-start; */
+  display: grid;
+  grid-template-columns: 632px auto;
+  gap: 24px;
   padding: 0 32px;
 }
 
@@ -5345,6 +5348,14 @@ header form.search-form button>* {
   overflow: hidden;
   isolation: isolate;
   transition: flex-grow 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease; */
+}
+
+.project-card-bottom-detail {
+  flex-direction: row;
+
+  @media (max-width: 1600px) {
+    flex-direction: column;
+  }
 }
 
 .homeproject-area .slick-dots {
