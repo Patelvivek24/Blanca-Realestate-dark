@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Page Specific Style -->
     <link rel="stylesheet" href="assets/css/projects.css">
+    <link rel="stylesheet" href="assets/css/download-modal.css">
     <!-- Iconify Icon -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
@@ -1054,6 +1055,202 @@
         });
     </script>
 
+    <!-- Download Brochure/Fact Sheet Modal -->
+    <div id="downloadModal" class="download-modal">
+        <div class="dm-content">
+            <button class="dm-close-btn" id="closeDownloadModal">&times;</button>
+            <div class="dm-header">
+                <h5>Contact Us</h5>
+            </div>
+            <div class="dm-body">
+                <!-- <div class="dm-left">
+                    <h2 class="dm-title bs-font-playfair-display">Get the Full Project Details</h2>
+                    <p class="dm-desc bs-font-inter">Enter your details to receive the comprehensive brochure and fact
+                        sheet. Our experts will also be happy to assist with any questions about Blanca : Ekaiva.</p>
+                    <div class="dm-feature-list">
+                        <div class="dm-feature-item">
+                            <i class="fas fa-file-pdf"></i>
+                            <span>Comprehensive Project Layouts</span>
+                        </div>
+                        <div class="dm-feature-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>ROI & Investment Analysis</span>
+                        </div>
+                        <div class="dm-feature-item">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <span>Detailed Location Advantages</span>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="dm-right">
+                    <form id="dmContactForm">
+                        <div class="row gap-4">
+                            <div class="col-md-6">
+                                <div class="form-group-new">
+                                    <label>FIRST NAME</label>
+                                    <div class="glass-input-wrapper">
+                                        <input type="text" class="form-control-new" placeholder="FIRST NAME" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group-new">
+                                    <label>LAST NAME</label>
+                                    <div class="glass-input-wrapper">
+                                        <input type="text" class="form-control-new" placeholder="LAST NAME" required />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row gap-4">
+                            <div class="col-md-6">
+                                <div class="form-group-new">
+                                    <label>EMAIL</label>
+                                    <div class="glass-input-wrapper">
+                                        <input type="email" class="form-control-new" placeholder="YOUR EMAIL"
+                                            required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group-new">
+                                    <label>PHONE NUMBER</label>
+                                    <div class="phone-input-wrapper glass-input-wrapper">
+                                        <div class="country-code">
+                                            <img src="https://flagcdn.com/w20/in.png" alt="India Flag"
+                                                class="selected-flag" />
+                                            <i class="fas fa-caret-down"></i>
+                                            <ul class="country-dropdown">
+                                                <li data-flag="https://flagcdn.com/w20/in.png" data-name="India">
+                                                    <img src="https://flagcdn.com/w20/in.png" alt="India" />
+                                                    India
+                                                </li>
+                                                <li data-flag="https://flagcdn.com/w20/ae.png" data-name="UAE">
+                                                    <img src="https://flagcdn.com/w20/ae.png" alt="UAE" /> UAE
+                                                </li>
+                                                <li data-flag="https://flagcdn.com/w20/us.png" data-name="USA">
+                                                    <img src="https://flagcdn.com/w20/us.png" alt="USA" /> USA
+                                                </li>
+                                                <li data-flag="https://flagcdn.com/w20/gb.png" data-name="UK">
+                                                    <img src="https://flagcdn.com/w20/gb.png" alt="UK" /> UK
+                                                </li>
+                                                <li data-flag="https://flagcdn.com/w20/ca.png" data-name="Canada">
+                                                    <img src="https://flagcdn.com/w20/ca.png" alt="Canada" />
+                                                    Canada
+                                                </li>
+                                                <li data-flag="https://flagcdn.com/w20/au.png" data-name="Australia">
+                                                    <img src="https://flagcdn.com/w20/au.png" alt="Australia" />
+                                                    Australia
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <input type="text" class="form-control-new" placeholder="XXXXXXXXX" required />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row gap-4">
+                            <div class="col-md-12">
+                                <div class="form-group-new">
+                                    <label>COUNTRY</label>
+                                    <div class="glass-input-wrapper">
+                                        <select class="form-control-new custom-select">
+                                            <!-- <option value="">-- select one --</option> -->
+                                            <option value="UAE">United Arab Emirates</option>
+                                            <option value="India">India</option>
+                                            <!-- Add more as needed -->
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="col">
+                                <div class="form-group-new">
+                                    <label>PREFERRED MODE OF CONTACT</label>
+                                    <div class="radio-group">
+                                        <label class="radio-container">
+                                            <input type="radio" name="contact_mode" value="phone" />
+                                            <span class="checkmark"></span>
+                                            Phone
+                                        </label>
+                                        <label class="radio-container">
+                                            <input type="radio" name="contact_mode" value="email" />
+                                            <span class="checkmark"></span>
+                                            Email
+                                        </label>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="row gap-4">
+                            <!-- <div class="col-md-6">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" />
+                                    <span class="checkmark"></span>
+                                    I'd like to hear about news and offers.
+                                </label>
+                            </div> -->
+                            <div class="col-md-6">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" required />
+                                    <span class="checkmark"></span>
+                                    I've read and agree to the
+                                    <a href="privacy-policy.html">Privacy Policy</a>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="submit-btn-contect-page">
+                            <a href="project-details.html" class="theme-btn bs-font-montserrat">Submit</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const wrappers = document.querySelectorAll('.phone-input-wrapper');
+
+        wrappers.forEach(wrapper => {
+            const opener = wrapper.querySelector('.country-code');
+            const dropdown = wrapper.querySelector('.country-dropdown');
+            const selectedFlag = wrapper.querySelector('.selected-flag');
+
+            opener.addEventListener('click', function (e) {
+                e.stopPropagation();
+                // Close other dropdowns first
+                document.querySelectorAll('.country-dropdown.show').forEach(d => {
+                    if (d !== dropdown) {
+                        d.classList.remove('show');
+                        d.closest('.glass-input-wrapper').classList.remove('z-index-high');
+                    }
+                });
+                dropdown.classList.toggle('show');
+                wrapper.classList.toggle('z-index-high');
+            });
+
+            dropdown.querySelectorAll('li').forEach(item => {
+                item.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    const flagUrl = this.getAttribute('data-flag');
+                    const flagAlt = this.getAttribute('data-name');
+                    selectedFlag.src = flagUrl;
+                    selectedFlag.alt = flagAlt + " Flag";
+                    dropdown.classList.remove('show');
+                    wrapper.classList.remove('z-index-high');
+                });
+            });
+        });
+
+        document.addEventListener('click', function () {
+            document.querySelectorAll('.country-dropdown.show').forEach(d => {
+                d.classList.remove('show');
+                d.closest('.glass-input-wrapper').classList.remove('z-index-high');
+            });
+        });
+    });
+</script>

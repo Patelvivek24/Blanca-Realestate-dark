@@ -1269,4 +1269,37 @@ document.addEventListener("DOMContentLoaded", () => {
       $("body").css("overflow", "auto");
     }
   });
+
+  // ## Download Modal Logic
+  const downloadModal = $("#downloadModal");
+  const openDownloadModalBtns = $(".download-link");
+  const closeDownloadModalBtn = $("#closeDownloadModal");
+
+  openDownloadModalBtns.on("click", function (e) {
+    e.preventDefault();
+    downloadModal.addClass("show");
+    $("body").css("overflow", "hidden");
+  });
+
+  closeDownloadModalBtn.on("click", function () {
+    downloadModal.removeClass("show");
+    $("body").css("overflow", "auto");
+  });
+
+  $(window).on("click", function (e) {
+    if ($(e.target).is(downloadModal)) {
+      downloadModal.removeClass("show");
+      $("body").css("overflow", "auto");
+    }
+  });
+
+  // Handle Download Form Submission
+  $("#dmContactForm").on("submit", function (e) {
+    e.preventDefault();
+    // Simulate successful submission and download
+    alert("Thank you! Your download will start shortly.");
+    downloadModal.removeClass("show");
+    $("body").css("overflow", "auto");
+    this.reset();
+  });
 });
