@@ -89,10 +89,10 @@
                                 <li class="header-link has-submenu">
                                     <a href="#our-story">Communities</a>
                                     <ul class="header-submenu">
-                                        <li><a href="projects.html" class="active">New Launches</a></li>
-                                        <li><a href="projects.html">Coming Soon</a></li>
-                                        <li><a href="projects.html" class="active">Ongoing Projects</a></li>
-                                        <li><a href="projects.html">Completed</a></li>
+                                        <li><a href="projects.html?filter=new-launches">New Launches</a></li>
+                                        <li><a href="projects.html?filter=coming-soon">Coming Soon</a></li>
+                                        <li><a href="projects.html?filter=ongoing">Ongoing Projects</a></li>
+                                        <li><a href="projects.html?filter=completed">Completed</a></li>
                                     </ul>
                                 </li>
                                 <li class="header-link has-submenu">
@@ -146,10 +146,10 @@
                                         <li class="dropdown">
                                             <a href="projects.html">Communities</a>
                                             <ul>
-                                                <li><a href="projects.html">New Launches</a></li>
-                                                <li><a href="projects.html">Coming Soon</a></li>
-                                                <li><a href="projects.html">Ongoing Projects</a></li>
-                                                <li><a href="projects.html">Completed</a></li>
+                                                <li><a href="projects.html?filter=new-launches">New Launches</a></li>
+                                                <li><a href="projects.html?filter=coming-soon">Coming Soon</a></li>
+                                                <li><a href="projects.html?filter=ongoing">Ongoing Projects</a></li>
+                                                <li><a href="projects.html?filter=completed">Completed</a></li>
                                             </ul>
                                         </li>
                                         <li class="dropdown">
@@ -187,16 +187,41 @@
         <div class="filter-container" id="filter-section">
             <div class="container">
                 <div class="filter-row wow fadeInUp">
-                    <div class="filter-btns">
-                        <button class="filter-btn active" data-filter="all">All Projects</button>
-                        <button class="filter-btn" data-filter="residential">Residential</button>
-                        <button class="filter-btn" data-filter="commercial">Commercial</button>
-                        <button class="filter-btn" data-filter="ongoing">Ongoing</button>
-                        <button class="filter-btn" data-filter="sold-out">Sold Out</button>
-                    </div>
-                    <div class="view-toggles">
-                        <button class="view-toggle-btn active" data-view="grid">GRID VIEW</button>
-                        <button class="view-toggle-btn" data-view="map">MAP VIEW</button>
+                    <div class="subfilter-row">
+                        <div class="filter-dropdowns">
+                            <!-- Category Dropdown -->
+                            <div class="custom-dropdown" id="typeDropdown">
+                                <div class="dropdown-selected" data-value="all">
+                                    <span>All Projects</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <ul class="dropdown-list">
+                                    <li data-value="all">All Projects</li>
+                                    <li data-value="commercial">Commercial</li>
+                                    <li data-value="residential">Residential</li>
+                                </ul>
+                            </div>
+
+                            <!-- Status Dropdown -->
+                            <div class="custom-dropdown" id="statusDropdown">
+                                <div class="dropdown-selected" data-value="all">
+                                    <span>All Status</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <ul class="dropdown-list">
+                                    <li data-value="all">All Status</li>
+                                    <li data-value="new-launches">New Launches</li>
+                                    <li data-value="coming-soon">Coming Soon</li>
+                                    <li data-value="ongoing">Ongoing Projects</li>
+                                    <li data-value="completed">Completed</li>
+                                    <li data-value="sold-out">Sold Out</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="view-toggles">
+                            <button class="view-toggle-btn active" data-view="grid">GRID VIEW</button>
+                            <button class="view-toggle-btn" data-view="map">MAP VIEW</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -207,7 +232,7 @@
             <div class="container">
                 <div class="projects-grid view-section active-view" id="grid-view">
                     <!-- Blanca : Ekaiva -->
-                    <div class="project-card-item wow fadeInUp commercial ongoing" data-wow-delay="0.1s">
+                    <div class="project-card-item wow fadeInUp commercial ongoing new-launches" data-wow-delay="0.1s">
                         <div class="project-img-wrapper">
                             <img src="assets/images/projects/lendscpae-images/blancs-business-hub.png"
                                 alt="Blanca : Ekaiva">
@@ -265,7 +290,7 @@
                     </div>
 
                     <!-- Blanca Tower -->
-                    <div class="project-card-item wow fadeInUp commercial ongoing" data-wow-delay="0.2s">
+                    <div class="project-card-item wow fadeInUp commercial ongoing new-launches" data-wow-delay="0.2s">
                         <div class="project-img-wrapper">
                             <img src="assets/images/projects/lendscpae-images/blanca-tower.png" alt="Blanca Tower">
                             <span class="project-status-badge status-ongoing">Ongoing</span>
@@ -322,7 +347,7 @@
                     </div>
 
                     <!-- ND Pearl -->
-                    <div class="project-card-item wow fadeInUp residential sold-out" data-wow-delay="0.3s">
+                    <div class="project-card-item wow fadeInUp residential sold-out completed" data-wow-delay="0.3s">
                         <div class="project-img-wrapper">
                             <img src="assets/images/projects/lendscpae-images/nd-pearl.png" alt="ND Pearl">
                             <span class="project-status-badge status-sold-out">Sold Out</span>
@@ -379,7 +404,7 @@
                     </div>
 
                     <!-- ND Garden Tower -->
-                    <div class="project-card-item wow fadeInUp residential sold-out" data-wow-delay="0.4s">
+                    <div class="project-card-item wow fadeInUp residential sold-out completed" data-wow-delay="0.4s">
                         <div class="project-img-wrapper">
                             <img src="assets/images/projects/lendscpae-images/nd-garden-tower.png"
                                 alt="ND Garden Tower">
@@ -437,7 +462,7 @@
                     </div>
 
                     <!-- ND Garden -->
-                    <div class="project-card-item wow fadeInUp residential sold-out" data-wow-delay="0.5s">
+                    <div class="project-card-item wow fadeInUp residential sold-out completed" data-wow-delay="0.5s">
                         <div class="project-img-wrapper">
                             <img src="assets/images/projects/lendscpae-images/nd-garden.png" alt="ND Garden">
                             <span class="project-status-badge status-sold-out">Sold Out</span>
@@ -494,7 +519,7 @@
                     </div>
 
                     <!-- Gajanand Krupa -->
-                    <div class="project-card-item wow fadeInUp residential sold-out" data-wow-delay="0.6s">
+                    <div class="project-card-item wow fadeInUp residential sold-out completed" data-wow-delay="0.6s">
                         <div class="project-img-wrapper">
                             <img src="assets/images/projects/lendscpae-images/gajanand krupa.png" alt="Gajanand Krupa">
                             <span class="project-status-badge status-sold-out">Sold Out</span>
@@ -549,12 +574,128 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Blanca Hill -->
+                    <div class="project-card-item wow fadeInUp residential coming-soon" data-wow-delay="0.6s">
+                        <div class="project-img-wrapper">
+                            <img src="assets/images/projects/lendscpae-images/blanca-hill.png" alt="Blanca Hill">
+                            <span class="project-status-badge status-ongoing">Coming Soon</span>
+                        </div>
+                        <div class="project-content-body">
+                            <h4 class="bs-font-playfair-display">Blanca Hill</h4>
+                            <div class="project-info-list">
+                                <div class="info-item">
+                                    <span>Location</span>
+                                    <strong>Ulwe, Navi Mumbai</strong>
+                                </div>
+                                <div class="info-item">
+                                    <span>Property Type</span>
+                                    <strong>Residential</strong>
+                                </div>
+                                <div class="info-item">
+                                    <span>Configuration</span>
+                                    <strong>54 units</strong>
+                                </div>
+                                <div class="info-item">
+                                    <span>Area – Carpet</span>
+                                    <strong>37,800 Sqft</strong>
+                                </div>
+                            </div>
+                            <div class="project-download-options">
+                                <a href="#" class="download-link brochure">
+                                    <div class="download-icon">
+                                        <iconify-icon icon="solar:document-text-outline"></iconify-icon>
+                                    </div>
+                                    <div class="download-text">
+                                        <span class="title">PROJECT BROCHURE</span>
+                                        <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                    </div>
+                                </a>
+                                <a href="#" class="download-link fact-sheet">
+                                    <div class="download-icon">
+                                        <iconify-icon icon="solar:bill-list-outline"></iconify-icon>
+                                    </div>
+                                    <div class="download-text">
+                                        <span class="title">FACT SHEET</span>
+                                        <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="project-card-button-section">
+                                <div class="project-card-btn">
+                                    <a href="project-details.html" class="theme-btn bs-font-montserrat">View Details</a>
+                                </div>
+                                <div class="project-card-btn">
+                                    <a href="project-details.html" class="theme-btn bs-font-montserrat">Enquireies</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blanca Seascape -->
+                    <div class="project-card-item wow fadeInUp residential commercial coming-soon"
+                        data-wow-delay="0.6s">
+                        <div class="project-img-wrapper">
+                            <img src="assets/images/projects/lendscpae-images/Blanca-Seascape.png"
+                                alt="Blanca Seascape">
+                            <span class="project-status-badge status-ongoing">Coming Soon</span>
+                        </div>
+                        <div class="project-content-body">
+                            <h4 class="bs-font-playfair-display">Blanca Seascape</h4>
+                            <div class="project-info-list">
+                                <div class="info-item">
+                                    <span>Location</span>
+                                    <strong>Ulwe, Navi Mumbai</strong>
+                                </div>
+                                <div class="info-item">
+                                    <span>Property Type</span>
+                                    <strong>Commercial & Residential</strong>
+                                </div>
+                                <div class="info-item">
+                                    <span>Configuration</span>
+                                    <strong>57 units</strong>
+                                </div>
+                                <div class="info-item">
+                                    <span>Area – Carpet</span>
+                                    <strong>60,000 Sqft</strong>
+                                </div>
+                            </div>
+                            <div class="project-download-options">
+                                <a href="#" class="download-link brochure">
+                                    <div class="download-icon">
+                                        <iconify-icon icon="solar:document-text-outline"></iconify-icon>
+                                    </div>
+                                    <div class="download-text">
+                                        <span class="title">PROJECT BROCHURE</span>
+                                        <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                    </div>
+                                </a>
+                                <a href="#" class="download-link fact-sheet">
+                                    <div class="download-icon">
+                                        <iconify-icon icon="solar:bill-list-outline"></iconify-icon>
+                                    </div>
+                                    <div class="download-text">
+                                        <span class="title">FACT SHEET</span>
+                                        <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="project-card-button-section">
+                                <div class="project-card-btn">
+                                    <a href="project-details.html" class="theme-btn bs-font-montserrat">View Details</a>
+                                </div>
+                                <div class="project-card-btn">
+                                    <a href="project-details.html" class="theme-btn bs-font-montserrat">Enquireies</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="map-view-container view-section" id="map-view">
                     <div class="map-side-list">
                         <!-- Blanca : Ekaiva -->
-                        <div class="project-card-horizontal commercial ongoing active-property"
+                        <div class="project-card-horizontal commercial ongoing new-launches active-property"
                             data-map-url="https://maps.google.com/maps?q=Blanca+Ekaiva+Turbhe+Navi+Mumbai&output=embed">
                             <div class="horiz-img-wrapper">
                                 <img src="assets/images/projects/lendscpae-images/blancs-business-hub.png"
@@ -593,7 +734,7 @@
                         </div>
 
                         <!-- Blanca Tower -->
-                        <div class="project-card-horizontal commercial ongoing"
+                        <div class="project-card-horizontal commercial ongoing new-launches"
                             data-map-url="https://maps.google.com/maps?q=Blanca+Tower+Borivali+Mumbai&output=embed">
                             <div class="horiz-img-wrapper">
                                 <img src="assets/images/projects/lendscpae-images/blanca-tower.png" alt="Blanca Tower">
@@ -630,7 +771,7 @@
                         </div>
 
                         <!-- ND Pearl -->
-                        <div class="project-card-horizontal residential sold-out"
+                        <div class="project-card-horizontal residential sold-out completed"
                             data-map-url="https://maps.google.com/maps?q=ND+Pearl+Kamothe+Navi+Mumbai&output=embed">
                             <div class="horiz-img-wrapper">
                                 <img src="assets/images/projects/lendscpae-images/nd-pearl.png" alt="ND Pearl">
@@ -667,7 +808,7 @@
                         </div>
 
                         <!-- ND Garden Tower -->
-                        <div class="project-card-horizontal residential sold-out"
+                        <div class="project-card-horizontal residential sold-out completed"
                             data-map-url="https://maps.google.com/maps?q=ND+Garden+Tower+Ulwe+Navi+Mumbai&output=embed">
                             <div class="horiz-img-wrapper">
                                 <img src="assets/images/projects/lendscpae-images/nd-garden-tower.png"
@@ -705,7 +846,7 @@
                         </div>
 
                         <!-- ND Garden -->
-                        <div class="project-card-horizontal residential sold-out"
+                        <div class="project-card-horizontal residential sold-out completed"
                             data-map-url="https://maps.google.com/maps?q=ND+Garden+Ulwe+Navi+Mumbai&output=embed">
                             <div class="horiz-img-wrapper">
                                 <img src="assets/images/projects/lendscpae-images/nd-garden.png" alt="ND Garden">
@@ -742,7 +883,7 @@
                         </div>
 
                         <!-- Gajanand Krupa -->
-                        <div class="project-card-horizontal residential sold-out"
+                        <div class="project-card-horizontal residential sold-out completed"
                             data-map-url="https://maps.google.com/maps?q=Shree+Gajanand+Krupa+Ulwe+Navi+Mumbai&output=embed">
                             <div class="horiz-img-wrapper">
                                 <img src="assets/images/projects/lendscpae-images/gajanand krupa.png"
@@ -752,6 +893,81 @@
                                 <h5>Gajanand Krupa</h5>
                                 <p class="horiz-desc">Elegant 1BHK living in the growing community of Ulwe. Reliable
                                     quality you can trust.</p>
+                                <div class="horiz-meta">
+                                    <span><i class="fas fa-map-marker-alt"></i> Ulwe, Navi Mumbai</span>
+                                </div>
+                                <div class="project-download-options-horizontal">
+                                    <a href="#" class="download-link brochure">
+                                        <div class="download-icon">
+                                            <iconify-icon icon="solar:document-text-outline"></iconify-icon>
+                                        </div>
+                                        <div class="download-text">
+                                            <span class="title">PROJECT BROCHURE</span>
+                                            <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="download-link fact-sheet">
+                                        <div class="download-icon">
+                                            <iconify-icon icon="solar:bill-list-outline"></iconify-icon>
+                                        </div>
+                                        <div class="download-text">
+                                            <span class="title">FACT SHEET</span>
+                                            <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="project-details.html" class="read-more-link">Read More</a>
+                            </div>
+                        </div>
+
+                        <!-- Blanca Hill -->
+                        <div class="project-card-horizontal residential coming-soon"
+                            data-map-url="https://maps.google.com/maps?q=Ulwe+Navi+Mumbai&output=embed">
+                            <div class="horiz-img-wrapper">
+                                <img src="assets/images/projects/lendscpae-images/blanca-hill.png" alt="Blanca Hill">
+                            </div>
+                            <div class="horiz-content">
+                                <h5>Blanca Hill</h5>
+                                <p class="horiz-desc">Experience premium residential living in Ulwe, Navi Mumbai. A
+                                    perfect blend of comfort and style.</p>
+                                <div class="horiz-meta">
+                                    <span><i class="fas fa-map-marker-alt"></i> Ulwe, Navi Mumbai</span>
+                                </div>
+                                <div class="project-download-options-horizontal">
+                                    <a href="#" class="download-link brochure">
+                                        <div class="download-icon">
+                                            <iconify-icon icon="solar:document-text-outline"></iconify-icon>
+                                        </div>
+                                        <div class="download-text">
+                                            <span class="title">PROJECT BROCHURE</span>
+                                            <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="download-link fact-sheet">
+                                        <div class="download-icon">
+                                            <iconify-icon icon="solar:bill-list-outline"></iconify-icon>
+                                        </div>
+                                        <div class="download-text">
+                                            <span class="title">FACT SHEET</span>
+                                            <span class="action">DOWNLOAD <i class="fas fa-arrow-down"></i></span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="project-details.html" class="read-more-link">Read More</a>
+                            </div>
+                        </div>
+
+                        <!-- Blanca Seascape -->
+                        <div class="project-card-horizontal residential commercial coming-soon"
+                            data-map-url="https://maps.google.com/maps?q=Ulwe+Navi+Mumbai&output=embed">
+                            <div class="horiz-img-wrapper">
+                                <img src="assets/images/projects/lendscpae-images/Blanca-Seascape.png"
+                                    alt="Blanca Seascape">
+                            </div>
+                            <div class="horiz-content">
+                                <h5>Blanca Seascape</h5>
+                                <p class="horiz-desc">Premium residential and commercial spaces in Ulwe. Designed for
+                                    modern living and thriving businesses.</p>
                                 <div class="horiz-meta">
                                     <span><i class="fas fa-map-marker-alt"></i> Ulwe, Navi Mumbai</span>
                                 </div>
@@ -830,10 +1046,10 @@
                             <div class="footer-links-column">
                                 <h5 class="footer-title">Communities</h5>
                                 <ul class="footer-links">
-                                    <li><a href="projects.html">New Launches</a></li>
-                                    <li><a href="projects.html">Coming Soon</a></li>
-                                    <li><a href="projects.html">Ongoing Projects</a></li>
-                                    <!-- <li><a href="projects.html">Completed</a></li> -->
+                                    <li><a href="projects.html?filter=new-launches">New Launches</a></li>
+                                    <li><a href="projects.html?filter=coming-soon">Coming Soon</a></li>
+                                    <li><a href="projects.html?filter=ongoing">Ongoing Projects</a></li>
+                                    <li><a href="projects.html?filter=completed">Completed</a></li>
                                 </ul>
                             </div>
                             <div class="footer-links-column">
@@ -999,19 +1215,48 @@
             // New WOW instance
             new WOW().init();
 
-            // Filter Projects
-            $('.filter-btn').on('click', function () {
-                $('.filter-btn').removeClass('active');
-                $(this).addClass('active');
-
-                var filterValue = $(this).attr('data-filter');
-                if (filterValue == 'all') {
-                    $('.project-card-item, .project-card-horizontal').fadeIn(400);
-                } else {
-                    $('.project-card-item, .project-card-horizontal').hide();
-                    $('.' + filterValue).fadeIn(400);
-                }
+            // Custom Dropdown Logic
+            $('.dropdown-selected').on('click', function (e) {
+                e.stopPropagation();
+                const $parent = $(this).parent();
+                $('.custom-dropdown').not($parent).removeClass('active');
+                $parent.toggleClass('active');
             });
+
+            $('.dropdown-list li').on('click', function () {
+                const value = $(this).data('value');
+                const text = $(this).text();
+                const $dropdown = $(this).closest('.custom-dropdown');
+
+                $dropdown.find('.dropdown-selected span').text(text);
+                $dropdown.find('.dropdown-selected').attr('data-value', value);
+                $dropdown.find('li').removeClass('selected');
+                $(this).addClass('selected');
+                $dropdown.removeClass('active');
+
+                applyFilters();
+            });
+
+            $(document).on('click', function () {
+                $('.custom-dropdown').removeClass('active');
+            });
+
+            function applyFilters() {
+                const typeFilter = $('#typeDropdown .dropdown-selected').attr('data-value');
+                const statusFilter = $('#statusDropdown .dropdown-selected').attr('data-value');
+
+                $('.project-card-item, .project-card-horizontal').each(function () {
+                    const $card = $(this);
+                    let typeMatch = (typeFilter === 'all' || $card.hasClass(typeFilter));
+                    let statusMatch = (statusFilter === 'all' || $card.hasClass(statusFilter));
+
+                    if (typeMatch && statusMatch) {
+                        $card.stop().fadeIn(400);
+                    } else {
+                        $card.stop().hide();
+                    }
+                });
+            }
 
             // View Toggle Logic
             $('.view-toggle-btn').on('click', function () {
@@ -1039,17 +1284,29 @@
                 const urlParams = new URLSearchParams(window.location.search);
                 const filter = urlParams.get('filter');
                 if (filter) {
-                    const $targetBtn = $(`.filter-btn[data-filter="${filter}"]`);
-                    if ($targetBtn.length) {
-                        // Small delay to ensure any layout/initialization is complete
-                        setTimeout(() => {
-                            $targetBtn.trigger('click');
-                            // Scroll to filter section if filter is applied from another page
-                            $('html, body').animate({
-                                scrollTop: $('#filter-section').offset().top - 0
-                            }, 500);
-                        }, 100);
+                    // Reset both dropdowns to 'All' initially to ensure a fresh filter
+                    $('#typeDropdown .dropdown-list li[data-value="all"]').trigger('click');
+                    $('#statusDropdown .dropdown-list li[data-value="all"]').trigger('click');
+
+                    // Check if it's a type or status filter
+                    const $typeItem = $(`#typeDropdown .dropdown-list li[data-value="${filter}"]`);
+                    const $statusItem = $(`#statusDropdown .dropdown-list li[data-value="${filter}"]`);
+
+                    if ($typeItem.length) {
+                        $typeItem.trigger('click');
+                    } else if ($statusItem.length) {
+                        $statusItem.trigger('click');
                     }
+
+                    // Scroll to filter section with a slight offset for better visibility
+                    setTimeout(() => {
+                        const filterSection = $('#filter-section');
+                        if (filterSection.length) {
+                            $('html, body').animate({
+                                scrollTop: filterSection.offset().top - 100
+                            }, 800);
+                        }
+                    }, 500);
                 }
             });
         });
