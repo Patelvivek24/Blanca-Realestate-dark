@@ -68,7 +68,7 @@
 }
 
 .dm-header {
-    padding: 36px 36px 0px 36px;
+    padding: 24px 36px 0px 36px;
     /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
     /* background: rgba(255, 255, 255, 0.02); */
 }
@@ -99,7 +99,7 @@
 .dm-right {
     flex: 1;
     width: 100%;
-    padding: 40px 36px 50px;
+    padding: 28px 36px 28px 36px;
 }
 
 .dm-title {
@@ -139,7 +139,7 @@
 
 /* Form Styles inside Modal */
 .form-group-new {
-    margin-bottom: 24px;
+    margin-bottom: 22px;
 }
 
 .form-group-new label {
@@ -148,7 +148,7 @@
     font-weight: 700;
     font-size: 14px;
     letter-spacing: 1px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     text-transform: uppercase;
 }
 
@@ -201,17 +201,19 @@
     font-size: 13px;
 } */
 
-.form-control-new {
+.form-control-new,
+textarea.form-control-new {
     width: 100%;
     background-color: transparent;
     border: none;
     border-radius: 5px;
-    padding: 15px 20px;
+    padding: 8px 12px;
     color: var(--lg-text);
-    font-size: 14px;
-    height: 55px;
+    font-size: 13px;
+    height: 46px;
     position: relative;
     z-index: 2;
+    resize: none;
 }
 
 .form-control-new::placeholder {
@@ -236,7 +238,7 @@ select.form-control-new option {
 }
 
 .submit-btn-contect-page {
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     flex-direction: column;

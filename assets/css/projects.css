@@ -387,7 +387,7 @@
 .project-card-button-section {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     gap: 12px;
 }
